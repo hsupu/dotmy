@@ -1,0 +1,16 @@
+# local config that won't be committed
+/vimrc.custom
+
+# color patterns, we symlink all files from other places
+/colors/*.vim
+
+# vim-plug
+/autoload/plug.vim.old
+/plugged/
+
+# history file for all the directories that were modified
+/.netrwhist
+
+.DS_Store
+*.bak
+*.swp
