@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+/mnt/c/Windows/explorer.exe $@
+

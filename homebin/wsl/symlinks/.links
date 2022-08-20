@@ -1,0 +1,1 @@
+code -> "$(wslpath $(winenv LocalAppData))/Programs/Microsoft VS Code/bin/code"

@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+# mshome.net is for Hyper-V network switch
+# On default switch
+# host $(hostname).mshome.net | awk '{print $4}'
+# On WSL switch
+# host $(hostname).local | awk '{print $4}'
+
+# ip route | grep default | awk '{ print $3 }'
+ip -4 route list scope global | grep -e "^default" - | awk '{ print $3 }'

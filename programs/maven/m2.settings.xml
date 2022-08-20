@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+    
+	<localRepository>${user.home}/.m2/repository</localRepository>
+
+	<!-- 执行中是否可交互，默认 true -->
+	<interactiveMode>true</interactiveMode>
+
+	<offline>false</offline>
+
+	<!-- 默认加载的插件组 -->
+	<pluginGroups>
+		<pluginGroup>org.apache.maven.plugins</pluginGroup>
+		<pluginGroup>org.codehaus.mojo</pluginGroup>
+	</pluginGroups>
+
+	<!-- 代理列表，第一个被标记为 active 的生效 -->
+	<proxies>
+		<!-- 代理
+		<proxy>
+			<id>optional</id>
+			<active>true</active>
+			<protocol>http</protocol>
+			<username>proxyuser</username>
+			<password>proxypass</password>
+			<host>proxy.host.net</host>
+			<port>80</port>
+			<nonProxyHosts>local.net|some.host.com</nonProxyHosts>
+		</proxy>
+		-->
+	</proxies>
+
+	<!-- 服务器认证配置 -->
+	<servers>
+		<!-- 成对地指定 username/password 或 privateKey/passphrase 属性
+		<server>
+			<id>deploymentRepo</id>
+			<username>repouser</username>
+			<password>repopwd</password>
+		</server>
+		-->
+	</servers>
+
+	<!-- 仓库镜像 -->
+    <mirrors>
+		<mirror>
+		    <id>alimaven1</id>
+		    <name>aliyun maven</name>
+		    <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+		    <mirrorOf>central</mirrorOf>
+		</mirror>
+ 		<mirror>
+		    <id>alimaven2</id>
+		    <name>aliyun maven</name>
+		    <url>http://maven.aliyun.com/nexus/content/repositories/central/</url>
+		    <mirrorOf>central</mirrorOf>
+		</mirror>
+    </mirrors>
+
+	<!-- 自定义配置 -->
+	<profiles>
+	</profiles>
+
+	<!-- 激活的配置 -->
+	<activeProfiles>
+	</activeProfiles>
+  
+</settings>

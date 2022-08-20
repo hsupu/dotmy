@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+if [[ $# < 1 ]]; then
+	/mnt/c/Windows/System32/WindowsPowerShell/v1.0/powershell.exe /c "Get-ChildItem env:" | tail -n +2 | head -n -2
+else
+    /mnt/c/Windows/System32/WindowsPowerShell/v1.0/powershell.exe /c "Write-Output \${env:$1}" | cat
+fi
+

@@ -1,0 +1,5 @@
+# https://docs.npmjs.com/cli/v8/configuring-npm/npmrc
+
+registry=http://mirrors.cloud.tencent.com/npm/
+# registry=https://registry.npmmirror.com
+# registry=https://mirrors.huaweicloud.com/repository/npm/

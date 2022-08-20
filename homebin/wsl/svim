@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+# -E for preserving env vars
+sudo -E vim $@
+

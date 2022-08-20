@@ -1,0 +1,54 @@
+# OS specified file
+
+## mac
+
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Files that might appear in the root of a volume 
+.Spotlight-V100
+.Trashe
+.Trashes
+.Trash-*
+.DocumentRevisions-V100
+.fseventsd
+.TemporaryItems
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+## Windows
+
+Desktop.ini
+Thumbs.db
+ehthumbs.db
+$RECYCLE.BIN/
+
+# thumbnail, compiled code or backup file
+
+**~
+._*
+*.out
+
+# Python
+.pyc
+
+# vim
+*.bak
+
+# Java
+.class
+
+# special dependencies dir
+
+venv
+node_modules
+.sass-cache
+

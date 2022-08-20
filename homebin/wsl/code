@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+LocalAppData=$(wslpath $(winenv LocalAppData))
+if [[ ! -d "$LocalAppData" ]]; then
+	echo "Failed to get \$env:LocalAppData"
+	exit 1
+fi
+
+"$LocalAppData/Programs/Microsoft VS Code/bin/code" $@
+

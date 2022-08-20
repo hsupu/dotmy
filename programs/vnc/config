@@ -1,0 +1,6 @@
+securitytypes=tlsvnc
+desktop=sandbox
+geometry=1920x1080
+dpi=96
+localhost
+alwaysshared

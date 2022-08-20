@@ -1,0 +1,39 @@
+201101
+    rm /etc/update-motd.d/50-motd-news
+    touch ~/.hushlogin
+
+201121
+    firewall rule
+        New-NetFirewallRule -DisplayName "WSL" -Direction Inbound -InterfaceAlias "vEthernet (WSL)" -Action Allow
+
+    vim /etc/apt/apt.conf/d/12proxy
+        Acquire::http::proxy "socks5h://127.0.0.1:5000";
+        Acquire::https::proxy "socks5h://127.0.0.1:5000";Acquire::AllowInsecureRepositories "true";
+        Acquire::AllowDowngradeToInsecureRepositories "true";
+
+    apt install -y python3 python-as-python3
+    vim ~/.pip/pip.conf
+        [global]
+        index-url = https://pypi.tuna.tsinghua.edu.cn/simple
+
+    python -m pip install --user ansible paramiko
+
+    vim /etc/security/limits.conf
+        * soft nofile 4096
+        * hard nofile 4096
+
+211115
+    mirror
+        https://mirrors.tuna.tsinghua.edu.cn/
+        https://mirrors.bfsu.edu.cn/
+
+220820
+    use dotmy, mybin
+
+    ln -s /home/xp/.config/dotmy/profiles/xp-14s-wsl/wsl.conf /etc/
+
+    https://github.com/chmln/sd
+    https://github.com/MitMaro/git-interactive-rebase-tool
+    https://github.com/dandavison/delta
+    https://github.com/BurntSushi/ripgrep/
+    https://github.com/chriswalz/bit

@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+sudo $(which sd) "^\S+(\s+host)" "$(hostip)\$1" /etc/hosts
+
