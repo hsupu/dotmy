@@ -13,3 +13,6 @@ Write-Host "Remeber to enable `"Developer Mode`" in system `"Settings`" first, t
 mkdir -p $HOME\Documents\PowerShell -ErrorAction SilentlyContinue
 Copy-Item "$PSScriptRoot\Microsoft.PowerShell_profile.ps1" "$HOME\Documents\PowerShell\"
 & cmd /c mklink /d "$HOME\Documents\PowerShell\Sync" $PSScriptRoot
+
+mkdir -p C:\my -ErrorAction SilentlyContinue
+& cmd /c mklink /d "C:\my\bin" "$PSScriptRoot\bin"
