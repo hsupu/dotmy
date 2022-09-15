@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
 
-sudo $(which sd) "^\S+(\s+host)" "$(hostip)\$1" /etc/hosts
+ip=$(hostip)
+echo $ip
+sudo $(which sd) "^\S+(\s+host)" "$ip\$1" /etc/hosts
 
