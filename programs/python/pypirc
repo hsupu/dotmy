@@ -1,0 +1,18 @@
+[distutils]
+index-servers =
+    pypi
+    testpypi
+    local
+
+[pypi]
+username = __token__
+password = 
+
+[testpypi]
+username = __token__
+password = 
+
+[local]
+repository = http://127.0.0.1:4001
+username = xp
+password = xpxpxpxp

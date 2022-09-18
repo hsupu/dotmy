@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-SHRC_DIR="$(cd "$(dirname $(realpath ${BASH_SOURCE[0]}))"; pwd)"
+curdir="$(cd "$(dirname $(realpath ${BASH_SOURCE[0]}))"; pwd)"
+export SHRC_DIR=$curdir
 
 # 安装 zsh
 sudo apt install -y zsh
