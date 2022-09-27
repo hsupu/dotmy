@@ -35,6 +35,8 @@ function enable_pyenv() {
     eval "$(pyenv init -)"
     # $PYENV_ROOT/plugins/pyenv-virtualenv/shims
     # eval "$(pyenv virtualenv-init -)"
+
+    [[ ! -e "$HOME/.local/bin/pyenv" ]] && ln -s "${PYENV_ROOT}/bin/pyenv" "$HOME/.local/bin/"
 }
 
 function enable_rbenv() {

@@ -3,3 +3,6 @@
 registry=http://mirrors.cloud.tencent.com/npm/
 # registry=https://registry.npmmirror.com
 # registry=https://mirrors.huaweicloud.com/repository/npm/
+
+disturl=http://mirrors.cloud.tencent.com/npm/dist
+cache=~/.local/npm/cache/
