@@ -2,6 +2,8 @@
 mapping = {
     'aria2/aria2.conf': '$HOME/.config/aria2/aria2.conf',
     'composer-config.json': '$HOME/.composer/config.json',
+    'git/config': '$HOME/.config/git/config',
+    'git/ignore': '$HOME/.config/git/ignore',
     'java/m2.settings.xml': '$HOME/.m2/settings.xml',
     'java/sbt-repositories': '$HOME/.sbt/repositories',
     'nodejs/npmrc': '$HOME/.npmrc',

@@ -8,3 +8,5 @@ export DOTMY_PROFILE="xp-pc-wsl"
 export PYENV_ROOT="$HOME/.local/pyenv"
 # nvm
 export NVM_DIR="$HOME/.local/nvm"
+# pnpm
+export PNPM_HOME="$HOME/.local/share/pnpm"

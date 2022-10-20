@@ -1,0 +1,83 @@
+#
+# external tool
+#
+[core]
+    # 用于编辑 message，如 commit tag
+    # $env:GIT_EDITOR 覆盖此项
+	# editor = "vim"
+    #
+    # 用于浏览文本，默认是 less
+    # $env:PAGER 覆盖此项
+	# pager = "delta"
+#
+[diff]
+    # 默认是 $merge.tool
+	# tool = "vscode"
+	# tool = "vimdiff"
+    # 默认是 $merge.guiTool
+    # guiTool = ""
+[difftool]
+    # 是否每次调用前需确认
+	prompt = false
+[difftool "vscode"]
+	cmd = "code --wait --diff $LOCAL $REMOTE"
+#
+# filter 决定了如何 worktree file -> blob
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+#
+[gui]
+[guitool "some"]
+#
+# 用于交互模式
+[interactive]
+    diffFilter = "delta --color-only"
+#
+[merge]
+    # 冲突块格式，default = merge
+	# 适配 default: vscode
+	# 适配 diff3: vimdiff delta
+    #
+    # <<<<<<<
+    # A
+    # =======
+    # B
+    # >>>>>>>
+	conflictStyle = "merge"
+    # <<<<<<<
+    # A
+    # !!!!!!!
+    # original
+    # =======
+    # B
+    # >>>>>>>
+	# conflictStyle = "diff3"
+	#
+	# tool = "vscode"
+	# tool = "vimdiff"
+    # guiTool = ""
+[mergetool]
+    # 是否每次调用前需确认
+	prompt = false
+[mergetool "vscode"]
+	cmd = "code --wait $MERGED"
+#
+[pager]
+    # 关闭特定命令的结果分页
+    branch = false
+#
+[sequence]
+    # 用于 rebase -i
+    # $env:GIT_SEQUENCE_EDITOR 覆盖此项，不指定则采用 $core.editor
+	editor = "interactive-rebase-tool"
+#
+# ext config
+#
+[delta]
+    # side-by-side = true
+    line-numbers = true
+	# use "n" and "N" to move between diff sections
+    navigate = true
