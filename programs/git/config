@@ -1,3 +1,4 @@
+# 请复制文件至 $HOME/.config/git/config 并定制
 # https://git-scm.com/docs/git-config
 [include]
     path = "~/.config/dotmy/programs/git/common.gitconfig"
