@@ -6,7 +6,7 @@ export EDITOR="vim"
 export VISUAL="$EDITOR"
 
 # brew
-export HOMEBREW_GITHUB_API_TOKEN="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"
+# export HOMEBREW_GITHUB_API_TOKEN=
 # export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles"
 # export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles"
 
