@@ -7,8 +7,8 @@
 -XX:SoftRefLRUPolicyMSPerMB=50
 
 -XX:CICompilerCount=2
--XX:ErrorFile=$USER_HOME/java_error_in_idea_%p.log
--XX:HeapDumpPath=$USER_HOME/java_error_in_idea.hprof
+-XX:ErrorFile=$USER_HOME/.local/jetbrains/java_error_in_idea_%p.log
+-XX:HeapDumpPath=$USER_HOME/.local/jetbrains/java_error_in_idea.hprof
 
 -XX:+UseG1GC
 -XX:+UseNUMA

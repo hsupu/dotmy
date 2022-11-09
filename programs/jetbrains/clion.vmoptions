@@ -9,8 +9,8 @@
 -XX:MaxNewSize=128m
 
 -XX:CICompilerCount=2
--XX:ErrorFile=$USER_HOME/java_error_in_clion_%p.log
--XX:HeapDumpPath=$USER_HOME/java_error_in_clion.hprof
+-XX:ErrorFile=$USER_HOME/.local/jetbrains/java_error_in_clion_%p.log
+-XX:HeapDumpPath=$USER_HOME/.local/jetbrains/java_error_in_clion.hprof
 
 -XX:+UseG1GC
 -XX:+UseNUMA
@@ -31,3 +31,4 @@
 -Djdk.module.illegalAccess.silent=true
 -Dkotlinx.coroutines.debug=off
 -Dsun.io.useCanonPrefixCache=false
+
