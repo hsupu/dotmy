@@ -13,6 +13,9 @@ function path_1_push_back() {
     unset new
 }
 
+[[ -z $EDITOR ]] && EDITOR="vim"
+[[ -z $PAGER ]] && PAGER="less"
+
 # dotnet
 [[ -d $HOME/.dotnet/tools ]] && path_1_push_back "$HOME/.dotnet/tools"
 
