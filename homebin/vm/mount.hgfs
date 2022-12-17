@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+sudo mkdir -p /mnt/hgfs
+
+#sudo usermod -aG hgfs $(whoami)
+
+sudo vmhgfs-fuse .host:/ /mnt/hgfs \
+    -o subtype=vmhgfs-fuse,allow_other

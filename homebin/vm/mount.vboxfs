@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+sudo systemctl enable vboxservice
+sudo systemctl start vboxservice
+
+sudo usermod -aG vboxsf $USER
+
+sudo mkdir -p /mnt/vbox
+sudo mount -t vboxsf -o uid=$UID,gid=$(id -g) hostfs/shared /mnt/vbox
