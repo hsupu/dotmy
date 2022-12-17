@@ -43,6 +43,7 @@ path_push_back "${PATH_3}"
 path_push_back "/sbin:/bin"
 path_push_back "${PATH_4}"
 
-unset path_push_back
+# [xp] we may use it later
+# unset path_push_back
 
 true

@@ -4,9 +4,11 @@ export DOTMY="$HOME/.config/dotmy"
 
 export DOTMY_PROFILE="xp-wdk-wsl"
 
-# pyenv
-export PYENV_ROOT="$HOME/.local/pyenv"
+# cargo
+export CARGO_ROOT="$HOME/.local/cargo"
 # nvm
 export NVM_DIR="$HOME/.local/nvm"
 # pnpm
 export PNPM_HOME="$HOME/.local/share/pnpm"
+# pyenv
+export PYENV_ROOT="$HOME/.local/pyenv"

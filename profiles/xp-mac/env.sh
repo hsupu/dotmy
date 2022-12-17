@@ -5,7 +5,7 @@ export DOTMY="$HOME/.config/dotmy"
 export DOTMY_PROFILE="xp-mac"
 
 # export CARGO_ROOT="$HOME/.cargo"
-export COMPOSER_ROOT="$HOME/.local/composer"
+export COMPOSER_HOME="$HOME/.local/composer"
 # export GOPATH="$HOME/.golang"
 # java
 export JAVA_HOME="/Library/Java/Home"

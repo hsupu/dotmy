@@ -45,14 +45,16 @@ export NVM_NODEJS_ORG_MIRROR="https://npmmirror.com/mirrors/node/"
 [[ -d $PYENV_ROOT ]] && export PYENV_ROOT && path_1_push_back "${PYENV_ROOT}/bin"
 
 # php
-[[ -z $COMPOSER_ROOT ]] && COMPOSER_ROOT="$HOME/.composer"
-[[ -d $COMPOSER_ROOT ]] && export COMPOSER_ROOT && path_1_push_back "${COMPOSER_ROOT}/vendor/bin"
+# https://getcomposer.org/doc/03-cli.md#composer-home
+[[ -z $COMPOSER_HOME ]] && COMPOSER_HOME="$HOME/.local/composer"
+# [[ -z $COMPOSER_BIN ]] && COMPOSER_BIN="${COMPOSER_HOME}/vendor/bin"
+[[ -d $COMPOSER_HOME ]] && export COMPOSER_HOME && path_1_push_back "${COMPOSER_HOME}/vendor/bin"
 
 # ruby
 [[ -z $RVM_DIR ]] && RVM_DIR="$HOME/.local/rvm"
 
 # rust
-[[ -z $CARGO_ROOT ]] && CARGO_ROOT="$HOME/.cargo"
+[[ -z $CARGO_ROOT ]] && CARGO_ROOT="$HOME/.local/cargo"
 [[ -d $CARGO_ROOT ]] && export CARGO_ROOT && path_1_push_back "${CARGO_ROOT}/bin"
 
 unset path_1_push_back

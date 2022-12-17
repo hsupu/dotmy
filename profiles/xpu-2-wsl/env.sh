@@ -4,9 +4,9 @@ export DOTMY="$HOME/.config/dotmy"
 
 export DOTMY_PROFILE="xpu-2-wsl"
 
-# pyenv
-export PYENV_ROOT="$HOME/.local/pyenv"
 # nvm
 export NVM_DIR="$HOME/.local/nvm"
 # pnpm
 export PNPM_HOME="$HOME/.local/share/pnpm"
+# pyenv
+export PYENV_ROOT="$HOME/.local/pyenv"

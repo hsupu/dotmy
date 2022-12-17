@@ -25,10 +25,14 @@ pyenv update
 具体版本和依赖 https://github.com/pyenv/pyenv/wiki#suggested-build-environment
 
 ```bash
+sudo apt install -y build-essential
+# or
+sudo apt install -y clang
+
 sudo apt install -y \
-    build-essential libssl-dev zlib1g-dev \
-    libbz2-dev libreadline-dev libsqlite3-dev xz-utils libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev \
-    wget curl
+    curl fakeroot make pkg-config wget \
+    libssl-dev zlib1g-dev \
+    libbz2-dev libreadline-dev libsqlite3-dev xz-utils libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
 
 pyenv install 3.10.1
 

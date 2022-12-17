@@ -4,7 +4,11 @@
 
 ## 安装
 
+https://pnpm.io/installation
+
 ```bash
+curl -fsSL https://get.pnpm.io/install.sh | sh -
+
 # from 16.13, may difficult to upgrade
 corepack enable
 
