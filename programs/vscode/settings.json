@@ -1,0 +1,120 @@
+// 将设置放入此文件中以覆盖默认设置
+{
+    "editor.fontFamily": "'Iosevka PU-5', 'Sarasa Term SC', Cousine, Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontSize": 13,
+    "editor.fontLigatures": true,
+    "editor.renderLineHighlight": "all",
+
+    // 选取框圆角
+    "editor.roundedSelection": false,
+
+    // 小地图滑块
+    "editor.minimap.showSlider": "always",
+
+    // 是否保留命令面板的最后一次输入
+    "workbench.commandPalette.preserveInput": true,
+
+    // 终端程序
+    "terminal.external.osxExec": "iTerm.app",
+
+    // exts: Find all references
+    "find.all.references.engine": "rg",
+
+    "[markdown]": {
+        "editor.fontFamily": "'Iosevka PU-5', 'Sarasa Term SC'",
+    },
+
+    // markdown
+    "markdownlint.config": {
+        "MD013": false,
+        "MD025": false,
+        "MD041": true
+    },
+
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+    "workbench.sideBar.location": "left",
+
+    "rust-client.channel": "stable",
+
+    "rust.mode": "rls",
+    "rust.rls": null,
+
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "xelatex",
+            "tools": [
+                "xelatex"
+            ]
+        },
+        {
+            "name": "latexmk",
+            "tools": [
+                "latexmk"
+            ]
+        },
+    ],
+    "latex-workshop.latex.tools": [
+        {
+            "name": "latexmk",
+            "command": "/Library/TeX/texbin/latexmk",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-pdf",
+                "%DOC%"
+            ]
+        },
+        {
+            "name": "xelatex",
+            "command": "/Library/TeX/texbin/xelatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "%DOC%"
+            ]
+        },
+        {
+            "name": "pdflatex",
+            "command": "/Library/TeX/texbin/pdflatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "%DOC%"
+            ]
+        },
+        {
+            "name": "bibtex",
+            "command": "/Library/TeX/texbin/bibtex",
+            "args": [
+                "%DOCFILE%"
+            ]
+        },
+    ],
+    "latex-workshop.view.pdf.viewer": "tab",
+    "latex-workshop.latex.autoBuild.run": "onFileChange",
+    "jupyter.alwaysTrustNotebooks": true,
+    "files.hotExit": "onExitAndWindowClose",
+    "window.dialogStyle": "custom",
+    "editor.rulers": [
+        140
+    ],
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter-notebook"
+    },
+    "notebook.cellToolbarLocation": {
+        "default": "right",
+        "jupyter-notebook": "left"
+    },
+    "markdown.preview.doubleClickToSwitchToEditor": false,
+    "gitlens.codeLens.enabled": false,
+    "gitlens.currentLine.enabled": false,
+    "gitlens.hovers.currentLine.over": "line",
+    "gitlens.defaultDateFormat": "hh:mm:ss, YYYY-MM-DD",
+    "gitlens.defaultDateShortFormat": "YY-MM-DD",
+    "files.autoGuessEncoding": true,
+    "diffEditor.ignoreTrimWhitespace": false,
+}
