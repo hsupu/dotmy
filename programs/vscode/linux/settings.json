@@ -1,0 +1,14 @@
+{
+    "window.titleBarStyle": "native",
+    "explorer.confirmDragAndDrop": false,
+    "files.associations": {
+        "*.h": "c"
+    },
+    "explorer.confirmDelete": false,
+    "editor.fontFamily": "'Cousine', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+    "terminal.integrated.rendererType": "dom",
+    "files.exclude": {
+        "benchtests/": true
+    },
+    "diffEditor.ignoreTrimWhitespace": false
+}

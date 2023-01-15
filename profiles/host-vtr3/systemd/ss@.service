@@ -1,0 +1,11 @@
+# /lib/systemd/system/ss@.service
+[Unit]
+Description=ss-%i
+After=network.target nss-lookup.target
+Wants=network-online.target
+
+[Service]
+ExecStart=/as/ss/%i
+
+[Install]
+WantedBy=multi-user.target
