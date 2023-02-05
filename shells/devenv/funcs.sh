@@ -34,7 +34,9 @@ function enable_pyenv() {
     # $PYENV_ROOT/shims
     eval "$(pyenv init -)"
     # $PYENV_ROOT/plugins/pyenv-virtualenv/shims
-    # eval "$(pyenv virtualenv-init -)"
+    # if which pyenv-virtualenv-init > /dev/null; then
+    #     eval "$(pyenv virtualenv-init -)"
+    # fi
 
     [[ ! -e "$HOME/.local/bin/pyenv" ]] && ln -s "${PYENV_ROOT}/bin/pyenv" "$HOME/.local/bin/"
 }

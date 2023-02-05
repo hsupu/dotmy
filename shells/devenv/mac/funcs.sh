@@ -5,6 +5,7 @@ function enable_nvm() {
         echo "\$NVM_DIR not set"
         return
     fi
+    # brew
     safe_source "/usr/local/opt/nvm/nvm.sh"
     safe_source "/usr/local/opt/nvm/etc/bash_completion.d/nvm"
 }

@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 
 LocalAppData=$(wslpath $(winenv LocalAppData))
+if [[ -z $LocalAppData ]]; then
+	LocalAppData="/mnt/c/Users/xp/AppData/Local"
+	echo Use default \$LocalAppData
+fi
 if [[ ! -d "$LocalAppData" ]]; then
 	echo "Failed to get \$env:LocalAppData"
 	exit 1

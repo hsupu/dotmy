@@ -22,23 +22,30 @@ function path_1_push_back() {
 # golang
 [[ -z $GOROOT ]] && GOROOT="/usr/local/opt/go"
 [[ -z $GOPATH ]] && GOPATH="$HOME/.golang"
-[[ -d $GOROOT ]] && export GOROOT && path_1_push_back "$GOROOT/bin"
+if [[ -d $GOROOT ]]; then
+    export GOROOT
+    export GO111MODULE=on
+    export GOPROXY=https://goproxy.cn
+    path_1_push_back "$GOROOT/bin"
+fi
 [[ -d $GOPATH ]] && export GOPATH && path_1_push_back "$GOPATH/bin"
-export GO111MODULE=on
-export GOPROXY=https://goproxy.cn
 
 # java
 [[ -z $JAVA_HOME ]] && JAVA_HOME="/usr/local/opt/java"
-[[ -d $JAVA_HOME ]] && export JAVA_HOME \
-    && export CLASSPATH=".:${JAVA_HOME}/lib/dt.jar:${JAVA_HOME}/lib/tools.jar" \
-    && path_1_push_back "${JAVA_HOME}/bin"
+if [[ -d $JAVA_HOME ]]; then
+    export JAVA_HOME
+    export CLASSPATH=".:${JAVA_HOME}/lib/dt.jar:${JAVA_HOME}/lib/tools.jar" \
+    path_1_push_back "${JAVA_HOME}/bin"
+fi
 
 # js
 [[ -z $NVM_DIR ]] && NVM_DIR="$HOME/.local/nvm"
 [[ -z $PNPM_HOME ]] && PNPM_HOME="$HOME/.local/share/pnpm"
-[[ -d $NVM_DIR ]] && export NVM_DIR
+if [[ -d $NVM_DIR ]]; then
+    export NVM_DIR
+    export NVM_NODEJS_ORG_MIRROR="https://npmmirror.com/mirrors/node/"
+fi
 [[ -d $PNPM_HOME ]] && export PNPM_HOME
-export NVM_NODEJS_ORG_MIRROR="https://npmmirror.com/mirrors/node/"
 
 # python
 [[ -z $PYENV_ROOT ]] && PYENV_ROOT="$HOME/.local/pyenv"
@@ -51,6 +58,7 @@ export NVM_NODEJS_ORG_MIRROR="https://npmmirror.com/mirrors/node/"
 [[ -d $COMPOSER_HOME ]] && export COMPOSER_HOME && path_1_push_back "${COMPOSER_HOME}/vendor/bin"
 
 # ruby
+[[ -z $RBENV_DIR ]] && RBENV_DIR="$HOME/.local/rbenv"
 [[ -z $RVM_DIR ]] && RVM_DIR="$HOME/.local/rvm"
 
 # rust

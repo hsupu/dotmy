@@ -40,10 +40,10 @@ source_or_skip "$HOME/.config/shell/pre-zsh.sh"
 if [[ ! -d $ZSH ]]; then
     [[ -n $ZSH ]] && echo "\$ZSH invalid: $ZSH"
 
+    [[ -d $ZSH ]] || ZSH="$HOME/.local/oh-my-zsh"
+    # [[ -d $ZSH ]] || ZSH="$HOME/.local/omz"
     [[ -d $ZSH ]] || ZSH="$HOME/.config/oh-my-zsh"
     # [[ -d $ZSH ]] || ZSH="$HOME/.config/omz"
-    # [[ -d $ZSH ]] || ZSH="$HOME/.local/oh-my-zsh"
-    # [[ -d $ZSH ]] || ZSH="$HOME/.local/omz"
     [[ -d $ZSH ]] || ZSH="$HOME/.oh-my-zsh"
 
     [[ -d $ZSH ]] && export ZSH || echo "\$ZSH not found"

@@ -19,6 +19,7 @@ mapping = {
 
 copy = {
     'git/config': '$HOME/.config/git/config',
+    'nodejs/yarnrc': '$HOME/.yarnrc',
 }
 
 mac_overrides = {
