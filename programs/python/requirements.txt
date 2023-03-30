@@ -1,2 +1,6 @@
+--index-url https://pypi.tuna.tsinghua.edu.cn/simple --trusted-host pypi.tuna.tsinghua.edu.cn
 argparse
 invoke
+isort
+pre-commit
+python-dotenv

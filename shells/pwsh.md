@@ -1,9 +1,8 @@
 # PowerShell
 
-On Windows?
+## mac
 
 ```ps1
-git clone --single-branch --branch win/pwsh [ThisRepo]
+# homebrew int
+Add-Content -Path $PROFILE.CurrentUserAllHosts -Value '$(/usr/local/bin/brew shellenv) | Invoke-Expression'
 ```
-
-目前没有在 WSL/Mac/Linux 用 pwsh 的需求……

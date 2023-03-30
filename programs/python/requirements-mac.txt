@@ -1,2 +1,1 @@
-argparse
-invoke
+-r requirements.txt
