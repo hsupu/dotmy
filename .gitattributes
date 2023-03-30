@@ -1,13 +1,17 @@
 
 # normalize test
-* text=auto
+* text=input
 
 *.md text
 *.txt text
-*.vcproj text eol=crlf
 *.sh text eol=lf
 *.sh text eol=lf
+*.ps1 text eol=crlf
 
-*.gif -text
-*.jpg -text
-*.jpeg -text
+*.bin binary
+
+*.pdf binary
+
+*.gif binary
+*.jpg binary
+*.jpeg binary

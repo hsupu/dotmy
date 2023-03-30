@@ -1,0 +1,97 @@
+
+# https://help.github.com/articles/dealing-with-line-endings/
+
+# * text=input
+
+*.c text=input
+*.cc text=input
+*.cpp text=input
+*.h text=input
+*.hpp text=input
+*.inc text=input
+
+*.cs text=input
+*.csproj text=input
+*.noproj text=input
+*.proj text=input
+*.sln text=input
+*.vcxproj text=input
+*.props text=input
+*.targets text=input
+
+*.rs text=input
+
+*.js text=input
+*.php text=input
+*.pl text=input
+*.ps1 text=input
+*.py text=input
+*.rb text=input
+*.sh text=input
+
+*.css text=input
+*.htm text=input
+*.html text=input
+*.html5 text=input
+*.svg text=input
+
+*.csv text=input
+*.ini text=input
+*.json text=input
+*.json5 text=input
+*.md text=input
+*.properties text=input
+*.toml text=input
+*.txt text=input
+*.xml text=input
+*.yaml text=input
+*.yml text=input
+
+*.scm text=input
+
+*.sql text=input
+
+.htaccess text=input
+
+# "binary" is a macro for "-text -diff"
+
+*.7z binary
+*.gz binary
+*.rar binary
+*.zip binary
+
+*.a binary
+*.bin binary
+*.dll binary
+*.exe binary
+*.lib binary
+*.o binary
+*.obj binary
+*.out binary
+*.pyc binary
+*.so binary
+
+*.ape binary
+*.fla binary
+*.flv binary
+*.m4a binary
+*.mov binary
+*.mp3 binary
+*.mp4 binary
+*.swf binary
+
+*.gif binary
+*.ico binary
+*.jpeg binary
+*.jpg binary
+*.png binary
+
+*.ttf binary
+*.ttc binary
+
+*.pdf binary
+*.doc binary
+*.docx binary
+*.ppt binary
+*.xls binary
+*.xlsx binary

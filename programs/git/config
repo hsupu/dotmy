@@ -5,3 +5,4 @@
     path = "~/.config/dotmy/programs/git/tools.gitconfig"
     path = "~/.config/dotmy/programs/git/profile.gitconfig"
     # path = "~/.config/dotmy/profiles/current/programs/git/profile.gitconfig"
+    # path = "~/.config/dotmy/private/current/programs/git/profile.gitconfig"

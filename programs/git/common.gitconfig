@@ -34,7 +34,7 @@
 	# 以特定模式显示移动的行，true = default
 	colorMoved = true
 [fetch]
-	# writeCommitGraph = true
+	writeCommitGraph = true
 [gc]
     # 更新 commit-graph
 	writeCommitGraph = true
@@ -63,4 +63,15 @@
     # git-receive-pack 的 ref 前缀
 	procReceiveRefs = refs/for
 [safe]
+	# 位于 include.path 时不生效
 	directory = *
+#
+# color
+#
+[color "diff"]
+	meta = 11
+	frag = magenta bold
+	commit = yellow bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
