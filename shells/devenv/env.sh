@@ -115,6 +115,7 @@ fi
 if [[ -d $RUBY_ROOT ]]; then
     export RUBY_ROOT
     path_1_push_back "${RUBY_ROOT}/bin"
+    PATH="${RUBY_ROOT}/bin:$PATH"
     if which -s gem >/dev/null; then
         USER_GEM_HOME="$(gem environment user_gemhome)"
         if [[ -d $USER_GEM_HOME ]]; then

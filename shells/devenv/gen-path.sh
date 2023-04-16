@@ -11,13 +11,13 @@ function path_push_back() {
     # echo "varname $varname"
 
     if [[ $ZSH_VERSION ]]; then
-        existing="${(P)$(echo $varname)}"
+        new="${(P)$(echo $varname)}"
     elif [[ $BASH_VERSION ]]; then
-        existing="${!varname}"
+        new="${!varname}"
     else
-        existing=$(eval "echo \"\$$varname\"")
+        new=$(eval "echo \"\$$varname\"")
     fi
-    # echo "$varname existing: $existing"
+    # echo "$varname existing: $new"
 
     # https://zsh.sourceforge.io/Doc/Release/Options.html
     if [[ $ZSH_VERSION ]]; then
@@ -39,17 +39,17 @@ function path_push_back() {
         fi
         # echo "$varname found: $i"
 
-        if [[ -z $existing ]]; then
-            existing="$i"
+        if [[ -z $new ]]; then
+            new="$i"
         else
-            existing="$existing:$i"
+            new="$new:$i"
         fi
     done
-    # echo "$varname updated: $existing"
+    # echo "$varname updated: $new"
 
-    # declare "$varname"="$existing"
-    export "$varname"="$existing"
-    unset i arrIN varname existing
+    # declare "$varname"="$new"
+    export "$varname"="$new"
+    unset i arrIN varname new
 }
 
 PATH=""
