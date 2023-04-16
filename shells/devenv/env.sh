@@ -1,10 +1,24 @@
 
+# case $(uname) in
+#     "Linux")
+#         ;;
+#     "Darwin")
+#         . "$DOTMY/shells/devenv/mac/env.sh"
+#         ;;
+#     *)
+#         >&2 echo "Unknown OS: $(uname)"
+#         return
+#         ;;
+# esac
+
+# echo $PATH
+
 [[ -d "$HOME/bin" ]] || mkdir "$HOME/bin"
 [[ -d "$HOME/.config" ]] || mkdir "$HOME/.config"
 [[ -d "$HOME/.local" ]] || mkdir "$HOME/.local"
 
 function path_1_push_back() {
-    if [[ -e $(which cygpath 2>/dev/null) ]]; then
+    if [[ -e "$(which cygpath 2>/dev/null)" ]]; then
         new=$(cygpath $1)
     else
         new="$1"
@@ -14,10 +28,23 @@ function path_1_push_back() {
 }
 
 [[ -z $EDITOR ]] && EDITOR="vim"
+if which -s $EDITOR >/dev/null; then
+    export EDITOR
+fi
 [[ -z $PAGER ]] && PAGER="less"
+if which -s $PAGER >/dev/null; then
+    export PAGER
+fi
 
 # dotnet
-[[ -d $HOME/.dotnet/tools ]] && path_1_push_back "$HOME/.dotnet/tools"
+# [[ -z $NUGET_PACKAGES ]] && NUGET_PACKAGES="$HOME/.local/nuget/packages"
+if [[ -d "$HOME/.dotnet" ]]; then
+    export DOTNET_ADD_GLOBAL_TOOLS_TO_PATH="false"
+    export DOTNET_NOLOGO="true"
+    export DOTNET_CLI_TELEMETRY_OPTOUT="false"
+    export DOTNET_CLI_UI_LANGUAGE="en-US"
+    path_1_push_back "$HOME/.dotnet/tools"
+fi
 
 # golang
 [[ -z $GOROOT ]] && GOROOT="/usr/local/opt/go"
@@ -28,13 +55,16 @@ if [[ -d $GOROOT ]]; then
     export GOPROXY=https://goproxy.cn
     path_1_push_back "$GOROOT/bin"
 fi
-[[ -d $GOPATH ]] && export GOPATH && path_1_push_back "$GOPATH/bin"
+if [[ -d $GOPATH ]]; then
+    export GOPATH
+    path_1_push_back "$GOPATH/bin"
+fi
 
 # java
 [[ -z $JAVA_HOME ]] && JAVA_HOME="/usr/local/opt/java"
 if [[ -d $JAVA_HOME ]]; then
     export JAVA_HOME
-    export CLASSPATH=".:${JAVA_HOME}/lib/dt.jar:${JAVA_HOME}/lib/tools.jar" \
+    export CLASSPATH=".:${JAVA_HOME}/lib/dt.jar:${JAVA_HOME}/lib/tools.jar"
     path_1_push_back "${JAVA_HOME}/bin"
 fi
 
@@ -44,26 +74,65 @@ fi
 if [[ -d $NVM_DIR ]]; then
     export NVM_DIR
     export NVM_NODEJS_ORG_MIRROR="https://npmmirror.com/mirrors/node/"
+    # delay to enable_nvm
 fi
-[[ -d $PNPM_HOME ]] && export PNPM_HOME
+if [[ -d $PNPM_HOME ]]; then
+    export PNPM_HOME
+    path_1_push_back "${PNPM_HOME}/bin"
+fi
 
 # python
 [[ -z $PYENV_ROOT ]] && PYENV_ROOT="$HOME/.local/pyenv"
-[[ -d $PYENV_ROOT ]] && export PYENV_ROOT && path_1_push_back "${PYENV_ROOT}/bin"
+if [[ -d $PYENV_ROOT ]] ; then
+    export PYENV_ROOT
+    path_1_push_back "${PYENV_ROOT}/bin"
+    # delay to enable_pyenv
+fi
 
 # php
 # https://getcomposer.org/doc/03-cli.md#composer-home
 [[ -z $COMPOSER_HOME ]] && COMPOSER_HOME="$HOME/.local/composer"
 # [[ -z $COMPOSER_BIN ]] && COMPOSER_BIN="${COMPOSER_HOME}/vendor/bin"
-[[ -d $COMPOSER_HOME ]] && export COMPOSER_HOME && path_1_push_back "${COMPOSER_HOME}/vendor/bin"
+if [[ -d $COMPOSER_HOME ]] ; then
+    export COMPOSER_HOME
+    path_1_push_back "${COMPOSER_HOME}/vendor/bin"
+fi
 
 # ruby
 [[ -z $RBENV_DIR ]] && RBENV_DIR="$HOME/.local/rbenv"
 [[ -z $RVM_DIR ]] && RVM_DIR="$HOME/.local/rvm"
+if [[ -d $RBENV_DIR ]]; then
+    export RBENV_DIR
+    # delay to enable_rbenv
+fi
+if [[ -d $RVM_DIR ]]; then
+    export RVM_DIR
+    # delay to enable_rvm
+fi
+
+# ruby
+[[ -z $RUBY_ROOT ]] && RUBY_ROOT="/usr/local/opt/ruby"
+if [[ -d $RUBY_ROOT ]]; then
+    export RUBY_ROOT
+    path_1_push_back "${RUBY_ROOT}/bin"
+    if which -s gem >/dev/null; then
+        USER_GEM_HOME="$(gem environment user_gemhome)"
+        if [[ -d $USER_GEM_HOME ]]; then
+            path_1_push_back "${USER_GEM_HOME}/bin"
+        fi
+        GEM_HOME="$(gem environment home)"
+        if [[ -d $GEM_HOME ]]; then
+            path_1_push_back "${GEM_HOME}/bin"
+        fi
+    fi
+fi
 
 # rust
 [[ -z $CARGO_ROOT ]] && CARGO_ROOT="$HOME/.local/cargo"
-[[ -d $CARGO_ROOT ]] && export CARGO_ROOT && path_1_push_back "${CARGO_ROOT}/bin"
+if [[ -d $CARGO_ROOT ]]; then
+    export CARGO_ROOT
+    path_1_push_back "${CARGO_ROOT}/bin"
+fi
 
 unset path_1_push_back
 
@@ -71,7 +140,7 @@ if [[ -z $LANG ]]; then
     # -u for user
     # -U for suffix ".UTF-8"
     # export LANG=$(locale -uU)
-    export LANG=en_US.UTF-8
+    export LANG="en_US.UTF-8"
 fi
 [[ -z $LANG ]] && export LC_ALL=$LANG
 

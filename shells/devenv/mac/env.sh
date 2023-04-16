@@ -1,36 +1,35 @@
-# locale
-export LANG="en_US.UTF-8"
-
-# editor
-export EDITOR="vim"
-export VISUAL="$EDITOR"
 
 # brew
 # export HOMEBREW_GITHUB_API_TOKEN=
 # export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles"
 # export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles"
-
 export HOMEBREW_BREW_GIT_REMOTE=https://mirrors.ustc.edu.cn/brew.git
 export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles
 export HOMEBREW_CORE_GIT_REMOTE=https://mirrors.ustc.edu.cn/homebrew-core.git
 
 # java
-[[ -z $JAVA_HOME ]] && export JAVA_HOME="/Library/Java/Home"
+[[ -z $JAVA_HOME ]] && JAVA_HOME="/Library/Java/Home"
 
 # man
-export MANPATH="/usr/local/share/man:/usr/share/man"
-[[ -d /Applications/Wireshark.app ]] && export MANPATH="$MANPATH:/Applications/Wireshark.app/Contents/Resources/share/man"
+if [[ -d "/Applications/Wireshark.app" ]]; then
+    MANPATH_1="${MANPATH_1}:/Applications/Wireshark.app/Contents/Resources/share/man"
+    PATH_4="${PATH_4}:/Applications/Wireshark.app/Contents/MacOS"
+fi
 
-# ruby
-if [[ -z $RUBY_ROOT ]]; then
-    RUBY_ROOT="/usr/local/opt/ruby"
-    GEM_DIR="/usr/local/lib/ruby/gems/3.1.0"
-    [[ -d $RUBY_ROOT ]] && export PATH_1="${PATH_1}:${RUBY_ROOT}/bin"
-    [[ -d $GEM_DIR ]] && export PATH_1="${PATH_1}:${GEM_DIR}/bin"
+# python
+if [[ -d $PYENV_ROOT ]]; then
+    [[ -d "${PYENV_ROOT}/bin" ]] || ln -s "$(brew --prefix pyenv)/bin" "${PYENV_ROOT}/"
 fi
 
 # tex
 # TEX_ROOT="/Library/TeX"
 # PATH_2="${PATH_2}:${TEX_ROOT}/texbin"
+
+# vmware
+if [[ -d "/Applications/VMware Fusion.app" ]]; then
+    PATH_4="${PATH_4}:/Applications/VMware Fusion.app/Contents/Public"
+fi
+
+PATH_4="${PATH_4}:/Library/Apple/usr/bin"
 
 true
