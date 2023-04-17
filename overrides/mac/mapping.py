@@ -5,6 +5,7 @@ unmapped = [
 ]
 
 mapping = {
+    '$DOTMY/homebin/mac/': '$HOME/.local/bin.mac',
     '$DOTMY/programs/python/requirements-mac.txt': '$HOME/.config/pip/requirements.txt',
     'programs/aria2/aria2.conf': '$HOME/.config/aria2/',
     'programs/tmux/tmux.conf': '$HOME/.config/tmux/',

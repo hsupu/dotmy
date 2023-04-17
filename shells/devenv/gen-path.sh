@@ -28,13 +28,21 @@ function path_push_back() {
         IFS=$':'; arrIN=($2); unset IFS;
     fi
 
+    if [[ $# > 2 && $3 == '-q' ]]; then
+        WARN=1
+    else
+        WARN=
+    fi
+
     for i in "${arrIN[@]}"; do
         if [[ -z $i ]]; then
             continue
         fi
 
         if [[ ! -d "$i" ]]; then
-            >&2 echo "path_push_back: $varname: dir not found: $i"
+            if [[ -s $WARN ]]; then
+                >&2 echo "path_push_back: $varname: dir not found: $i"
+            fi
             continue
         fi
         # echo "$varname found: $i"
@@ -49,18 +57,18 @@ function path_push_back() {
 
     # declare "$varname"="$new"
     export "$varname"="$new"
-    unset i arrIN varname new
+    unset varname WARN new arrIN i
 }
 
 PATH=""
 path_push_back PATH "${PATH_0}"
-path_push_back PATH "$HOME/bin:$HOME/.local/bin"
+path_push_back PATH "$HOME/bin:$HOME/.local/bin:$HOME/.local/bin.linux:$HOME/.local/bin.wsl:$HOME/.local/bin.mac" -q
 path_push_back PATH "${PATH_1}"
-path_push_back PATH "/usr/local/sbin:/usr/local/bin"
+path_push_back PATH "/usr/local/sbin:/usr/local/bin" -q
 path_push_back PATH "${PATH_2}"
-path_push_back PATH "/usr/sbin:/usr/bin"
+path_push_back PATH "/usr/sbin:/usr/bin" -q
 path_push_back PATH "${PATH_3}"
-path_push_back PATH "/sbin:/bin"
+path_push_back PATH "/sbin:/bin" -q
 path_push_back PATH "${PATH_4}"
 export PATH
 

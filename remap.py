@@ -32,6 +32,7 @@ def string_substitute(s: str):
     return s.format_map(gvars)
 
 
+# py3.8 doesn't support 'type dict', use higher versions instead if error
 def apply(mapping: dict[str, str], curdir: str):
     def normalize(src0: str, dst0: str):
         src = string_substitute(src0)

@@ -1,52 +1,49 @@
-
-TCPKeepAlive yes
-ServerAliveInterval 30
-
-AddKeysToAgent yes
-GatewayPorts yes
-
-Include config.d/*.conf
-
-Host 10.*.*.* 172.[16-31].*.* 192.168.*.*
-	StrictHostKeyChecking no
-	CheckHostIP no
-	UserKnownHostsFile /dev/null
-    ControlMaster auto
-    # ControlPath %d/.ssh/sessions/master-%r@%h:%p
-
-Host 127.*.*.*
-	StrictHostKeyChecking no
-	CheckHostIP no
-	UserKnownHostsFile /dev/null
+# edited at 221030
 
 Host *
-	Protocol 2
-	LogLevel INFO
-	IdentitiesOnly no
-	PasswordAuthentication yes
-    PreferredAuthentications publickey
-	IdentityFile %d/.ssh/id_ed25519
-	IdentityFile %d/.ssh/id_rsa
-	ServerAliveCountMax 3
-	ServerAliveInterval 10
+    Protocol 2
+    LogLevel INFO
 
-Host gitee.com
-    User git
-    HostName gitee.com
+    AddKeysToAgent yes
+    ForwardAgent yes
+    GatewayPorts yes
+
+    TCPKeepAlive yes
+    ServerAliveInterval 30
+    ServerAliveCountMax 3
+
+    PreferredAuthentications publickey
+
+Host 127.*.*.*
+    CheckHostIP no
+	StrictHostKeyChecking no
+	UserKnownHostsFile /dev/null
+
+Host 10.*.*.* 172.[16-31].*.* 192.168.*.*
+    CheckHostIP no
+    StrictHostKeyChecking no
+    UserKnownHostsFile /dev/null
+    ControlMaster auto
+    # ControlPath %d/.ssh/sessions/master-%r@%h:%p
+    IdentitiesOnly no
+    PasswordAuthentication yes
     PreferredAuthentications publickey
     IdentityFile %d/.ssh/id_ed25519
-    IdentitiesOnly yes
+    IdentityFile %d/.ssh/id_rsa
 
-Host github.com
+Host gitee.com github.com gitlab.com
+    HostName %h
     User git
-    HostName github.com
+    IdentitiesOnly yes
     PreferredAuthentications publickey
     IdentityFile %d/.ssh/id_ed25519
-    IdentitiesOnly yes
 
+# azure don't support ED25519 yet
 Host ssh.dev.azure.com
+    HostName %h
     User git
-    HostName ssh.dev.azure.com
+    IdentitiesOnly yes
     PreferredAuthentications publickey
     IdentityFile %d/.ssh/id_rsa
-    IdentitiesOnly yes
+
+Include config.d/*.conf

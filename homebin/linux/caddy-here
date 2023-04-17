@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+# if [[ $# < 1 ]]; then
+#     echo "caddy-here [port=8000] [path=.]"
+#     exit(0)
+# fi
+
+if [[ $# >= 1 ]]; then
+    PORT=$1
+else
+    PORT=8000
+fi
+
+if [[ $# >= 2 ]]; then
+    PATH=$2
+else
+    PATH=8000
+fi
+
+caddy file-server --browse \
+    --listen 0.0.0.0:$PORT \
+    --root $PATH \
