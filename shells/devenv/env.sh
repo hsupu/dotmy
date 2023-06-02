@@ -28,11 +28,11 @@ function path_1_push_back() {
 }
 
 [[ -z $EDITOR ]] && EDITOR="vim"
-if which -s $EDITOR >/dev/null; then
+if which $EDITOR >/dev/null; then
     export EDITOR
 fi
 [[ -z $PAGER ]] && PAGER="less"
-if which -s $PAGER >/dev/null; then
+if which $PAGER >/dev/null; then
     export PAGER
 fi
 
@@ -116,7 +116,7 @@ if [[ -d $RUBY_ROOT ]]; then
     export RUBY_ROOT
     path_1_push_back "${RUBY_ROOT}/bin"
     PATH="${RUBY_ROOT}/bin:$PATH"
-    if which -s gem >/dev/null; then
+    if which gem >/dev/null; then
         USER_GEM_HOME="$(gem environment user_gemhome)"
         if [[ -d $USER_GEM_HOME ]]; then
             path_1_push_back "${USER_GEM_HOME}/bin"

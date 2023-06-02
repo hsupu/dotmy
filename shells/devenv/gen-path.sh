@@ -4,7 +4,7 @@ export PATH_OLD="$PATH"
 function path_push_back() {
     if [[ $# < 2 ]]; then
         >&2 echo "path_push_back: invalid args"
-        exit(1)
+        exit 1
     fi
 
     varname=$1
