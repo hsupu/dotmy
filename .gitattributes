@@ -2,8 +2,8 @@
 # normalize test
 * text=input
 
-*.md text
-*.txt text
+*.md text=input
+*.txt text=input
 *.sh text eol=lf
 *.sh text eol=lf
 *.ps1 text eol=crlf
@@ -15,3 +15,8 @@
 *.gif binary
 *.jpg binary
 *.jpeg binary
+
+*.zip binary
+*.7z binary
+*.bz binary
+*.gz binary

@@ -1,9 +1,13 @@
+-javaagent:/Users/xp/opt/ja/ja-netfilter.jar=jetbrains
+--add-opens=java.base/jdk.internal.org.objectweb.asm=ALL-UNNAMED
+--add-opens=java.base/jdk.internal.org.objectweb.asm.tree=ALL-UNNAMED
+
 -server
 -ea
 
 -Xms128m
 -Xmx2048m
--XX:ReservedCodeCacheSize=240m
+-XX:ReservedCodeCacheSize=1024m
 -XX:SoftRefLRUPolicyMSPerMB=50
 
 -XX:CICompilerCount=2
