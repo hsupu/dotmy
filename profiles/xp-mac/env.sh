@@ -24,4 +24,8 @@ export NVM_DIR="$HOME/.local/nvm"
 # rbenv data dir
 export RBENV_ROOT="$HOME/.local/rbenv"
 # rust
-export CARGO_ROOT="$HOME/.local/cargo"
+export CARGO_HOME="$HOME/.local/cargo"
+export RUSTUP_HOME="$HOME/.local/rustup"
+# vim
+# export VIMRUNTIME="/usr/local/opt/vim/share/vim/vim90"
+# export VIMINIT="$HOME/.vim/vimrc"

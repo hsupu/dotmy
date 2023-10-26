@@ -5,7 +5,9 @@ export DOTMY="$HOME/.config/dotmy"
 export DOTMY_PROFILE="default"
 
 # cargo
-# export CARGO_ROOT="$HOME/.local/cargo"
+# export CARGO_HOME="$HOME/.local/cargo"
+# CARGO_INSTALL_DIR ?
+# export RUSTUP_HOME="$HOME/.local/rustup"
 # composer
 # export COMPOSER_HOME="$HOME/.local/composer"
 # java

@@ -129,10 +129,15 @@ if [[ -d $RUBY_ROOT ]]; then
 fi
 
 # rust
-[[ -z $CARGO_ROOT ]] && CARGO_ROOT="$HOME/.local/cargo"
-if [[ -d $CARGO_ROOT ]]; then
-    export CARGO_ROOT
-    path_1_push_back "${CARGO_ROOT}/bin"
+[[ -z $CARGO_HOME ]] && CARGO_HOME="$HOME/.local/cargo"
+if [[ -d $CARGO_HOME ]]; then
+    export CARGO_HOME
+    path_1_push_back "${CARGO_HOME}/bin"
+fi
+[[ -z $RUSTUP_HOME ]] && RUSTUP_HOME="$HOME/.local/rustup"
+if [[ -d $RUSTUP_HOME ]]; then
+    export RUSTUP_HOME
+    path_1_push_back "${RUSTUP_HOME}/bin"
 fi
 
 unset path_1_push_back

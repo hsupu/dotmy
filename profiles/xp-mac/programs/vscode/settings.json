@@ -121,4 +121,5 @@
         "editor.formatOnType": true
     },
     "workbench.colorTheme": "Default Dark+",
+    "window.commandCenter": false,
 }

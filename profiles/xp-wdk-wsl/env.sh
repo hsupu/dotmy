@@ -5,7 +5,8 @@ export DOTMY="$HOME/.config/dotmy"
 export DOTMY_PROFILE="xp-wdk-wsl"
 
 # cargo
-export CARGO_ROOT="$HOME/.local/cargo"
+export CARGO_HOME="$HOME/.local/cargo"
+export RUSTUP_HOME="$HOME/.local/rustup"
 # nvm
 export NVM_DIR="$HOME/.local/nvm"
 # pnpm
