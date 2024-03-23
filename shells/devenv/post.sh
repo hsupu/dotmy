@@ -8,7 +8,7 @@ fi
 source_or_warn "$curdir/aliases.sh"
 source_or_warn "$curdir/funcs.sh"
 
-if which ssh-agent >/dev/null; then
+if [[ -e $(which ssh-agent 2>/dev/null) ]]; then
   # copy from https://gist.github.com/JanTvrdik/33df5554d981973fce02
   export SSH_AUTH_SOCK="/tmp/ssh-auth.socket"
   # 0 for ok, 1 for empty, 2 for disconnected
