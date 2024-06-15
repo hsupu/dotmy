@@ -1,8 +1,0 @@
-#!/usr/bin/env bash
-
-MYDIR="$(cd "$(dirname "$0")"; pwd)"
-pushd "$MYDIR"
-
-/as/bin/ssserver -c /as/ss-default.json $@
-
-popd

@@ -1,0 +1,15 @@
+[System]
+Mode = master
+Listen = 127.0.0.1:5212
+Debug = false
+SessionSecret = huIzap7rj1D0KbGKzggYzYTGd7XiwFSKKFdKOv97zsmwd8hjQRQRpYZ0P1HeLEHt
+HashIDSalt = 6p9GfISunHyOdU6y4tXyKAa92J0gDgQI5WpyFF06jSts4MTytnae4ixOY6KkSp7h
+
+#[Database]
+#Type = sqlite3
+#DBFile = cloudreve.db
+
+[Redis]
+Server = 127.0.0.1:6379
+Password =
+DB = 1

@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+HOST="$1"; shift
+PORT="$1"; shift
+METHOD="$1"; shift
+PASS="$1"; shift
+TIMEOUT="$1"; shift
+
+snap run shadowsocks-libev.ss-server \
+    -s $HOST \
+    -p $PORT \
+    -m $METHOD \
+    -k $PASS \
+    -t $TIMEOUT \
+    $@
+

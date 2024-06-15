@@ -1,0 +1,2 @@
+
+echo "/as/bin/ssserver -s \$HOST:\$PORT -m \$METHOD -k \$PASS --timeout \$TIMEOUT -U \$@"

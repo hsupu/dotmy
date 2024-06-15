@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+HOST4=0.0.0.0
+HOST6=::0
+PORT=3002
+METHOD=rc4-md5
+PASS=HelloWorld.
+TIMEOUT=10
+
+MYDIR="$(cd "$(dirname "$0")"; pwd)"
+pushd "$MYDIR"
+
+./run \
+	"$HOST4 -s $HOST6" \
+	$PORT \
+	$METHOD $PASS \
+	$TIMEOUT \
+	-u -d $DNS \
+	--reuse-port --fast-open \
+	$@
+
+popd
