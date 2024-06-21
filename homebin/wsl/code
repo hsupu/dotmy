@@ -1,14 +1,48 @@
 #!/usr/bin/env bash
 
-LocalAppData=$(wslpath $(winenv LocalAppData))
-if [[ -z $LocalAppData ]]; then
-	LocalAppData="/mnt/c/Users/xp/AppData/Local"
-	echo Use default \$LocalAppData
-fi
-if [[ ! -d "$LocalAppData" ]]; then
-	echo "Failed to get \$env:LocalAppData"
-	exit 1
-fi
+function try_LocalAppData()
+{
+    LocalAppData=$(wslpath "$(winenv LocalAppData)")
+    if [[ -z $LocalAppData ]]; then
+        LocalAppData="/mnt/c/Users/xp/AppData/Local"
+        echo "Use default \$LocalAppData"
+    fi
+    if [[ ! -d "$LocalAppData" ]]; then
+        echo "not a folder? $LocalAppData"
+        return 1
+    fi
 
-"$LocalAppData/Programs/Microsoft VS Code/bin/code" $@
+    pathToStart="$LocalAppData/Programs/Microsoft VS Code/bin/code"
+    if [[ ! -e "$pathToStart" ]]; then
+        echo "not found at $pathToStart"
+        return 2
+    fi
+    echo "found at $pathToStart"
+    "$pathToStart" $@
+    return 0
+}
 
+function try_ProgramFiles()
+{
+    ProgramFiles=$(wslpath "$(winenv ProgramFiles)")
+    if [[ -z $ProgramFiles ]]; then
+        ProgramFiles="/mnt/c/Program Files"
+        echo "Use default \$ProgramFiles"
+    fi
+    if [[ ! -d "$ProgramFiles" ]]; then
+        echo "not a folder? $ProgramFiles"
+        return 1
+    fi
+
+    pathToStart="$ProgramFiles/Microsoft VS Code/bin/code"
+    if [[ ! -e "$pathToStart" ]]; then
+        echo "not found at $pathToStart"
+        return 2
+    fi
+    echo "found at $pathToStart"
+    "$pathToStart" $@
+    return 0
+}
+
+try_LocalAppData $@ && exit 0
+try_ProgramFiles $@ && exit 0

@@ -31,6 +31,8 @@ else
     PS1NC='\u@\h:\w\$ '
     PS1=$PS1NC
 fi
+PS1="\${debian_chroot:+(\$debian_chroot)}$PS1"
+unset bash_with_color
 
 # 为 xterm 添加一组控制字符，用于向终端提示本行有几个字符已占用
 # \e - ASCII escape
