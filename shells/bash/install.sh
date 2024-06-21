@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+echo "Setting bash as user shell"
+
 curdir="$(cd "$(dirname $(realpath ${BASH_SOURCE[0]}))"; pwd)"
 export SHRC_DIR=$curdir
 

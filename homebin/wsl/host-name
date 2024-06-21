@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+# it returns with trailing "\r\n", while linux only accepts "\n"
+/mnt/c/Windows/System32/HOSTNAME.EXE | tr -d "[:cntrl:]"

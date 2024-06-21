@@ -8,19 +8,21 @@ import sys
 from abc import ABC, ABCMeta, abstractmethod
 
 
-gvars = {
-    **os.environ,
-}
+gvars = {}
 
-if 'DOTMY' not in gvars:
-    gvars['DOTMY'] = (os.path.dirname(os.path.realpath(__file__)))
-
-try:
+import pkgutil
+if pkgutil.find_loader('dotenv'):
+# try:
     import dotenv
     gvars.update(dotenv.dotenv_values(".env.shared"))
     gvars.update(dotenv.dotenv_values(".env"))
-except ModuleNotFoundError:
-    print("module 'dotenv' is not installed, dotenv files will not be loaded")
+# except ModuleNotFoundError:
+else:
+    print("module 'dotenv' not installed, dotenv files will not be loaded")
+
+gvars.update(os.environ)
+if 'DOTMY' not in gvars:
+    gvars['DOTMY'] = (os.path.dirname(os.path.realpath(__file__)))
 
 
 def string_substitute(s: str):
@@ -258,6 +260,15 @@ class Engine:
 
     def start(self):
         self.include(self.cmdargs.map_file, os.path.curdir)
+
+        if not self.cmdargs.dry_run:
+            if os.geteuid() == 0:
+                # print(sys.argv)
+                confirm = input('run as root, continue? [Yy]')
+                if not confirm or confirm not in ['Y', 'y']:
+                    print('User cancelled')
+                    return
+
         for item in self.items:
             if self.cmdargs.dry_run:
                 print('INFO  DryRun: "{}" => "{}"'.format(item.dst, item.src))

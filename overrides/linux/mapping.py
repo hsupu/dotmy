@@ -8,8 +8,8 @@ class LinuxCuiMapping:
 class LinuxGuiMapping:
 
     declares = [
-        ('$HOME/.config/Code/User/', '$DOTMY/programs/vscode/keybindings.json'),
-        ('$HOME/.config/Code/User/', '$DOTMY/programs/vscode/settings.json'),
+        ('$HOME/.config/Code/User/', 'programs/vscode/keybindings.json'),
+        ('$HOME/.config/Code/User/', 'programs/vscode/settings.json'),
     ]
 
 class LinuxDevEnvGuiMapping:
