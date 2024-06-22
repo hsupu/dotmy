@@ -20,24 +20,30 @@ if [[ ! -d ./private ]]; then
     ./private/set-current.sh || exit 1
 fi
 
+if [[ "$(python --version)" =~ ^"Python 3.8." ]]; then
+    remap_py="./remap.py38"
+else
+    remap_py="./remap.py"
+fi
+
 if [[ -e ./profiles/current/mapping.py ]]; then
-    python ./remap.py
-    sudo python ./remap.py
+    python $remap_py
+    sudo python $remap_py
 else
     OS=$(uname -s)
     case $OS in
         (Linux)
             if [[ -e "/proc/sys/fs/binfmt_misc/WSLInterop" ]]; then
-                python ./remap.py --map-file ./overrides/wsl/mapping.py
-                sudo python ./remap.py --map-file ./overrides/wsl/mapping.py
+                python $remap_py --map-file ./overrides/wsl/mapping.py
+                sudo python $remap_py --map-file ./overrides/wsl/mapping.py
             else
-                python ./remap.py --map-file ./overrides/linux/mapping.py
-                sudo python ./remap.py --map-file ./overrides/linux/mapping.py
+                python $remap_py --map-file ./overrides/linux/mapping.py
+                sudo python $remap_py --map-file ./overrides/linux/mapping.py
             fi
             ;;
         (Darwin)
-            python ./remap.py --map-file ./overrides/mac/mapping.py
-            sudo python ./remap.py --map-file ./overrides/mac/mapping.py
+            python $remap_py --map-file ./overrides/mac/mapping.py
+            sudo python $remap_py --map-file ./overrides/mac/mapping.py
             ;;
         (*)
             echo "Unknown \$(uname -s): $OS"

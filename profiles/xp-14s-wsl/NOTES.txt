@@ -30,8 +30,6 @@
 220820
     use dotmy, mybin
 
-    ln -s /home/xp/.config/dotmy/profiles/xp-14s-wsl/wsl.conf /etc/
-
     https://github.com/chmln/sd
     https://github.com/MitMaro/git-interactive-rebase-tool
     https://github.com/dandavison/delta

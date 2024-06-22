@@ -16,6 +16,7 @@ class DevEnvCuiMapping:
         # python
         ('$HOME/.config/pip/', '$DOTMY/programs/python/pip.conf'),
         ('$HOME/.config/pip/', '$DOTMY/programs/python/requirements.txt'),
+        # ('$HOME/.invoke.yaml', 'programs/python/invoke.yaml'),
         # java
         ('$HOME/.m2/settings.xml', '$DOTMY/programs/java/m2.settings.xml'),
         # ('$HOME/.sbt/repositories', '$DOTMY/programs/java/sbt-repositories'),

@@ -4,11 +4,11 @@ SCRIPT_DIR="$(cd "$(dirname $(realpath ${BASH_SOURCE[0]}))"; pwd)"
 pushd $SCRIPT_DIR
 
 if [[ -e "/proc/sys/fs/binfmt_misc/WSLInterop" ]]; then
-    TARGET=$(/mnt/c/Windows/System32/HOSTNAME.exe | tr -d '[:cntrl:]')-wsl
+    TARGET=$(/mnt/c/Windows/System32/HOSTNAME.exe | tr -d '[:cntrl:]' | tr '[:upper:]' '[:lower:]')-wsl
     echo "WSL way: \"$TARGET\""
 else
     # -s : short
-    TARGET=$(hostname)
+    TARGET=$(hostname | tr '[:upper:]' '[:lower:]')
     echo "Linux/Mac way: \"$TARGET\""
 fi
 
