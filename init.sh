@@ -20,27 +20,31 @@ if [[ ! -d ./private ]]; then
     ./private/set-current.sh || exit 1
 fi
 
-python ./remap.py --map-file ./mapping.py
-sudo python ./remap.py --map-file ./mapping.py
-
-OS=$(uname -s)
-case $OS in
-    (Linux)
-        if [[ -e "/proc/sys/fs/binfmt_misc/WSLInterop" ]]; then
-            python ./remap.py --map-file ./overrides/wsl/mapping.py
-            sudo python ./remap.py --map-file ./overrides/wsl/mapping.py
-        else
-            python ./remap.py --map-file ./overrides/linux/mapping.py
-        fi
-        ;;
-    (Darwin)
-        python ./remap.py --map-file ./overrides/mac/mapping.py
-        ;;
-    (*)
-        echo "Unknown \$(uname -s): $OS"
-        exit 1
-        ;;
-esac
+if [[ -e ./profiles/current/mapping.py ]]; then
+    python ./remap.py
+    sudo python ./remap.py
+else
+    OS=$(uname -s)
+    case $OS in
+        (Linux)
+            if [[ -e "/proc/sys/fs/binfmt_misc/WSLInterop" ]]; then
+                python ./remap.py --map-file ./overrides/wsl/mapping.py
+                sudo python ./remap.py --map-file ./overrides/wsl/mapping.py
+            else
+                python ./remap.py --map-file ./overrides/linux/mapping.py
+                sudo python ./remap.py --map-file ./overrides/linux/mapping.py
+            fi
+            ;;
+        (Darwin)
+            python ./remap.py --map-file ./overrides/mac/mapping.py
+            sudo python ./remap.py --map-file ./overrides/mac/mapping.py
+            ;;
+        (*)
+            echo "Unknown \$(uname -s): $OS"
+            exit 1
+            ;;
+    esac
+fi
 
 ./shells/bash/install.sh
 

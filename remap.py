@@ -10,8 +10,10 @@ from abc import ABC, ABCMeta, abstractmethod
 
 gvars = {}
 
-import pkgutil
-if pkgutil.find_loader('dotenv'):
+import importlib
+if importlib.util.find_spec('dotenv'):
+# import pkgutil
+# if pkgutil.find_loader('dotenv'):
 # try:
     import dotenv
     gvars.update(dotenv.dotenv_values(".env.shared"))
