@@ -136,7 +136,7 @@ class ItemDef():
     def apply(self):
         is_sudo = os.geteuid() == 0
         if is_sudo != self.need_sudo:
-            print('INFO  Ignored: "{}" sudo={}'.format(self.dst, self.need_sudo))
+            print('INFO  Ignored: sudo={} "{}"'.format(self.dst, self.need_sudo))
             return
 
         try:
@@ -149,10 +149,10 @@ class ItemDef():
 
             if self.need_copy:
                 shutil.copy2(self.src, self.dst)
-                print('INFO  Copied: "{}" => "{}"'.format(self.dst, self.src))
+                print('INFO  Write "{}" (copy from "{}")'.format(self.dst, self.src))
             else:
                 os.symlink(self.src, self.dst, target_is_directory=self.src_is_dir)
-                print('INFO  Linked: "{}" => "{}"'.format(self.dst, self.src))
+                print('INFO  Link "{}" => "{}"'.format(self.dst, self.src))
         except PermissionError:
             print('ERROR NoPerm: "{}"'.format(self.dst))
 
@@ -191,7 +191,7 @@ class Engine:
                 if item.dst_is_exist:
                     if not item.dst_is_link:
                         if item.need_copy:
-                            print('DEBUG DstFileExist: "{}" (copy src "{}")'.format(item.dst, item.src))
+                            print('DEBUG DstExist: "{}" (copy from "{}")'.format(item.dst, item.src))
                         else:
                             print('ERROR DstNotALink: "{}"'.format(item.dst))
                         continue
