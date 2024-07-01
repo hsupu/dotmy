@@ -10,16 +10,18 @@ from abc import ABC, ABCMeta, abstractmethod
 
 gvars = {}
 
-import importlib
-if importlib.util.find_spec('dotenv'):
+# available since 3.4
+# import importlib.util
+# if importlib.util.find_spec('dotenv'):
+# deprecated since 3.12
 # import pkgutil
 # if pkgutil.find_loader('dotenv'):
-# try:
+try:
     import dotenv
     gvars.update(dotenv.dotenv_values(".env.shared"))
     gvars.update(dotenv.dotenv_values(".env"))
-# except ModuleNotFoundError:
-else:
+# else:
+except ModuleNotFoundError:
     print("module 'dotenv' not installed, dotenv files will not be loaded")
 
 gvars.update(os.environ)

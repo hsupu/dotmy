@@ -20,8 +20,8 @@ if [[ ! -d ./private ]]; then
     ./private/set-current.sh || exit 1
 fi
 
-if [[ "$(python --version)" =~ ^"Python 3.8." ]]; then
-    remap_py="./remap.py38"
+if [[ "$(python --version)" =~ ^"Python 3"\.(7|8)\. ]]; then
+    remap_py="./remap.py37" # downgrade mainly for type hinting
 else
     remap_py="./remap.py"
 fi
