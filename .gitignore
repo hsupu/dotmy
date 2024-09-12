@@ -1,6 +1,5 @@
-/local/
-/private/
+/local
+/private
 
 /.env
 /.env.secret
-/hostname
