@@ -7,7 +7,6 @@ class MacOverrideMapping:
         ('$HOME/.config/tmux/', 'programs/tmux/tmux.conf'),
         ('$HOME/.local/bin.mac', '$DOTMY/homebin/wsl/'),
         ('$HOME/Library/Application Support/Code/User/', 'programs/vscode/keybindings.json'),
-        ('$HOME/Library/Application Support/Code/User/', 'programs/vscode/settings.json'),
     ]
 
 
