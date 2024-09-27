@@ -60,22 +60,43 @@ function path_push_back() {
     unset varname WARN new arrIN i
 }
 
-PATH=""
-path_push_back PATH "${PATH_0}"
-path_push_back PATH "$HOME/bin:$HOME/.local/bin:$HOME/.local/bin.linux:$HOME/.local/bin.wsl:$HOME/.local/bin.mac" -q
-path_push_back PATH "${PATH_1}"
-path_push_back PATH "/usr/local/sbin:/usr/local/bin" -q
-path_push_back PATH "${PATH_2}"
-path_push_back PATH "/usr/sbin:/usr/bin" -q
-path_push_back PATH "${PATH_3}"
-path_push_back PATH "/sbin:/bin" -q
-path_push_back PATH "${PATH_4}"
+PATH_next=""
+path_push_back PATH_next "${PATH_0}"
+path_push_back PATH_next "$HOME/bin:$HOME/.local/bin:$HOME/.local/bin.posix"
+
+OS=$(uname -s)
+case $OS in
+    (Linux)
+        if [[ -e "/proc/sys/fs/binfmt_misc/WSLInterop" ]]; then
+            path_push_back PATH_next "$HOME/.local/bin.linux:$HOME/.local/bin.wsl" -q
+        else
+            path_push_back PATH_next "$HOME/.local/bin.linux" -q
+        fi
+        ;;
+    (Darwin)
+        path_push_back PATH_next "$HOME/.local/bin.mac" -q
+        ;;
+    (*)
+        echo "Unknown \$(uname -s): $OS"
+        exit 1
+        ;;
+esac
+
+path_push_back PATH_next "${PATH_1}"
+path_push_back PATH_next "/usr/local/sbin:/usr/local/bin" -q
+path_push_back PATH_next "${PATH_2}"
+path_push_back PATH_next "/usr/bin:/bin:/usr/sbin:/sbin" -q
+path_push_back PATH_next "${PATH_3}:${PATH_4}"
+PATH="${PATH_next}"
+unset PATH_next
 export PATH
 
-MANPATH=""
-path_push_back MANPATH "${MANPATH_0}"
-path_push_back MANPATH "/usr/local/share/man:/usr/share/man"
-path_push_back MANPATH "${MANPATH_1}"
+MANPATH_next=""
+path_push_back MANPATH_next "${MANPATH_0}"
+path_push_back MANPATH_next "/usr/local/share/man:/usr/share/man"
+path_push_back MANPATH_next "${MANPATH_1}"
+MANPATH="${MANPATH_next}"
+unset MANPATH_next
 export MANPATH
 
 # [xp] we may use it later

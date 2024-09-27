@@ -3,6 +3,7 @@ class LinuxCuiMapping:
 
     declares = [
         ('$HOME/.local/bin.linux', '$DOTMY/homebin/linux/'),
+        ('$HOME/.local/bin.posix', '$DOTMY/homebin/common/'),
     ]
 
 class LinuxGuiMapping:

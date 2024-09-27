@@ -71,7 +71,10 @@ add_plugin shell-proxy
 add_plugin sudo
 add_plugin timer
 add_plugin tmux
-add_plugin zsh-completions
+
+# https://github.com/zsh-users/zsh-completions/issues/603
+# add_plugin zsh-completions
+fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 
 # 这必须是最后一个插件
 add_plugin zsh-syntax-highlighting

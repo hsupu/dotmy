@@ -6,7 +6,12 @@ class MacOverrideMapping:
         ('$HOME/.config/pip/requirements.txt', 'programs/python/requirements.txt'),
         ('$HOME/.config/tmux/', 'programs/tmux/tmux.conf'),
         ('$HOME/.local/bin.mac', '$DOTMY/homebin/wsl/'),
+        ('$HOME/.local/bin.posix', '$DOTMY/homebin/common/'),
         ('$HOME/Library/Application Support/Code/User/', 'programs/vscode/keybindings.json'),
+    ]
+
+    vars = [
+        
     ]
 
 

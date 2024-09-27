@@ -13,3 +13,9 @@ git clone https://gitee.com/hsupu/dotmy.git --single-branch --branch main ~/.con
 
 ~/.config/dotmy/init.sh
 ```
+
+## mac
+
+```zsh
+xcode-select --install
+```
