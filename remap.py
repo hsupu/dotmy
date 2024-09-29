@@ -28,6 +28,7 @@ gvars.update(os.environ)
 if 'DOTMY' not in gvars:
     gvars['DOTMY'] = (os.path.dirname(os.path.realpath(__file__)))
 
+is_sudo = os.geteuid() == 0
 
 def string_substitute(s: str):
     # s = s.replace('{', '{{{{')
@@ -140,9 +141,8 @@ class ItemDef():
 
 
     def apply(self):
-        is_sudo = os.geteuid() == 0
         if is_sudo != self.need_sudo:
-            print('INFO  Ignored: sudo={} "{}"'.format(self.dst, self.need_sudo))
+            print('INFO  Ignored: sudo={} "{}"'.format(self.need_sudo, self.dst))
             return
 
         try:
@@ -194,6 +194,9 @@ class Engine:
                     continue
 
                 item.check_status()
+                if is_sudo and not item.need_sudo:
+                    continue
+
                 if item.dst_is_exist:
                     if not item.dst_is_link:
                         if item.need_copy:

@@ -20,7 +20,10 @@ function source_or_skip() {
     [[ -s "$1" ]] && . "$1"
 }
 
-SHRC_DIR="$(cd "$(dirname $(realpath ${BASH_SOURCE[0]}))"; pwd)"
+alias safe_source=source_or_warn
+
+export SHRC_DIR="$(cd "$(dirname $(realpath ${BASH_SOURCE[0]}))"; pwd)"
+export DOTMY="$(cd "${SHRC_DIR}/../.."; pwd)"
 
 
 source_or_skip "$HOME/.bash_login"

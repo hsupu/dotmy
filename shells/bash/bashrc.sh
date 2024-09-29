@@ -26,15 +26,12 @@ function source_or_skip() {
 alias safe_source=source_or_warn
 
 export SHRC_DIR="$(cd "$(dirname $(realpath ${BASH_SOURCE[0]}))"; pwd)"
+export DOTMY="$(cd "${SHRC_DIR}/../.."; pwd)"
 
 
-unset PATH_0
-unset PATH_1
-unset PATH_2
-unset PATH_3
-unset PATH_4
+# source "$HOME/.config/shell/env.sh" and gen $PATH inside
+source_or_warn "$DOTMY/profiles/base/env.sh"
 
-source_or_skip "$HOME/.config/shell/env.sh"
 source_or_skip "$HOME/.config/shell/pre.sh"
 source_or_skip "$HOME/.config/shell/pre-bash.sh"
 
@@ -46,6 +43,23 @@ shopt -s checkwinsize
 #set -o notify
 # 忽略 EOF(^D) 作为退出信号（这是 Ctrl+Z 即 Windows 风格曾用过的退出命令）
 set -o ignoreeof
+
+# readline bindings
+# 忽略大小写
+bind "set completion-ignore-case on"
+# "-_" 视同
+bind "set completion-map-case on"
+# 二义时显示所有
+bind "set show-all-if-ambiguous on"
+# 立即解析目录的符号链接并追加后缀 "/"
+bind "set mark-symlinked-directories on"
+
+# 使 less 命令对非文本文件更友好, see lesspipe(1)
+[[ -x /usr/bin/lesspipe ]] && eval "$(SHELL=/bin/sh lesspipe)"
+
+if [[ -x /usr/bin/dircolors ]]; then
+    [[ -r ~/.dircolors ]] && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+fi
 
 # 命令历史
 #

@@ -6,9 +6,9 @@ class MyMapping:
     ]
 
     includes = [
-        ('$DOTMY/overrides/mac', 'MacOverrideMapping'),
-        ('$DOTMY/overrides/base', 'DevEnvCuiMapping'),
-        ('$DOTMY/overrides/base', 'LinuxLikeBaseMapping'),
+        ('$DOTMY/profiles/base/mac', 'MacOverrideMapping'),
+        ('$DOTMY/profiles/base/devenv', 'DevEnvCuiMapping'),
+        ('$DOTMY/profiles/base', 'LinuxLikeBaseMapping'),
     ]
 
 

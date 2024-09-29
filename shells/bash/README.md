@@ -26,9 +26,11 @@ ${SHRC_DIR}
 
 ### 加载细节
 
-login shell 入口是 `.bash_profile`，non-login shell 入口是 `.bashrc`。`profile` 导入 `bashrc`，`bashrc` 仅在交互环境下生效。
+login shell 入口是 `.bash_profile`，non-login shell 入口是 `.bashrc`。
 
-`bashrc` 依次导入：
+我在 `profile` 里导入 `bashrc`，还使 `bashrc` 仅在交互环境下生效。
+
+我的 `bashrc` 依次导入：
 
 - `$HOME/.config/shell/env.sh`
 - `$HOME/.config/shell/pre.sh`

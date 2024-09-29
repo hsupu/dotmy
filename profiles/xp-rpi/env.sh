@@ -5,19 +5,21 @@ export DOTMY="$HOME/.config/dotmy"
 export DOTMY_PROFILE="xp-rpi"
 
 # pkg-config
-export PKG_CONFIG_PATH="/usr/lib/pkgconfig:/usr/share/pkgconfig:/usr/lib/aarch64-linux-gnu/pkgconfig"
+PKG_CONFIG_PATH="/usr/lib/pkgconfig:/usr/share/pkgconfig:/usr/lib/aarch64-linux-gnu/pkgconfig"
 # cargo
-export CARGO_DIR="$HOME/.cargo"
+CARGO_DIR="$HOME/.cargo"
 # java
-export JAVA_HOME="/opt/current/jdk"
-export CLASSPATH=".:${JAVA_HOME}/lib/dt.jar:${JAVA_HOME}/lib/tools.jar"
+JAVA_HOME="/opt/current/jdk"
+CLASSPATH=".:${JAVA_HOME}/lib/dt.jar:${JAVA_HOME}/lib/tools.jar"
 # pyenv: $PYENV_DIR/plugins/pyenv-virtualenv/shims:$PYENV_DIR/shims
-export PYENV_ROOT="$HOME/.pyenv"
+PYENV_ROOT="$HOME/.pyenv"
 # nvm
-export NVM_DIR="$HOME/.local/nvm"
+NVM_DIR="$HOME/.local/nvm"
 # pnpm
-export PNPM_HOME="$HOME/.local/share/pnpm"
+PNPM_HOME="$HOME/.local/share/pnpm"
 # rbenv
-export RBENV_DIR="$HOME/.rbenv"
+RBENV_DIR="$HOME/.rbenv"
 
-PATH_4="/snap/bin"
+source_or_warn "$DOTMY/profiles/base/devenv/env-defaults.sh"
+
+true

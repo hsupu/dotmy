@@ -1,57 +1,9 @@
-function source_or_warn() {
-    if [[ -e $1 ]]; then
-        . "$1" || echo "source failed: $1"
-    else
-        echo "source not found: $1"
-    fi
-}
 
-function source_or_skip() {
-    if [[ -e $1 ]]; then
-        . "$1" || echo "source failed: $1"
-    fi
-}
+### My Pre
 
-alias safe_source=source_or_warn
-
-# https://unix.stackexchange.com/questions/4650/determining-path-to-sourced-shell-script
-# ${BASH_SOURCE[0]:-${(%):-%x}}
-
-# https://zsh.sourceforge.io/Doc/Release/Expansion.html#Modifiers
-# :A for 1) absolute path 2) resolve symlink
-# ${0:A}
-
-# https://zsh.sourceforge.io/Doc/Release/Prompt-Expansion.html#Prompt-Expansion
-export SHRC_DIR="$(cd "$(dirname "$(realpath ${(%):-%x})")"; pwd)"
-export MYZSH="${SHRC_DIR}"
-
-### My
-
-unset PATH_0
-unset PATH_1
-unset PATH_2
-unset PATH_3
-unset PATH_4
-
-source_or_skip "$HOME/.config/shell/env.sh"
 source_or_skip "$HOME/.config/shell/pre.sh"
 source_or_skip "$HOME/.config/shell/pre-zsh.sh"
-
-if [[ ! -d $ZSH ]]; then
-    [[ -n $ZSH ]] && echo "\$ZSH invalid: $ZSH"
-
-    [[ -d $ZSH ]] || ZSH="$HOME/.local/oh-my-zsh"
-    # [[ -d $ZSH ]] || ZSH="$HOME/.local/omz"
-    [[ -d $ZSH ]] || ZSH="$HOME/.config/oh-my-zsh"
-    # [[ -d $ZSH ]] || ZSH="$HOME/.config/omz"
-    [[ -d $ZSH ]] || ZSH="$HOME/.oh-my-zsh"
-
-    [[ -d $ZSH ]] && export ZSH || echo "\$ZSH not found"
-fi
-[[ -z $ZSH_CUSTOM ]] && export ZSH_CUSTOM="$ZSH/custom"
-[[ -z $ZSH_CACHE_DIR ]] && export ZSH_CACHE_DIR="$ZSH/cache"
-
-source_or_skip "$HOME/.config/shell/pre-omz.sh"
+# source_or_skip "$HOME/.config/shell/pre-omz.sh"
 
 ### 插件管理
 # 标准插件在 $ZSH/plugins 目录下
@@ -169,12 +121,42 @@ DISABLE_UPDATE_PROMPT="false"
 # 自动更新的检查间隔（按天计）
 # UPDATE_ZSH_DAYS=13
 # 开启 Oh My ZSH !
-. $ZSH/oh-my-zsh.sh
+. "$ZSH/oh-my-zsh.sh"
 
-### My
+function zshextra() {
+    # load plugins
+    plugins=(colorize colored-man-pages tmux)
+
+    is_plugin() {
+        local base_dir=$1
+        local name=$2
+        false \
+            || test -f $base_dir/plugins/$name/$name.plugin.zsh \
+            || test -f $base_dir/plugins/$name/_$name \
+            false
+    }
+
+    for plugin ($plugins); do
+        if is_plugin $ZSH_CUSTOM $plugin; then
+            fpath=($ZSH_CUSTOM/plugins/$plugin $fpath)
+        elif is_plugin $ZSH $plugin; then
+            fpath=($ZSH/plugins/$plugin $fpath)
+        fi
+    done
+
+    for plugin ($plugins); do
+        if [[ -f "$ZSH_CUSTOM/plugins/$plugin/$plugin.plugin.zsh" ]]; then
+            . "$ZSH_CUSTOM/plugins/$plugin/$plugin.plugin.zsh"
+        elif [[-f "$ZSH/plugins/$plugin/$plugin.plugin.zsh" ]]; then
+            . "$ZSH/plugins/$plugin/$plugin.plugin.zsh"
+        fi
+    done
+}
+
+### My Post
 
 source_or_skip "$HOME/.config/shell/post.sh"
 source_or_skip "$HOME/.config/shell/post-zsh.sh"
-source_or_skip "$HOME/.config/shell/post-omz.sh"
+# source_or_skip "$HOME/.config/shell/post-omz.sh"
 
 ### END

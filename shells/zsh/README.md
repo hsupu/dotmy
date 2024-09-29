@@ -18,6 +18,8 @@ SHRC_DIR=$DOTMY/shells/zsh/
 
 ```zsh
 ${SHRC_DIR}
+├── zprofile.sh     -> $HOME/.zprofile
+├── zshenv.sh       -> $HOME/.zshenv
 ├── zshrc.sh        -> $HOME/.zshrc
 ├── zlogin.sh       -> $HOME/.zlogin
 └── zlogout.sh      -> $HOME/.zlogout
@@ -25,7 +27,14 @@ ${SHRC_DIR}
 
 ### 加载细节
 
-`zshrc` 依次导入：
+官方 [zsh 依次导入](https://zsh.sourceforge.io/Doc/Release/Files.html)：
+
+- `/etc/zshenv` → `$ZDOTDIR/.zshenv`
+- if a login shell: `/etc/zprofile` → `$ZDOTDIR/.zprofile`
+- if interactive: `/etc/zshrc` → `$ZDOTDIR/.zshrc`
+- if a login shell: `/etc/zlogin` → `$ZDOTDIR/.zlogin`
+
+我的 `zshrc` 依次导入：
 
 - `$HOME/.config/shell/env.sh`
 - `$HOME/.config/shell/pre.sh`
@@ -36,3 +45,5 @@ ${SHRC_DIR}
 - `$HOME/.config/shell/post.sh`
 - `$HOME/.config/shell/post-zsh.sh`
 - `$HOME/.config/shell/post-omz.sh`
+
+通常，`$HOME/.config/shell/` 是指向 `$DOTMY/profiles/<hostname>/` 的目录符号链接。

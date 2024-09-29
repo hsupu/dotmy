@@ -5,9 +5,8 @@
 配置
 
 - remap.py - 配置引擎，会解析 mapping.py，按需对各种文件（夹）做符号链接
-- overrides - 可复用的某类配置
 - private - 敏感信息配置，另一私有仓库
-- profiles - 各机器的配置
+- profiles - 可复用的配置；各机器的配置
 - profiles/current - 符号链接，指向当前机器的配置目录
 - programs  - 各程序的配置
 - shells - 各 Shell 的配置

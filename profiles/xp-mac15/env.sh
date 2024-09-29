@@ -2,30 +2,47 @@
 export DOTMY="$HOME/.config/dotmy"
 [[ -d $DOTMY ]] || echo "\$DOTMY not found: $DOTMY"
 
-export DOTMY_PROFILE="xp-mac"
+export DOTMY_PROFILE="xp-mac15"
 
-# editor
-export EDITOR="vim"
-export VISUAL="$EDITOR"
+eval "$(/usr/local/bin/brew shellenv)"
+
+PATH_1+=":$(brew --prefix)/bin:$(brew --prefix)/sbin"
+
+PATH_opt2+=":$(brew --prefix curl)/bin"
+PATH_opt2+=":$(brew --prefix openssl@1.1)/bin"
+PATH_opt2+=":$(brew --prefix sqlite)/bin"
+
+PATH_4+=":/Library/Apple/usr/bin"
+
+PATH_opt4+=":/Applications/VMware Fusion.app/Contents/Public"
+PATH_opt4+=":/Applications/Wireshark.app/Contents/MacOS"
+PATH_opt4+=":/Users/xp/Applications/iTerm.app/Contents/Resources/utilities"
 
 # golang
-export GOPATH="$HOME/.local/golang"
+GOPATH="$HOME/.local/golang"
 # java
-export JAVA_HOME="/Library/Java/Home"
+JAVA_HOME="/Library/Java/Home"
 # php
-export COMPOSER_HOME="$HOME/.local/composer"
+COMPOSER_HOME="$HOME/.local/composer"
 # python
 # pyenv data dir
-export PYENV_ROOT="$HOME/.local/pyenv"
+PYENV_ROOT="$HOME/.local/pyenv"
 # node
 # nvm data dir - avoid losing installations when "brew upgrade nvm"
-export NVM_DIR="$HOME/.local/nvm"
+NVM_DIR="$HOME/.local/nvm"
 # ruby
 # rbenv data dir
-export RBENV_ROOT="$HOME/.local/rbenv"
+RBENV_ROOT="$HOME/.local/rbenv"
 # rust
-export CARGO_HOME="$HOME/.local/cargo"
-export RUSTUP_HOME="$HOME/.local/rustup"
+CARGO_HOME="$HOME/.local/cargo"
+RUSTUP_HOME="$HOME/.local/rustup"
 # vim
-# export VIMRUNTIME="/usr/local/opt/vim/share/vim/vim90"
-# export VIMINIT="$HOME/.vim/vimrc"
+# VIMRUNTIME="/usr/local/opt/vim/share/vim/vim90"
+# VIMINIT="$HOME/.vim/vimrc"
+
+# editor
+EDITOR="vim"
+
+source_or_warn "$DOTMY/profiles/base/devenv/env-defaults.sh"
+
+true
