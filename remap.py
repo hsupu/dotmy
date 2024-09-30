@@ -213,11 +213,11 @@ class Engine:
                         continue
 
                     if item.target_is_broken:
-                        print('WARN  LinkOther.Broken: "{}" => "{}" (expect "{}")'.format(item.dst, item.src, item.target))
+                        print('WARN  LinkOther.Broken: "{}" => "{}" (expect "{}")'.format(item.dst, item.target, item.src))
                         if not self.cmdargs.fix_other and not self.cmdargs.fix_broken:
                             continue
                     else:
-                        print('WARN  LinkOther: "{}" => "{}" (expect "{}")'.format(item.dst, item.src, item.target))
+                        print('WARN  LinkOther: "{}" => "{}" (expect "{}")'.format(item.dst, item.target, item.src))
                         if not self.cmdargs.fix_other:
                             continue
 

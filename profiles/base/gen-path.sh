@@ -69,6 +69,7 @@ function path_push_back() {
                 continue
             fi
         else
+            true # nop
             # echo "$varname found: $i"
         fi
 

@@ -1,4 +1,20 @@
 
+function source_or_warn() {
+    if [[ -e $1 ]]; then
+        . "$1" || echo "source failed: $1"
+    else
+        echo "source not found: $1"
+    fi
+}
+
+function source_or_skip() {
+    if [[ -e $1 ]]; then
+        . "$1" || echo "source failed: $1"
+    fi
+}
+
+alias safe_source=source_or_warn
+
 ### My Pre
 
 source_or_skip "$HOME/.config/shell/pre.sh"

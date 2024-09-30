@@ -29,10 +29,20 @@ ${SHRC_DIR}
 
 官方 [zsh 依次导入](https://zsh.sourceforge.io/Doc/Release/Files.html)：
 
+If a non-login shell:
+
+- `/etc/zshenv` → `$ZDOTDIR/.zshenv`
+
+If a login shell:
+
 - `/etc/zshenv` → `$ZDOTDIR/.zshenv`
 - if a login shell: `/etc/zprofile` → `$ZDOTDIR/.zprofile`
 - if interactive: `/etc/zshrc` → `$ZDOTDIR/.zshrc`
 - if a login shell: `/etc/zlogin` → `$ZDOTDIR/.zlogin`
+
+For each nested shell:
+
+- if interactive: `/etc/zshrc` → `$ZDOTDIR/.zshrc`
 
 我的 `zshrc` 依次导入：
 

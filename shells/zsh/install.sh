@@ -1,20 +1,24 @@
 #!/usr/bin/env bash
 
 curdir="$(cd "$(dirname $(realpath ${BASH_SOURCE[0]}))"; pwd)"
-export SHRC_DIR=$curdir
+export SHRC_DIR="$curdir"
 
-SUFFIX=$(date +"%Y-%M-%dT%T%z")
-mv "$HOME/.zlogin" "$HOME/.zlogin.$SUFFIX"
-mv "$HOME/.zlogout" "$HOME/.zlogout.$SUFFIX"
-mv "$HOME/.zprofile" "$HOME/.zprofile.$SUFFIX"
-mv "$HOME/.zshenv" "$HOME/.zshenv.$SUFFIX"
-mv "$HOME/.zshrc" "$HOME/.zshrc.$SUFFIX"
+pushd "${ZDOTDIR:-$HOME}"
 
-ln -sf "${SHRC_DIR}/zlogin.sh" "$HOME/.zlogin"
-ln -sf "${SHRC_DIR}/zlogout.sh" "$HOME/.zlogout"
-ln -sf "${SHRC_DIR}/zprofile.sh" "$HOME/.zprofile"
-ln -sf "${SHRC_DIR}/zshenv.sh" "$HOME/.zshenv"
-ln -sf "${SHRC_DIR}/zshrc.sh" "$HOME/.zshrc"
+BACKUP_PREFIX=$(date +"%Y-%M-%dT%T%z")
+mv .zlogin      "${BACKUP_PREFIX}.zlogin"
+mv .zlogout     "${BACKUP_PREFIX}.zlogout"
+mv .zprofile    "${BACKUP_PREFIX}.zprofile"
+mv .zshenv      "${BACKUP_PREFIX}.zshenv"
+mv .zshrc       "${BACKUP_PREFIX}.zshrc"
+
+ln -sf "${SHRC_DIR}/zlogin.sh"      .zlogin
+ln -sf "${SHRC_DIR}/zlogout.sh"     .zlogout
+ln -sf "${SHRC_DIR}/zprofile.sh"    .zprofile
+ln -sf "${SHRC_DIR}/zshenv.sh"      .zshenv
+ln -sf "${SHRC_DIR}/zshrc.sh"       .zshrc
+
+popd
 
 TARGET_SHELL=zsh
 if [[ "$(basename "$(sh -c "echo \$SHELL")")" == $TARGET_SHELL ]]; then

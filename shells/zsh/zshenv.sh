@@ -26,9 +26,7 @@ alias safe_source=source_or_warn
 export SHRC_DIR="$(cd "$(dirname "$(realpath ${(%):-%x})")"; pwd)"
 export DOTMY="$(cd "${SHRC_DIR}/../.."; pwd)"
 
-# source "$HOME/.config/shell/env.sh" and gen $PATH inside
-source_or_warn "$DOTMY/profiles/base/env.sh"
-
+export ZDOTDIR="$HOME/.config/zsh"
 if [[ ! -d $ZSH ]]; then
     [[ -n $ZSH ]] && echo "\$ZSH invalid: $ZSH"
 

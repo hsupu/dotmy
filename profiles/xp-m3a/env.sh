@@ -1,18 +1,15 @@
 
-export DOTMY="$HOME/.config/dotmy"
 [[ -d $DOTMY ]] || echo "\$DOTMY not found: $DOTMY"
 
 export DOTMY_PROFILE="xp-m3a"
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
-PATH_1+=":$(brew --prefix)/bin:$(brew --prefix)/sbin"
+PATH_1+=":${HOMEBREW_PREFIX}/bin:${HOMEBREW_PREFIX}/sbin"
 
 PATH_opt2+=":$(brew --prefix curl)/bin"
 PATH_opt2+=":$(brew --prefix openssl@1.1)/bin"
 PATH_opt2+=":$(brew --prefix sqlite)/bin"
-
-PATH_4+=":/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
 
 # golang
 GOPATH="$HOME/.local/golang"
@@ -39,6 +36,10 @@ RUSTUP_HOME="$HOME/.local/rustup"
 # editor
 EDITOR="vim"
 
+source_or_warn "$DOTMY/profiles/base/mac/env-defaults.sh"
 source_or_warn "$DOTMY/profiles/base/devenv/env-defaults.sh"
+
+# mac has /etc/zprofile which uses /etc/paths[.d] to reset $PATH, but we control it manually.
+# PATH_next="$PATH"
 
 true

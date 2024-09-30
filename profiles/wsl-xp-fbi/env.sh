@@ -1,5 +1,4 @@
 
-export DOTMY="$HOME/.config/dotmy"
 [[ -d $DOTMY ]] || echo "\$DOTMY not found: $DOTMY"
 
 export DOTMY_PROFILE="xp-fbi"

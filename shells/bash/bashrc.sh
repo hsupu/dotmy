@@ -29,9 +29,6 @@ export SHRC_DIR="$(cd "$(dirname $(realpath ${BASH_SOURCE[0]}))"; pwd)"
 export DOTMY="$(cd "${SHRC_DIR}/../.."; pwd)"
 
 
-# source "$HOME/.config/shell/env.sh" and gen $PATH inside
-source_or_warn "$DOTMY/profiles/base/env.sh"
-
 source_or_skip "$HOME/.config/shell/pre.sh"
 source_or_skip "$HOME/.config/shell/pre-bash.sh"
 

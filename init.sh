@@ -90,6 +90,8 @@ if [[ $exitcode != 0 ]]; then
 fi
 
 if (which zsh >/dev/null); then
+    export ZDOTDIR="$HOME/.config/zsh"
+    mkdir -p $ZDOTDIR
     ./shells/zsh/install.sh
 else
     ./shells/bash/install.sh

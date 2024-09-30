@@ -1,8 +1,7 @@
 
-export DOTMY="$HOME/.config/dotmy"
 [[ -d $DOTMY ]] || echo "\$DOTMY not found: $DOTMY"
 
-export DOTMY_PROFILE="xp-wdk-wsl"
+export DOTMY_PROFILE="xp-wdk"
 
 # cargo
 export CARGO_HOME="$HOME/.local/cargo"

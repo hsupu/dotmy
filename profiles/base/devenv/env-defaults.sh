@@ -19,7 +19,7 @@ function path_1_push_back() {
     else
         new="$1"
     fi
-    PATH_1+="$new"
+    PATH_opt1+="$new"
     unset new
 }
 
