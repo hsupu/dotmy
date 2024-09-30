@@ -1,7 +1,7 @@
 
 [[ -d $DOTMY ]] || echo "\$DOTMY not found: $DOTMY"
 
-export DOTMY_PROFILE="CPC-puxu-39AOR6"
+export DOTMY_PROFILE="cpc-puxu-39aor6"
 
 # nvm
 NVM_DIR="$HOME/.local/nvm"
