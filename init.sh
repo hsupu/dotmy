@@ -47,8 +47,8 @@ if [[ ! -d ./private ]]; then
 fi
 
 # downgrade mainly for type hinting
-# 3.7 不支持 | 的写法
-# 3.9 不支持 T|None 的写法
+# 3.7 不支持写法 "|"，用 "Optional[T]" 代替
+# 3.9 不支持写法 "T|None"
 if [[ "$($PYTHON --version)" =~ ^"Python 3"\.(7|8|9)\. ]]; then
     remap_py="./remap.py37"
 else
