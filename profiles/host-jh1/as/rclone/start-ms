@@ -1,6 +1,0 @@
-#!/usr/bin/env bash
-
-rclone mount \
-	ms-axp:/rclone \
-	/as/rclone/ms-axp \
-	--copy-links --no-gzip-encoding --no-check-certificate --allow-other --allow-non-empty --umask 000
