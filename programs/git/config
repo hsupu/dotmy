@@ -5,5 +5,15 @@
     path = "~/.config/dotmy/programs/git/tools.gitconfig"
     # path = "~/.config/dotmy/profiles/current/programs/git/profile.gitconfig"
     path = "~/.config/dotmy/private/current/programs/git/profile.gitconfig"
+
 [safe]
     directory = *
+
+[http "https://gitee.com"]
+    proxy =
+# [http "https://github.com"]
+#     proxy = socks5h://127.0.0.1:4000
+# [http "https://gitlab.com"]
+#     proxy = socks5h://127.0.0.1:4000
+# [http "https://git.dev.azure.com"]
+#     proxy = socks5h://127.0.0.1:4000
