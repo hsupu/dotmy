@@ -23,7 +23,7 @@ alias safe_source=source_or_warn
 # ${0:A}
 
 # https://zsh.sourceforge.io/Doc/Release/Prompt-Expansion.html#Prompt-Expansion
-export SHRC_DIR="$(cd "$(dirname "$(realpath ${(%):-%x})")"; pwd)"
+export SHRC_DIR="$(cd "$(dirname "$(readlink -f -- ${(%):-%x})")"; pwd)"
 export DOTMY="$(cd "${SHRC_DIR}/../.."; pwd)"
 
 export ZDOTDIR="$HOME/.config/zsh"

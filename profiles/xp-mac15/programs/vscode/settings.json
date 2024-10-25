@@ -116,7 +116,7 @@
     "gitlens.defaultDateFormat": "hh:mm:ss, YYYY-MM-DD",
     "gitlens.defaultDateShortFormat": "YY-MM-DD",
     "files.autoGuessEncoding": true,
-    "diffEditor.ignoreTrimWhitespace": false,
+    "diffEditor.ignoreTrimWhitespace": true,
     "[python]": {
         "editor.formatOnType": true
     },

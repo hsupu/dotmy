@@ -18,8 +18,8 @@ Host *
 
 Host 127.*.*.*
     CheckHostIP no
-	StrictHostKeyChecking no
-	UserKnownHostsFile /dev/null
+    StrictHostKeyChecking no
+    UserKnownHostsFile /dev/null
 
 Host 10.*.*.* 172.[16-31].*.* 192.168.*.*
     CheckHostIP no

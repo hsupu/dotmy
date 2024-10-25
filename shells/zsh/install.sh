@@ -18,6 +18,9 @@ ln -sf "${SHRC_DIR}/zprofile.sh"    .zprofile
 ln -sf "${SHRC_DIR}/zshenv.sh"      .zshenv
 ln -sf "${SHRC_DIR}/zshrc.sh"       .zshrc
 
+# fallback
+ln -sf "${SHRC_DIR}/zshenv.sh"      $HOME/.zshenv
+
 popd
 
 TARGET_SHELL=zsh

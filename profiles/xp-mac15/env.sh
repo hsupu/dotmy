@@ -42,6 +42,7 @@ RUSTUP_HOME="$HOME/.local/rustup"
 # editor
 EDITOR="vim"
 
+source_or_warn "$DOTMY/profiles/base/mac/env-defaults.sh"
 source_or_warn "$DOTMY/profiles/base/devenv/env-defaults.sh"
 
 true
