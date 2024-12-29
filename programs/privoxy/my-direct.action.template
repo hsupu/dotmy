@@ -1,0 +1,6 @@
+{{alias}}
+
+direct = -forward-override +forward-override{ forward . } +fire-now
+
+{ direct }
+

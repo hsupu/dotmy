@@ -1,0 +1,113 @@
+// sync at 220313
+//
+// https://ohmyposh.dev/docs/config-overview
+// https://ohmyposh.dev/docs/config-colors
+// https://ohmyposh.dev/docs/themes
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "blocks": [
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "segments": [
+        {
+          // https://ohmyposh.dev/docs/time
+          "type": "time",
+          "style": "plain",
+          "foreground": "#98C379",
+          "properties": {
+            "template": "{{ .CurrentDate | date .Format }} "
+          }
+        },
+        // {
+        //   // https://ohmyposh.dev/docs/session
+        //   "type": "session",
+        //   "style": "plain",
+        //   "properties": {
+        //     "template": "{{ .UserName }}@{{ .Shell }} "
+        //   }
+        // },
+        {
+          // https://ohmyposh.dev/docs/path
+          "type": "path",
+          "style": "plain",
+          "foreground": "#56B6C2",
+          "properties": {
+            "style": "folder",
+            // "folder_separator_icon": "\ue0b1 ",
+            "home_icon": "~",
+            "template": "{{ .Path }}"
+          }
+        },
+        // {
+        //   // https://ohmyposh.dev/docs/git
+        //   "type": "git",
+        //   "style": "plain",
+        //   "background": "#fffb38",
+        //   "background_templates": [
+        //     "{{ if or (.Working.Changed) (.Staging.Changed) }}#FF9248{{ end }}",
+        //     "{{ if and (gt .Ahead 0) (gt .Behind 0) }}#ff4500{{ end }}",
+        //     "{{ if gt .Ahead 0 }}#B388FF{{ end }}",
+        //     "{{ if gt .Behind 0 }}#B388FF{{ end }}"
+        //   ],
+        //   "foreground": "#193549",
+        //   "properties": {
+        //     "branch_max_length": 25,
+        //     "fetch_stash_count": true,
+        //     "fetch_status": true,
+        //     "fetch_upstream_icon": true,
+        //     "template": " {{ .UpstreamIcon }}{{ .HEAD }}{{ .BranchStatus }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }} \uf692 {{ .StashCount }}{{ end }} "
+        //   }
+        // },
+        {
+          // https://ohmyposh.dev/docs/text
+          "type": "text",
+          "style": "plain",
+          "properties": {
+            "template": ">"
+          }
+        }
+      ]
+    },
+    {
+      "type": "rprompt",
+      "segments": [
+        {
+          "type": "exit",
+          "style": "plain",
+          "background_templates": [
+            "{{ if eq .Code 0 }}#2B2B2B{{ end }}",
+            "{{ if gt .Code 0 }}#DC291E{{ end }}"
+          ],
+          "foreground": "#ffffff",
+          "properties": {
+            "always_enabled": false,
+            "template": "={{ .Code }}"
+          }
+        },
+        {
+          // https://ohmyposh.dev/docs/executiontime
+          "type": "executiontime",
+          "style": "plain",
+          "background": "#2B2B2B",
+          "foreground": "#ffffff",
+          "properties": {
+            "always_enabled": false,
+            "threshold": 500,
+            "style": "austin",
+            "template": "/{{ .FormattedMs }}"
+          }
+        }
+      ]
+    }
+  ],
+
+  // https://ohmyposh.dev/docs/config-title
+  "console_title": true,
+  "console_title_style": "template",
+  // "console_title_template": "{{ .UserName }}@{{ .HostName }} in {{ .Shell }} {{ .PWD }}",
+  "console_title_template": "{{ .Shell }} {{ .PWD }}",
+
+  "final_space": true,
+  "version": 1
+}

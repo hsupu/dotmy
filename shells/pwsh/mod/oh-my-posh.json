@@ -1,0 +1,65 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "blocks": [
+    {
+      "alignment": "left",
+      "segments": [
+        {
+          "foreground": "#98C379",
+          "style": "plain",
+          "template": "{{ .CurrentDate | date .Format }} ",
+          "type": "time"
+        },
+        {
+          "foreground": "#56B6C2",
+          "properties": {
+            "home_icon": "~",
+            "style": "folder"
+          },
+          "style": "plain",
+          "template": "{{ .Path }}",
+          "type": "path"
+        },
+        {
+          "style": "plain",
+          "template": ">",
+          "type": "text"
+        }
+      ],
+      "type": "prompt"
+    },
+    {
+      "segments": [
+        {
+          "background_templates": [
+            "{{ if eq .Code 0 }}#2B2B2B{{ end }}",
+            "{{ if gt .Code 0 }}#DC291E{{ end }}"
+          ],
+          "foreground": "#ffffff",
+          "properties": {
+            "always_enabled": false
+          },
+          "style": "plain",
+          "template": "={{ .Code }}",
+          "type": "exit"
+        },
+        {
+          "background": "#2B2B2B",
+          "foreground": "#ffffff",
+          "properties": {
+            "always_enabled": false,
+            "style": "austin",
+            "threshold": 500
+          },
+          "style": "plain",
+          "template": "/{{ .FormattedMs }}",
+          "type": "executiontime"
+        }
+      ],
+      "type": "rprompt"
+    }
+  ],
+  "console_title_template": "{{ .Shell }} {{ .PWD }}",
+  "final_space": true,
+  "version": 2
+}

@@ -1,0 +1,28 @@
+# https://dev.mysql.com/doc/refman/9.0/en/option-files.html
+
+[mysqld]
+# https://dev.mysql.com/doc/refman/9.0/en/server-system-variables.html
+
+# basedir=C:/opt/scoop/apps/mysql/9.0.0
+datadir=F:/my/srv/var/mysql
+
+# skip-networking
+# 跳过 DNS 解析的话，用户权限控制也不能 <user>@<domain> 了
+# skip_name_resolve
+bind-address=127.0.0.1,::1
+port=3306
+
+# enable-named-pipe
+# socket = mysqld
+
+key_buffer_size=16M
+max_allowed_packet=8M
+
+[mysqladmin]
+
+[client]
+port=3306
+user=root
+
+[mysqldump]
+quick

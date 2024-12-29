@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-sandbox/windows-sandbox-configure-using-wsb-file -->
+<Configuration>
+  <AudioInput>Enable</AudioInput>
+  <ClipboardRedirection>Default</ClipboardRedirection>
+  <LogonCommand>
+    <Command>explorer.exe "C:\Program Files (x86)\Tencent\WeChat"</Command>
+  </LogonCommand>
+  <MappedFolders>
+    <MappedFolder>
+      <HostFolder>C:\my\local\var\wechat\app</HostFolder>
+      <SandboxFolder>C:\Program Files (x86)\Tencent\WeChat</SandboxFolder>
+      <ReadOnly>false</ReadOnly>
+    </MappedFolder>
+    <MappedFolder>
+      <HostFolder>C:\my\local\var\wechat\data</HostFolder>
+      <SandboxFolder>C:\Users\WDAGUtilityAccount\Documents\WeChat Files\</SandboxFolder>
+      <ReadOnly>false</ReadOnly>
+    </MappedFolder>
+    <MappedFolder>
+      <HostFolder>C:\Users\xp\Downloads</HostFolder>
+      <SandboxFolder>C:\Host\Downloads</SandboxFolder>
+      <ReadOnly>true</ReadOnly>
+    </MappedFolder>
+  </MappedFolders>
+  <MemoryInMB>2048</MemoryInMB>
+  <Networking>Default</Networking>
+  <PrinterRedirection>Disable</PrinterRedirection>
+  <ProtectedClient>Disable</ProtectedClient>
+  <vGPU>Enable</vGPU>
+  <VideoInput>Disable</VideoInput>
+</Configuration>

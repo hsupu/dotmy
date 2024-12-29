@@ -1,0 +1,25 @@
+
+*               text=auto
+
+# shell lang
+*.bash          text=auto eol=lf
+*.bat           text=auto eol=crlf
+*.cmd           text=auto eol=crlf
+*.ps1           text=auto eol=native
+*.sh            text=auto eol=lf
+*.zsh           text=auto eol=lf
+
+# docs & config
+*.conf          text=auto eol=native
+*.csv           text=auto eol=native
+*.ini           text=auto eol=native
+*.ipynb         text=auto eol=native
+*.json          text=auto eol=native
+*.json5         text=auto eol=native
+*.md            text=auto eol=native
+*.properties    text=auto eol=native
+*.toml          text=auto eol=native
+*.txt           text=auto eol=native
+*.xml           text=auto eol=native
+*.yaml          text=auto eol=native
+*.yml           text=auto eol=native

@@ -1,0 +1,11 @@
+Windows Registry Editor Version 5.00
+
+; Create default admin shares
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters]
+"AutoShareWks"=dword:00000001
+; "AutoShareServer"=dword:00000001
+
+; Allow admin user to remote access
+; https://learn.microsoft.com/en-us/troubleshoot/windows-server/windows-security/user-account-control-and-remote-restriction
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System]
+"LocalAccountTokenFilterPolicy"=dword:00000001

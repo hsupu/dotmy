@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-sandbox/windows-sandbox-configure-using-wsb-file -->
+<Configuration>
+    <MappedFolders>
+        <MappedFolder>
+            <HostFolder>******这里替换为 app 文件夹完整路径******</HostFolder>
+            <SandboxFolder>C:\Users\WDAGUtilityAccount\Desktop\微信</SandboxFolder>
+            <ReadOnly>false</ReadOnly>
+        </MappedFolder>
+        <MappedFolder>
+            <HostFolder>******这里替换为 Roaming 文件夹完整路径******</HostFolder>
+            <SandboxFolder>C:\Users\WDAGUtilityAccount\AppData\Roaming\Tencent\WeChat</SandboxFolder>
+            <ReadOnly>false</ReadOnly>
+        </MappedFolder>
+        <MappedFolder>
+            <HostFolder>******这里替换为 WeChat Files 文件夹完整路径******</HostFolder>
+            <SandboxFolder>C:\Users\WDAGUtilityAccount\Documents\WeChat Files</SandboxFolder>
+            <ReadOnly>false</ReadOnly>
+        </MappedFolder>
+    </MappedFolders>
+    <AudioInput>Enable</AudioInput>
+</Configuration>

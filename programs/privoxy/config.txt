@@ -1,0 +1,43 @@
+# sync at 220217
+# merged xp-14s 210710 at 241228
+
+listen-address 127.0.0.1:4001
+forward-socks5 / 127.0.0.1:4000 .
+
+confdir .
+#confdir /home/xp/.config/dotmy/programs/privoxy
+
+actionsfile my-block.action
+actionsfile my-direct.action
+
+#actionsfile match-all.action    # 应用于全体的规则，可被后续规则覆盖
+#actionsfile default.action      # 内置规则
+#actionsfile user.action         # 用户自定义规则
+
+#filterfile default.filter       # 内置规则
+#filterfile user.filter          # 用户自定义规则
+
+logdir .
+#logdir /var/log/privoxy
+logfile privoxy.log
+
+# debug 1024 # 记录阻断及原因
+debug 4096  # 记录初始化警告
+debug 8192  # 记录非关键错误
+
+# 1 to 关闭实为最小化
+# close-button-minimizes 1
+# 1 to 显示在任务栏
+show-on-task-bar 0
+activity-animation 0
+
+enable-remote-toggle 0
+enable-remote-http-toggle 0
+
+max-client-connections 4096
+listen-backlog 51200
+receive-buffer-size 131072 # 128KB
+socket-timeout 30 # seconds
+connection-sharing 0
+tolerate-pipelining 0
+keep-alive-timeout 5 # seconds

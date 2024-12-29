@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-sandbox/windows-sandbox-configure-using-wsb-file -->
+<Configuration>
+  <AudioInput>Enable</AudioInput>
+  <ClipboardRedirection>Disable</ClipboardRedirection>
+  <LogonCommand>
+    <Command>explorer.exe</Command>
+  </LogonCommand>
+  <MappedFolders>
+    <MappedFolder>
+      <HostFolder>C:\my\local\var\bluestacks</HostFolder>
+      <SandboxFolder>C:\Program Files\bluestacks</SandboxFolder>
+      <ReadOnly>false</ReadOnly>
+    </MappedFolder>
+    <MappedFolder>
+      <HostFolder>C:\Users\xp\Downloads</HostFolder>
+      <SandboxFolder>C:\Host\Downloads</SandboxFolder>
+      <ReadOnly>true</ReadOnly>
+    </MappedFolder>
+  </MappedFolders>
+  <MemoryInMB>4096</MemoryInMB>
+  <Networking>Default</Networking>
+  <PrinterRedirection>Disable</PrinterRedirection>
+  <ProtectedClient>Disable</ProtectedClient>
+  <vGPU>Enable</vGPU>
+  <VideoInput>Disable</VideoInput>
+</Configuration>

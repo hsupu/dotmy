@@ -1,0 +1,142 @@
+// 230115
+// 211120
+{
+    "[cpp]": {
+        "editor.semanticHighlighting.enabled": true,
+        "editor.suggest.insertMode": "replace",
+        "editor.wordBasedSuggestions": "off"
+    },
+    "[json]": {
+        "editor.quickSuggestions": {
+            "strings": true
+        },
+        "editor.suggest.insertMode": "replace",
+        "editor.tabSize": 2
+    },
+    "[python]": {
+        "editor.formatOnType": true
+    },
+    "accessibility.signals.terminalBell": {
+        "sound": "on"
+    },
+    "diffEditor.ignoreTrimWhitespace": false,
+    "editor.fontFamily": "'Iosevka PU-5', 'Sarasa Mono SC', Cousine, Consolas, 'Courier New', monospace",
+    "editor.fontLigatures": false,
+    "editor.formatOnPaste": false,
+    "editor.formatOnSave": false,
+    "editor.roundedSelection": false,
+    "editor.rulers": [
+        120,
+        140
+    ],
+    "editor.suggestSelection": "first",
+    "editor.tokenColorCustomizations": {
+        "[Default Light+]": {
+            "textMateRules": [
+                {
+                    "scope": "keyword.operator",
+                    "settings": {
+                        "foreground": "#D30102"
+                    }
+                },
+                {
+                    "scope": [
+                        "comment.block.documentation",
+                        "meta.tag"
+                    ],
+                    "settings": {
+                        "foreground": "#008000"
+                    }
+                }
+            ]
+        }
+    },
+    "editor.unicodeHighlight.includeComments": false,
+    "editor.unicodeHighlight.includeStrings": false,
+    "editor.wordSeparators": "`~!@#$%^&*()-=+[]{}\\|:;'\",.<>/? ·！￥…（）【】、：；‘’“”，。《》？　｀～＠＃＄％＾＆＊－＝＋［］｛｝｜＇＂．＜＞／— │",
+    "editor.wordWrapColumn": 140,
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+    "files.autoGuessEncoding": true,
+    "files.exclude": {},
+    "files.hotExit": "onExitAndWindowClose",
+    "git.autoRepositoryDetection": false,
+    "git.countBadge": "tracked",
+    "git.mergeEditor": false,
+    "git.path": [
+        "C:\\Program Files\\Git\\cmd\\git.exe",
+        "C:\\Users\\xp\\AppData\\Local\\Programs\\Git\\cmd\\git.exe",
+        "C:\\Users\\xp\\scoop\\shims\\git.exe"
+    ],
+    "git.rebaseWhenSync": true,
+    "git.repositoryScanMaxDepth": 0,
+    "gitlens.codeLens.authors.enabled": false,
+    "gitlens.codeLens.recentChange.enabled": false,
+    "hexeditor.columnWidth": 16,
+    "hexeditor.defaultEndianness": "little",
+    "hexeditor.inspectorType": "aside",
+    "hexeditor.showDecodedText": true,
+    "notebook.cellToolbarLocation": {
+        "default": "right",
+        "jupyter-notebook": "left"
+    },
+    "powershell.codeFormatting.trimWhitespaceAroundPipe": true,
+    "powershell.codeFormatting.useCorrectCasing": true,
+    "powershell.integratedConsole.suppressStartupBanner": true,
+    "powershell.pester.useLegacyCodeLens": false,
+    "powershell.powerShellDefaultVersion": "PowerShell Core (x64)",
+    "powershell.startAsLoginShell.linux": true,
+    "redhat.telemetry.enabled": false,
+    "search.exclude": {},
+    "search.quickOpen.includeSymbols": true,
+    "search.showLineNumbers": true,
+    "search.smartCase": false,
+    "security.allowedUNCHosts": [
+        "XP-TM17"
+    ],
+    "security.workspace.trust.untrustedFiles": "open",
+    "sortJSON.contextMenu": {
+        "sortJSON": false,
+        "sortJSONAlphaNum": false,
+        "sortJSONAlphaNumReverse": false,
+        "sortJSONKeyLength": false,
+        "sortJSONKeyLengthReverse": false,
+        "sortJSONReverse": false,
+        "sortJSONType": false,
+        "sortJSONTypeReverse": false,
+        "sortJSONValues": false,
+        "sortJSONValuesReverse": false
+    },
+    "terminal.external.windowsExec": "wt.exe",
+    "terminal.integrated.commandsToSkipShell": [
+        "workbench.action.terminal.sendSequence"
+    ],
+    "terminal.integrated.confirmOnExit": "hasChildProcesses",
+    "terminal.integrated.cursorStyle": "line",
+    "terminal.integrated.enableVisualBell": true,
+    "terminal.integrated.fontFamily": "'Iosevka PU-5', 'Sarasa Mono SC'",
+    "terminal.integrated.tabs.hideCondition": "never",
+    "window.autoDetectHighContrast": false,
+    "window.commandCenter": false,
+    "window.dialogStyle": "custom",
+    "workbench.colorCustomizations": {
+        "[Default Light+]": {
+            "activityBar.activeBackground": "#eee",
+            "activityBar.background": "#ccc",
+            "activityBar.border": "#aaa",
+            "activityBar.foreground": "#111",
+            "activityBarBadge.background": "#555",
+            "activityBarBadge.foreground": "#fff",
+            "list.inactiveFocusBackground": "#ddd",
+            "sideBar.border": "#ddd",
+            "terminal.background": "#222",
+            "terminal.foreground": "#ddd"
+        }
+    },
+    "workbench.colorTheme": "Default Dark+",
+    "workbench.editor.closeEmptyGroups": false,
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter-notebook"
+    },
+    "workbench.quickOpen.preserveInput": true
+}

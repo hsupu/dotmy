@@ -1,0 +1,6 @@
+{{alias}}
+
+block = -forward-override +block +fire-now
+
+{ block }
+

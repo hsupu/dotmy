@@ -1,0 +1,17 @@
+{
+  "debug": false,
+  "exec-opts": [
+    "isolation=hyperv"
+  ],
+  "features": {
+    "buildkit": true
+  },
+  "group": "docker-users",
+  "hosts": [
+    "npipe://"
+  ],
+  "registry-mirrors": [
+    "https://registry.dockermirror.com",
+    "https://docker.m.daocloud.io"
+  ]
+}

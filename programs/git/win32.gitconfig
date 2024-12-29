@@ -1,0 +1,12 @@
+[core]
+    # 常见文件系统 NTFS FAT 是忽略大小写的，保持一致
+    ignoreCase = true
+    # 采用特定的 ssh（预留）
+    sshCommand = ssh
+    # 自动转换换行符
+    # 查看 attributes 了解更多换行符处理的细节
+    # 当 core.autocrlf = true or input 时，core.eol 会被忽略
+    autocrlf = input
+    # 检测到同一文件内换行符混用，如何处理: true warn false
+    # https://git-scm.com/docs/git-config#Documentation/git-config.txt-coresafecrlf
+    safecrlf = warn

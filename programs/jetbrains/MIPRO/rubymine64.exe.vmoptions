@@ -1,0 +1,24 @@
+-server
+-ea
+
+-Xms128m
+-Xmx2048m
+-XX:ReservedCodeCacheSize=240m
+-XX:SoftRefLRUPolicyMSPerMB=50
+
+-XX:CICompilerCount=2
+
+-XX:+UseConcMarkSweepGC
+-XX:+HeapDumpOnOutOfMemoryError
+-XX:-OmitStackTraceInFastThrow
+
+-Dfile.encoding=UTF-8
+-Djava.net.preferIPv4Stack=true
+-Djdk.attach.allowAttachSelf=true
+-Djdk.http.auth.tunneling.disabledSchemes=""
+-Djdk.module.illegalAccess.silent=true
+-Dkotlinx.coroutines.debug=off
+-Dsun.io.useCanonPrefixCache=false
+
+#-javaagent:C:\Users\Public\.jetbrains\jetbrains-agent-v3.2.1.c46b.ed7=by https://zhile.io
+-javaagent:C:\Users\Public\.jetbrains\jetbrains-agent-v3.2.0.0f1f.69e=6e68f9eb,LFq51qqupnaiTNn39w6zATiOTxZI2JYuRJEBlzmUDv4zeeNlXhMgJZVb0q5QkLr+CIUrSuNB7ucifrGXawLB4qswPOXYG7+ItDNUR/9UkLTUWlnHLX07hnR1USOrWIjTmbytcIKEdaI6x0RskyotuItj84xxoSBP/iRBW2EHpOc

@@ -1,0 +1,185 @@
+{{alias}}
+
+direct = -forward-override +forward-override{ forward . } +fire-now
+
+{ direct }
+
+# 通用域名
+.cn
+
+# 基础设施
+
+#.googletagmanager.com
+
+.cdnjs.cloudflare.com
+.jsdelivr.net
+.ravenjs.com
+.staticfile.org
+.typekit.net
+
+.qiniu.com
+.qiniuapi.com
+.qiniucdn.com
+.qiniudn.com
+.qbox.me
+
+.upaiyun.com
+.upyun.com
+.yupoo.com
+
+# 常用网站
+
+## 微软
+.bing.com
+.live.com
+.microsoft.com
+.microsoftonline.com
+.ms
+.msftconnecttest.com
+.office.com
+.office.net
+.onmicrosoft.com
+.outlook.com
+.windows.com
+.windows.net
+.windowsupdate.com
+
+## 哔哩哔哩
+.bilibili.com
+.hdslb.com
+.bilivideo.com
+
+## AcFun
+.acfun.tv
+
+## 百度
+.baidu.com
+.baidupcs.com
+.baidustatic.com
+.bdcloudapi.com
+.bdimg.com
+.bdstatic.com
+
+## 阿里
+.aliapp.org
+.alicdn.com
+.aliyun.com
+.aliyuncs.com
+.alibabacloud.com
+.mmstat.com
+
+.alibaba.com
+.aliexpress.com
+.alimama.com
+.alipay.com
+.alipayobjects.com
+.amap.com
+.autonavi.com
+.dingtalk.com
+.taobao.com
+.tmall.com
+.fliggy.com
+.umeng.com
+.umengcloud.com
+.youku.com
+.1688.com
+
+## 携程
+.ctrip.com
+
+## 腾讯
+.qq.com
+.qqurl.com
+.subhd.la
+.tencent.com
+.wechat.com
+.weixin.com
+.weixinbridge.com
+
+## 京东
+.jd.com
+.jcloud.com
+.jcloudcs.com
+.jdcloud.com
+.360buy.com
+.360buyimg.com
+
+## 国企
+.139.com
+.10010.com
+
+## 华为
+.huaweicloud.com
+
+## 知乎
+.zhihu.com
+.zhimg.com
+
+## 115
+.115.com
+
+## 网易
+.126.com
+.126.net
+.127.net
+.163.com
+.163yun.com
+.netease.com
+.youdao.com
+.ydstatic.com
+
+## 小米
+.mi.com
+.miui.com
+.miwifi.com
+
+## 微博
+.weibo.com
+
+## 豆瓣
+.douban.com
+.doubanio.com
+
+## 斗鱼
+.douyu.com
+.douyu.tv
+.douyutv.com
+
+## Steam
+.pinyuncloud.com
+.steamcontent.com
+
+# 其他
+.coalcloud.net
+.csdn.com
+.gcores.com
+.geetest.com
+.jandan.net
+.lian.la
+.ip138.com
+.v2ex.com
+.yhd.com
+.zimuzu.tv
+.12306.com
+.36kr.com
+.360.com
+.58.com
+.8686c.com
+
+.mo.fish
+.chouti.com
+.huxiu.com
+.newsmth.net
+.printf520.com
+.qdaily.com
+.shejipi.com
+.tophub.fun
+
+.guokr.com
+.guokr.net
+
+.segmentfault.com
+.segmentfault.net
+
+.shimo.im
+.shimonote.com

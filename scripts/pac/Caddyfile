@@ -1,0 +1,26 @@
+# Global Options
+# https://caddyserver.com/docs/caddyfile/options
+{
+	# https://caddyserver.com/docs/caddyfile/options#debug
+	debug
+	# https://caddyserver.com/docs/caddyfile/options#persist-config
+	persist_config off
+	# https://caddyserver.com/docs/caddyfile/options#admin
+	admin off
+}
+
+http://127.0.0.1:4002 {
+	# bind 127.0.0.1 [::1]
+	skip_log
+
+	handle /pac.js {
+		rewrite * /base.js
+		file_server * {
+			root "{$CADDY_FILE_DIR}"
+		}
+	}
+
+	handle {
+		respond "no route" 404
+	}
+}

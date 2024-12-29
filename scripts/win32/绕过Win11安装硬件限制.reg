@@ -1,0 +1,11 @@
+Windows Registry Editor Version 5.00
+
+; 用于装机时，Shift+F10 打开命令提示符，导入此文件
+; 提示：cmd 可以打开 notepad，再“文件-打开”使用 GUI 对话框，可以“运行” .reg 文件
+[HKEY_LOCAL_MACHINE\SYSTEM\Setup\LabConfig]
+; 默认要求 TPM 2.0，这可以降低至 TPM 1.2
+"BypassTPMCheck"=dword:00000001
+"BypassSecureBootCheck"=dword:00000001
+"BypassRAMCheck"=dword:00000001
+"BypassStorageCheck"=dword:00000001
+"AllowUpgradesWithUnsupportedTPMOrCPU"=dword:00000001

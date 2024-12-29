@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+
+  <!-- https://maven.apache.org/ref/3.9.1/maven-settings/settings.html -->
+
+  <localRepository>${user.home}/.m2/repository</localRepository>
+
+  <!-- 默认加载的插件组 -->
+  <pluginGroups>
+    <pluginGroup>org.apache.maven.plugins</pluginGroup>
+    <pluginGroup>org.codehaus.mojo</pluginGroup>
+  </pluginGroups>
+
+  <!-- 执行中是否可交互，默认 true -->
+  <interactiveMode>true</interactiveMode>
+
+  <offline>false</offline>
+
+  <!-- 代理列表，第一个被标记为 active 的生效 -->
+  <proxies>
+    <!-- 代理
+    <proxy>
+      <id>optional</id>
+      <active>true</active>
+      <protocol>http</protocol>
+      <username>proxyuser</username>
+      <password>proxypass</password>
+      <host>proxy.host.net</host>
+      <port>80</port>
+      <nonProxyHosts>local.net|some.host.com</nonProxyHosts>
+    </proxy>
+    -->
+  </proxies>
+
+  <!-- 服务器认证配置 -->
+  <servers>
+    <!-- 成对地指定 username/password 或 privateKey/passphrase 属性
+    <server>
+      <id>deploymentRepo</id>
+      <username>repouser</username>
+      <password>repopwd</password>
+    </server>
+    -->
+  </servers>
+
+  <!-- 仓库镜像 -->
+  <!-- 同一镜像者，先出现的配置生效 -->
+  <mirrors>
+    <mirror>
+      <id>aliyun</id>
+      <name>aliyun</name>
+      <mirrorOf>central</mirrorOf>
+      <!-- <mirrorOf>*</mirrorOf> -->
+      <url>http://maven.aliyun.com/repository/public</url>
+    </mirror>
+    <mirror>
+      <id>aliyun-gradle-plugin</id>
+      <name>aliyun gradle-plugin</name>
+      <mirrorOf>central</mirrorOf>
+      <url>https://maven.aliyun.com/repository/gradle-plugin</url>
+    </mirror>
+    <mirror>
+      <id>huaweicloud</id>
+      <name>huaweicloud</name>
+      <mirrorOf>central</mirrorOf>
+      <url>https://mirrors.huaweicloud.com/repository/maven</url>
+    </mirror>
+    <mirror>
+      <id>tencent</id>
+      <name>tencent</name>
+      <mirrorOf>central</mirrorOf>
+      <url>http://mirrors.cloud.tencent.com/nexus/repository/maven-public</url>
+    </mirror>
+  </mirrors>
+
+  <!-- 自定义配置 -->
+  <profiles>
+    <profile>
+      <id>default</id>
+
+      <!-- 本地仓库 -->
+      <!-- <repositories>
+        <repository>
+          <id>local-alternative</id>
+          <url>file:///${user.home}/.m2/alternative</url>
+          <releases>
+            <enabled>true</enabled>
+          </releases>
+          <snapshots>
+            <enabled>true</enabled>
+          </snapshots>
+        </repository>
+      </repositories> -->
+
+    </profile>
+  </profiles>
+
+  <!-- 激活的配置 -->
+  <activeProfiles>
+    <activeProfile>default</activeProfile>
+  </activeProfiles>
+
+</settings>

@@ -1,0 +1,225 @@
+{
+  "log": {
+    // "access": "/path/to/access/log/file",
+    // "error": "/path/to/error/log/file",
+    // Log level, one of "debug", "info", "warning", "error", "none"
+    "loglevel": "warning"
+  },
+  "inbounds": [
+    {
+      "tag": "in-default",
+      "listen": "127.0.0.1",
+      "port": 1080,
+      "protocol": "socks",
+      "settings": {
+        "auth": "noauth",
+        "udp": true,
+        "ip": "127.0.0.1", // for UDP
+        "userLevel": 0
+      },
+      "sniffing": {
+        "enabled": false,
+        "destOverride": ["http"]
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "tag": "direct",
+      "protocol": "freedom",
+      "settings": {
+        // UseIP UseIPv4 UseIPv6 AsIs
+        // AsIs = 重新使用系统 DNS 解析域名
+        "domainStrategy": "UseIPv4"
+      }
+    },
+    {
+      "tag": "proxy-vtr",
+      "protocol": "vmess",
+      "settings": {
+        "vnext": [{
+          "address": "vtr2.xpcas.cc",
+          "port": 3000,
+          "users": [{
+            "id": "f3d2fab3-57d4-4a53-a419-9d1f1fc1cf38",
+            "alterId": 64
+          }]
+        }]
+      }
+    },
+    {
+      "tag": "proxy-jh",
+      "protocol": "vmess",
+      "settings": {
+        "vnext": [{
+          "address": "jh1.xpcas.cc",
+          "port": 3001,
+          "users": [{
+            "id": "3a0d6048-2eff-4723-8c7f-3de430c7eb44",
+            "alterId": 64
+          }]
+        }]
+      }
+    },
+    {
+      "tag": "proxy-kk2",
+      "protocol": "vmess",
+      "settings": {
+        "vnext": [{
+          "address": "42.7.27.163",
+          "port": 20031,
+          "users": [{
+            "id": "f3d2fab3-57d4-4a53-a419-9d1f1fc1cf38",
+            "alterId": 64
+          }]
+        }]
+      },
+      "streamSettings": {
+          "network": "tcp"
+      },
+      "mux": { "enabled": true }
+    },
+    {
+      "tag": "proxy-co4",
+      "protocol": "vmess",
+      "settings": {
+        "vnext": [{
+          "address": "co3.xpcas.cc",
+          "port": 20304,
+          "users": [{
+            "id": "f3d2fab3-57d4-4a53-a419-9d1f1fc1cf38",
+            "alterId": 64
+          }]
+        }]
+      }
+    },
+    {
+      "tag": "proxy-local",
+      "protocol": "socks",
+      "settings": {
+        "servers": [{
+          "address": "127.0.0.1",
+          "port": 1081,
+          "users": []
+        }]
+      }
+    },
+    {
+      "tag": "drop",
+      "protocol": "blackhole",
+      "settings": {}
+    }
+  ],
+
+  // Transport is for global transport settings. If you have multiple transports with same settings
+  // (say mKCP), you may put it here, instead of in each individual inbound/outbounds.
+  //"transport": {},
+
+  "dns": {
+    "hosts": {},
+    "servers": [
+      "1.1.1.1",
+      {
+        "address": "119.29.29.29",
+        "port": 53,
+        "domains": [
+          "geosite:cn"
+        ],
+        "expectIPs": [
+          "geoip:cn"
+        ]
+      },
+      {
+        "address": "8.8.8.8",
+        "port": 53,
+        "domains": [
+          "geosite:geolocation-!cn"
+        ]
+      },
+      "localhost"
+    ]
+  },
+
+  "routing": {
+    "domainStrategy": "IPIfNonMatch",
+    "rules":[
+      {
+        "type": "field",
+        "ip": [
+          "218.104.216.153",    // kk
+          "194.156.121.172",    // jh
+          "207.148.115.155",    // vtr
+          "geoip:private"
+        ],
+        "outboundTag": "direct"
+      },
+      {
+        "type": "field",
+        "domain": [
+          "domain:xpcas.cc",
+          "domain:cloudflare.com",
+          "domain:coalcloud.net",
+          "domain:liyuans.com",
+          "domain:shimo.im",
+          "geosite:cn"
+        ],
+        "outboundTag": "direct"
+      },
+      {
+        "type": "field",
+        "ip": [
+          "geoip:cn"
+        ],
+        "outboundTag": "direct"
+      },
+      {
+        "type": "field",
+        "inboundTag": "dns",
+        "outboundTag": "proxy-kk2"
+      },
+      {
+        "type": "field",
+        "inboundTag": "in-default",
+        "outboundTag": "proxy-kk2"
+      },
+      {
+        "type": "field",
+        "network": "tcp,udp",
+        "outboundTag": "direct"
+      }
+    ]
+  },
+
+  // Policy controls some internal behavior of how V2Ray handles connections.
+  // It may be on connection level by user levels in 'levels', or global settings in 'system.'
+  "policy": {
+    // Connection policys by user levels
+    "levels": {
+      "0": {
+        "uplinkOnly": 0,
+        "downlinkOnly": 0
+      }
+    },
+    "system": {
+      "statsInboundUplink": false,
+      "statsInboundDownlink": false
+    }
+  },
+
+  // Stats enables internal stats counter.
+  // This setting can be used together with Policy and Api. 
+  //"stats":{},
+
+  // Api enables gRPC APIs for external programs to communicate with V2Ray instance.
+  //"api": {
+    //"tag": "api",
+    //"services": [
+    //  "HandlerService",
+    //  "LoggerService",
+    //  "StatsService"
+    //]
+  //},
+
+  // user customized configuration, will not be recognized by V2Ray.
+  "other": {}
+}

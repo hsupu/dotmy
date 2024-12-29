@@ -1,0 +1,576 @@
+[
+  {
+    "Info": "",
+    "Version": "24.07",
+    "Source": "main",
+    "Updated": "2024-06-20T22:16:11.855741+08:00",
+    "Name": "7zip"
+  },
+  {
+    "Info": "",
+    "Version": "19.00",
+    "Source": "main",
+    "Updated": "2024-07-02T15:21:50.9985783+08:00",
+    "Name": "7zip19.00-helper"
+  },
+  {
+    "Info": "",
+    "Version": "0.13.2",
+    "Source": "extras",
+    "Updated": "2024-03-26T16:31:02.8094233+08:00",
+    "Name": "alacritty"
+  },
+  {
+    "Info": "",
+    "Version": "1.6.6",
+    "Source": "extras",
+    "Updated": "2024-06-14T10:30:18.3856754+08:00",
+    "Name": "another-redis-desktop-manager"
+  },
+  {
+    "Info": "",
+    "Version": "10.26.0",
+    "Source": "main",
+    "Updated": "2024-08-01T11:38:55.9293273+08:00",
+    "Name": "azcopy"
+  },
+  {
+    "Info": "",
+    "Version": "2.62.0",
+    "Source": "main",
+    "Updated": "2024-07-15T15:12:59.7324901+08:00",
+    "Name": "azure-cli"
+  },
+  {
+    "Info": "",
+    "Version": "0.24.0",
+    "Source": "main",
+    "Updated": "2023-10-17T17:09:32.571147+08:00",
+    "Name": "bat"
+  },
+  {
+    "Info": "",
+    "Version": "1.41.1",
+    "Source": "main",
+    "Updated": "2024-08-05T13:59:01.7174057+08:00",
+    "Name": "broot"
+  },
+  {
+    "Info": "",
+    "Version": "2024-07-02",
+    "Source": "main",
+    "Updated": "2024-07-02T12:52:59.8018703+08:00",
+    "Name": "cacert"
+  },
+  {
+    "Info": "",
+    "Version": "2.8.4",
+    "Source": "main",
+    "Updated": "2024-06-04T15:07:39.9643676+08:00",
+    "Name": "caddy"
+  },
+  {
+    "Info": "",
+    "Version": "1.6.18",
+    "Source": "main",
+    "Updated": "2024-07-31T13:17:42.4701781+08:00",
+    "Name": "clink"
+  },
+  {
+    "Info": "",
+    "Version": "3.30.2",
+    "Source": "main",
+    "Updated": "2024-08-05T13:59:47.771511+08:00",
+    "Name": "cmake"
+  },
+  {
+    "Info": "",
+    "Version": "23.07.24",
+    "Source": "extras",
+    "Updated": "2023-07-24T13:43:22.8021624+08:00",
+    "Name": "conemu"
+  },
+  {
+    "Info": "",
+    "Version": "2.10",
+    "Source": "extras",
+    "Updated": "2024-07-15T15:13:13.9207843+08:00",
+    "Name": "cpu-z"
+  },
+  {
+    "Info": "",
+    "Version": "9.3.2",
+    "Source": "extras",
+    "Updated": "2024-06-24T10:49:56.6717405+08:00",
+    "Name": "crystaldiskinfo"
+  },
+  {
+    "Info": "",
+    "Version": "8.0.5",
+    "Source": "extras",
+    "Updated": "2024-02-28T15:59:09.6929982+08:00",
+    "Name": "crystaldiskmark"
+  },
+  {
+    "Info": "",
+    "Version": "8.9.1_1",
+    "Source": "main",
+    "Updated": "2024-08-01T11:39:01.142664+08:00",
+    "Name": "curl"
+  },
+  {
+    "Info": "",
+    "Version": "7.0.0",
+    "Source": "main",
+    "Updated": "2024-02-28T15:59:18.9155674+08:00",
+    "Name": "czkawka"
+  },
+  {
+    "Info": "",
+    "Version": "3.14",
+    "Source": "main",
+    "Updated": "2024-02-28T15:59:25.7369336+08:00",
+    "Name": "dark"
+  },
+  {
+    "Info": "",
+    "Version": "0.17.0",
+    "Source": "main",
+    "Updated": "2024-03-19T23:57:23.1062746+08:00",
+    "Name": "delta"
+  },
+  {
+    "Info": "",
+    "Version": "27.1.1",
+    "Source": "main",
+    "Updated": "2024-07-31T13:18:29.3509212+08:00",
+    "Name": "docker"
+  },
+  {
+    "Info": "",
+    "Version": "3.5.15",
+    "Source": "main",
+    "Updated": "2024-07-31T13:18:34.0211911+08:00",
+    "Name": "etcd"
+  },
+  {
+    "Info": "",
+    "Version": "1.4.1.1026",
+    "Source": "extras",
+    "Updated": "2024-08-03T01:33:18.4767233+08:00",
+    "Name": "everything"
+  },
+  {
+    "Info": "",
+    "Version": "3.7.1",
+    "Source": "extras",
+    "Updated": "2024-04-10T18:32:32.2905883+08:00",
+    "Name": "exe-explorer"
+  },
+  {
+    "Info": "",
+    "Version": "1.4.0",
+    "Source": "extras",
+    "Updated": "2024-01-29T15:39:33.9895912+08:00",
+    "Name": "explorerplusplus"
+  },
+  {
+    "Info": "",
+    "Version": "30b6060",
+    "Source": "main",
+    "Updated": "2022-12-18T23:19:59.1666277+08:00",
+    "Name": "far"
+  },
+  {
+    "Info": "",
+    "Version": "10.1.0",
+    "Source": "main",
+    "Updated": "2024-05-10T13:41:41.7383073+08:00",
+    "Name": "fd"
+  },
+  {
+    "Info": "",
+    "Version": "7.0.2",
+    "Source": "main",
+    "Updated": "2024-08-05T14:00:10.4073611+08:00",
+    "Name": "ffmpeg"
+  },
+  {
+    "Info": "",
+    "Version": "0.54.3",
+    "Source": "main",
+    "Updated": "2024-08-01T11:39:04.8544896+08:00",
+    "Name": "fzf"
+  },
+  {
+    "Info": "",
+    "Version": "2.46.0",
+    "Source": "main",
+    "Updated": "2024-07-31T18:52:47.4398288+08:00",
+    "Name": "git"
+  },
+  {
+    "Info": "",
+    "Version": "2.3.0",
+    "Source": "main",
+    "Updated": "2023-07-24T13:44:09.653331+08:00",
+    "Name": "git-interactive-rebase-tool"
+  },
+  {
+    "Info": "",
+    "Version": "3.5.1",
+    "Source": "main",
+    "Updated": "2024-03-19T23:57:35.3480449+08:00",
+    "Name": "git-lfs"
+  },
+  {
+    "Info": "",
+    "Version": "1.22.5",
+    "Source": "main",
+    "Updated": "2024-07-08T11:00:13.5263326+08:00",
+    "Name": "go"
+  },
+  {
+    "Info": "",
+    "Version": "3.11",
+    "Source": "main",
+    "Updated": "2023-07-17T13:36:03.1332326+08:00",
+    "Name": "grep"
+  },
+  {
+    "Info": "",
+    "Version": "2.5.1",
+    "Source": "main",
+    "Updated": "2024-06-04T15:09:07.3100757+08:00",
+    "Name": "gsudo"
+  },
+  {
+    "Info": "",
+    "Version": "12.8",
+    "Source": "extras",
+    "Updated": "2024-07-17T16:39:07.0528169+08:00",
+    "Name": "heidisql"
+  },
+  {
+    "Info": "",
+    "Version": "1.2.0",
+    "Source": "extras",
+    "Updated": "2022-07-05T13:51:52.8966526+08:00",
+    "Name": "hosts-file-editor"
+  },
+  {
+    "Info": "",
+    "Version": "8.06-5500",
+    "Source": "extras",
+    "Updated": "2024-07-31T13:18:46.6207733+08:00",
+    "Name": "hwinfo"
+  },
+  {
+    "Info": "",
+    "Version": "1.35.4",
+    "Source": "extras",
+    "Updated": "2024-07-15T15:13:45.5769282+08:00",
+    "Name": "imhex"
+  },
+  {
+    "Info": "",
+    "Version": "0.50",
+    "Source": "main",
+    "Updated": "2022-06-23T14:06:46.2149833+08:00",
+    "Name": "innounp"
+  },
+  {
+    "Info": "",
+    "Version": "3.17",
+    "Source": "main",
+    "Updated": "2024-05-11T16:26:57.5232566+08:00",
+    "Name": "iperf3"
+  },
+  {
+    "Info": "",
+    "Version": "1.34.0",
+    "Source": "main",
+    "Updated": "2024-08-05T14:00:13.5849904+08:00",
+    "Name": "just"
+  },
+  {
+    "Info": "",
+    "Version": "3.8.0",
+    "Source": "main",
+    "Updated": "2024-07-31T13:20:28.1024438+08:00",
+    "Name": "kafka"
+  },
+  {
+    "Info": "",
+    "Version": "18.1.8",
+    "Source": "main",
+    "Updated": "2024-07-02T12:56:31.2321585+08:00",
+    "Name": "llvm"
+  },
+  {
+    "Info": "",
+    "Version": "1.1.2",
+    "Source": "main",
+    "Updated": "2024-03-26T16:31:16.5549665+08:00",
+    "Name": "lsd"
+  },
+  {
+    "Info": "",
+    "Version": "2024-08-03T04-33-23Z",
+    "Source": "main",
+    "Updated": "2024-08-05T14:00:23.9731997+08:00",
+    "Name": "minio"
+  },
+  {
+    "Info": "",
+    "Version": "0.38.0",
+    "Source": "extras",
+    "Updated": "2024-04-26T13:37:20.8427309+08:00",
+    "Name": "mpv"
+  },
+  {
+    "Info": "",
+    "Version": "2.2.294",
+    "Source": "extras",
+    "Updated": "2024-08-03T01:33:22.8670851+08:00",
+    "Name": "msbuild-structured-log-viewer"
+  },
+  {
+    "Info": "",
+    "Version": "0.17.6",
+    "Source": "main",
+    "Updated": "2024-05-06T09:53:06.3911673+08:00",
+    "Name": "mutagen"
+  },
+  {
+    "Info": "",
+    "Version": "9.0.1",
+    "Source": "main",
+    "Updated": "2024-07-31T13:21:05.8514583+08:00",
+    "Name": "mysql"
+  },
+  {
+    "Info": "",
+    "Version": "9.0.1",
+    "Source": "main",
+    "Updated": "2024-07-31T13:23:02.4692387+08:00",
+    "Name": "mysql-shell"
+  },
+  {
+    "Info": "",
+    "Version": "2.23.0",
+    "Source": "main",
+    "Updated": "2023-12-18T17:26:21.2920563+08:00",
+    "Name": "navi"
+  },
+  {
+    "Info": "",
+    "Version": "2.24-103",
+    "Source": "main",
+    "Updated": "2022-06-23T13:27:24.9862105+08:00",
+    "Name": "nssm"
+  },
+  {
+    "Info": "",
+    "Version": "6.10.1",
+    "Source": "main",
+    "Updated": "2024-07-15T15:14:09.5984414+08:00",
+    "Name": "nuget"
+  },
+  {
+    "Info": "",
+    "Version": "1.1.12",
+    "Source": "main",
+    "Updated": "2023-11-27T18:40:14.8428808+08:00",
+    "Name": "nvm"
+  },
+  {
+    "Info": "",
+    "Version": "0.9.6",
+    "Source": "extras",
+    "Updated": "2023-02-22T13:43:04.8856882+08:00",
+    "Name": "openhardwaremonitor"
+  },
+  {
+    "Info": "",
+    "Version": "9.5.0.0p1",
+    "Source": "main",
+    "Updated": "2024-06-16T06:16:08.5137514+08:00",
+    "Name": "openssh"
+  },
+  {
+    "Info": "",
+    "Version": "3.3.1",
+    "Source": "main",
+    "Updated": "2024-06-06T16:21:21.3674635+08:00",
+    "Name": "openssl"
+  },
+  {
+    "Info": "",
+    "Version": "5.2.0",
+    "Source": "main",
+    "Updated": "2024-08-05T14:00:30.0670132+08:00",
+    "Name": "podman"
+  },
+  {
+    "Info": "",
+    "Version": "1.11.1",
+    "Source": "extras",
+    "Updated": "2024-07-02T12:57:42.7045732+08:00",
+    "Name": "podman-desktop"
+  },
+  {
+    "Info": "",
+    "Version": "16.3",
+    "Source": "main",
+    "Updated": "2024-07-02T15:22:47.5709969+08:00",
+    "Name": "postgresql"
+  },
+  {
+    "Info": "",
+    "Version": "2.3.5",
+    "Source": "extras",
+    "Updated": "2024-04-10T18:39:12.0436467+08:00",
+    "Name": "PSReadline"
+  },
+  {
+    "Info": "",
+    "Version": "3.1.1",
+    "Source": "main",
+    "Updated": "2022-07-21T12:37:14.0598842+08:00",
+    "Name": "pyenv"
+  },
+  {
+    "Info": "",
+    "Version": "14.1.0",
+    "Source": "main",
+    "Updated": "2024-01-10T14:12:02.5555037+08:00",
+    "Name": "ripgrep"
+  },
+  {
+    "Info": "",
+    "Version": "4.5",
+    "Source": "extras",
+    "Updated": "2024-05-27T13:15:28.7004627+08:00",
+    "Name": "rufus"
+  },
+  {
+    "Info": "",
+    "Version": "0.3.0",
+    "Source": "extras",
+    "Updated": "2024-02-16T21:53:20.6164758+08:00",
+    "Name": "scoop-completion"
+  },
+  {
+    "Info": "",
+    "Version": "1.0.0",
+    "Source": "main",
+    "Updated": "2023-11-20T18:03:21.9238437+08:00",
+    "Name": "sd"
+  },
+  {
+    "Info": "",
+    "Version": "1.20.3",
+    "Source": "main",
+    "Updated": "2024-07-31T13:23:06.835678+08:00",
+    "Name": "shadowsocks-rust"
+  },
+  {
+    "Info": "",
+    "Version": "3.9.4",
+    "Source": "extras",
+    "Updated": "2022-06-22T18:38:26.9302743+08:00",
+    "Name": "sharpkeys"
+  },
+  {
+    "Info": "",
+    "Version": "1.20.1",
+    "Source": "main",
+    "Updated": "2024-07-31T13:23:09.4540597+08:00",
+    "Name": "starship"
+  },
+  {
+    "Info": "",
+    "Version": "21.0.4-7.0",
+    "Source": "java",
+    "Updated": "2024-07-31T13:24:19.4007685+08:00",
+    "Name": "temurin21-jdk"
+  },
+  {
+    "Info": "",
+    "Version": "1.5.0",
+    "Source": "extras",
+    "Updated": "2023-05-15T13:34:22.9236468+08:00",
+    "Name": "thisiswin11"
+  },
+  {
+    "Info": "",
+    "Version": "0.6.1",
+    "Source": "main",
+    "Updated": "2022-10-08T17:15:51.8639132+08:00",
+    "Name": "tldr"
+  },
+  {
+    "Info": "",
+    "Version": "9.1.0381",
+    "Source": "main",
+    "Updated": "2024-04-30T14:17:33.3189048+08:00",
+    "Name": "vim"
+  },
+  {
+    "Info": "",
+    "Version": "3.0.21",
+    "Source": "extras",
+    "Updated": "2024-06-14T10:33:44.5268401+08:00",
+    "Name": "vlc"
+  },
+  {
+    "Info": "Install failed",
+    "Version": "v4.3.2",
+    "Source": "main",
+    "Updated": "2024-06-14T10:34:36.1925408+08:00",
+    "Name": "wasmer"
+  },
+  {
+    "Info": "",
+    "Version": "1.21.4",
+    "Source": "main",
+    "Updated": "2023-05-13T00:02:24.6182151+08:00",
+    "Name": "wget"
+  },
+  {
+    "Info": "",
+    "Version": "2.20",
+    "Source": "main",
+    "Updated": "2022-11-01T13:05:16.905095+08:00",
+    "Name": "which"
+  },
+  {
+    "Info": "",
+    "Version": "1.1.2",
+    "Source": "extras",
+    "Updated": "2022-07-01T11:35:07.2767797+08:00",
+    "Name": "windirstat"
+  },
+  {
+    "Info": "",
+    "Version": "3.7.4",
+    "Source": "extras",
+    "Updated": "2024-07-15T15:44:39.6038179+08:00",
+    "Name": "wsltty"
+  },
+  {
+    "Info": "",
+    "Version": "2.20",
+    "Source": "main",
+    "Updated": "2024-05-06T09:53:43.1381733+08:00",
+    "Name": "yori"
+  },
+  {
+    "Info": "",
+    "Version": "0.9.4",
+    "Source": "main",
+    "Updated": "2024-02-28T16:01:23.8513048+08:00",
+    "Name": "zoxide"
+  }
+]

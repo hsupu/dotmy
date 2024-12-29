@@ -1,0 +1,275 @@
+# https://www.git-scm.com/docs/gitattributes
+# Find templates here: https://github.com/gitattributes/gitattributes
+#
+# 文本类型处理，即 git 接管 checkin checkout 的 encoding 和 eol 的处理
+# 从原理上讲，总是转换 crlf -> lf 会破坏二进制文件，所以需要区分文本文件和二进制文件
+#
+# `eol` 控制 checkout eol；单独标记 eol 会自动标记 text
+#   eol=native : 同 auto，按平台决定
+#   eol=lf or crlf : 固定
+#
+# `autocrlf` 控制 checkin checkout 两部分的 eol
+#   autocrlf=false : checkout as-is, checkin as-is
+#   autocrlf=input : checkout as-is, checkin eol=lf
+#   autocrlf=true  : checkout $eol,  checkin eol=lf
+#
+# `text` 显式标记为文本文件，处理视同 autocrlf=true
+# `-text` 显示标记为二进制文件。该写法等同 text=false
+# `text=auto` 自动检测是否为文本文件。如果是文本，处理视同 autocrlf=true
+#   特殊情况：如果已检入过，且 eol=crlf，处理视同 autocrlf=false
+# `binary` = -text -diff
+# 未指定、或指定了其他值，自动检测是否为文本文件。如果是文本，处理按 $autocrlf
+#
+# 如果遇到比较混乱的项目，可以搞个项目级别的 .gitattributes 加下面这行临时规避
+#   *.<ext> text=false eol=input autocrlf=false
+#
+# 可以使用下述命令来查看 eol
+#   git ls-files --eol <path-to-file>
+#
+# 暂无命令可查看 encoding
+#
+# 批量修改 encoding eol 可以使用下面的命令
+#   git add --renormalize .
+# or
+#   git filter-branch --tree-filter 'find . -type f -exec dos2unix {} \;' -- --all
+#
+
+# 定义标签
+#
+[attr]utf8      working-tree-encoding=UTF-8
+
+# "text"s
+# =======
+
+*               text=auto
+
+# code src
+#
+
+# c
+*.c             text=auto eol=native
+*.cc            text=auto eol=native
+*.cpp           text=auto eol=native
+*.h             text=auto eol=native
+*.hpp           text=auto eol=native
+*.inc           text=auto eol=native
+
+# C#, MSBuild, VS
+*.cs            text=auto eol=native
+*.csproj        text=auto eol=native
+*.noproj        text=auto eol=native
+*.proj          text=auto eol=native
+*.sln           text=auto eol=native
+*.vcxproj       text=auto eol=native
+*.props         text=auto eol=native
+*.targets       text=auto eol=native
+
+*.rs            text=auto eol=native
+
+# web lang
+*.cjs           text=auto eol=native diff=javascript
+*.css           text=auto eol=native diff=css
+*.ejs           text=auto eol=native diff=javascript
+*.htm           text=auto eol=native diff=html
+*.html          text=auto eol=native diff=html
+*.html5         text=auto eol=native diff=html
+*.js            text=auto eol=native diff=javascript
+*.jsx           text=auto eol=native diff=javascript
+*.less          text=auto eol=native
+*.mjs           text=auto eol=native diff=javascript
+*.sass          text=auto eol=native
+*.scss          text=auto eol=native diff=css
+*.ts            text=auto eol=native diff=typescript
+*.tsx           text=auto eol=native diff=typescript
+*.vue           text=auto eol=native diff=typescript
+*.xhtml         text=auto eol=native diff=html
+
+# script lang
+*.php           text=auto eol=native diff=php
+*.pl            text=auto eol=native diff=perl
+*.py            text=auto eol=native diff=python
+*.rb            text=auto eol=native diff=ruby
+
+# shell lang
+*.bash          text=auto eol=lf
+*.bat           text=auto eol=crlf
+*.cmd           text=auto eol=crlf
+*.ps1           text=auto eol=native
+*.sh            text=auto eol=lf
+*.zsh           text=auto eol=lf
+
+# docs & config
+*.conf          text=auto eol=native
+*.csv           text=auto eol=native
+*.ini           text=auto eol=native
+*.ipynb         text=auto eol=native
+*.json          text=auto eol=native
+*.json5         text=auto eol=native
+*.md            text=auto eol=native
+*.properties    text=auto eol=native
+*.toml          text=auto eol=native
+*.txt           text=auto eol=native
+*.xml           text=auto eol=native
+*.yaml          text=auto eol=native
+*.yml           text=auto eol=native
+
+*.scm           text=auto eol=native
+
+*.sql           text=auto eol=native
+
+# conventional
+*.*config       text=auto eol=native
+*.*ignore       text=auto eol=native
+*.lock          text=auto eol=native -diff
+
+.env            text=auto eol=native
+.env.*          text=auto eol=native
+.gitattributes  text=auto eol=native
+.htaccess       text=auto eol=native
+Containerfile   text=auto eol=native
+Dockerfile      text=auto eol=native
+makefile        text=auto eol=native
+Makefile        text=auto eol=native
+
+
+# "binary"s
+# =========
+
+# obj
+*.a         binary
+*.bin       binary
+*.class     binary
+*.com       binary
+*.dll       binary
+*.exe       binary
+*.lib       binary
+*.o         binary
+*.obj       binary
+*.out       binary
+*.pyc       binary
+*.so        binary
+*.sys       binary
+
+# zip
+*.7z        binary
+*.bz2       binary
+*.bzip2     binary
+*.cab       binary
+*.deb       binary
+*.dmg       binary
+*.gz        binary
+*.gzip      binary
+*.iso       binary
+*.jar       binary
+*.lzma      binary
+*.nupkg     binary
+*.rar       binary
+*.rpm       binary
+*.tar       binary
+*.tbz       binary
+*.tbz2      binary
+*.tgz       binary
+*.tpz       binary
+*.txz       binary
+*.vhd       binary
+*.vhdx      binary
+*.wim       binary
+*.xz        binary
+*.zip       binary
+
+# ebooks
+*.epub      binary
+*.mobi      binary
+*.azw       binary
+*.azw3      binary
+
+# images
+*.bmp       binary
+*.eps       binary
+*.gif       binary
+*.gifv      binary
+*.ico       binary
+*.jpeg      binary
+*.jpeg2000  binary
+*.jp2       binary
+*.jpg       binary
+*.png       binary
+*.svg       text=auto eol=native
+*.svgz      binary
+*.tif       binary
+*.tiff      binary
+*.wbmp      binary
+*.webp      binary
+
+# audio
+*.aac       binary
+*.ac3       binary
+*.aif       binary
+*.aiff      binary
+*.amr       binary
+*.ape       binary
+*.dff       binary
+*.dsf       binary
+*.dts       binary
+*.fla       binary
+*.flac      binary
+*.flv       binary
+*.m4a       binary
+*.mid       binary
+*.midi      binary
+*.mka       binary
+*.mov       binary
+*.mp3       binary
+*.mp4       binary
+*.ogg       binary
+*.opus      binary
+# Real Audio
+*.ra        binary
+*.wma       binary
+
+# videos
+*.3g2       binary
+*.3gp       binary
+*.3gp2      binary
+*.3gpp      binary
+*.amv       binary
+*.as        binary
+*.asf       binary
+*.asx       binary
+*.avi       binary
+*.cue       text=auto eol=native
+*.f4v       binary
+*.fla       binary
+*.flv       binary
+*.m4v       binary
+*.mkv       binary
+*.mng       binary
+*.mov       binary
+*.mp4       binary
+*.mpeg      binary
+*.mpg       binary
+*.ogv       binary
+*.rm        binary
+*.rmvb      binary
+*.swc       binary
+*.swf       binary
+*.webm      binary
+*.wmv       binary
+
+# fonts
+*.ttf       binary
+*.ttc       binary
+*.otf       binary
+*.woff      binary
+*.woff2     binary
+
+# office files
+*.doc       binary
+*.docx      binary
+*.pdf       binary
+*.ppt       binary
+*.pptx      binary
+*.xls       binary
+*.xlsx      binary
+
+cloudbuild.gdnbaselines text autocrlf=false

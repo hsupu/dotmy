@@ -1,0 +1,6 @@
+
+redis*.pid
+redis*.log
+
+dump.rdb
+/aof/

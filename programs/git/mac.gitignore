@@ -1,0 +1,22 @@
+# General
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Thumbnails
+._*
+
+# Files in volume root
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.Trash-*
+.VolumeIcon.icns
+
+# Dirs in remote AFP share
+.AppleDB/
+.AppleDesktop/
+Network Trash Folder/
+Temporary Items/
+.apdisk/

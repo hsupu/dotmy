@@ -1,0 +1,24 @@
+
+### exe - suitable for workdir-independent programs
+
+# devenv - exe shims
+dotnet.exe => "C:\Program Files\dotnet\dotnet.exe"
+#gsudo.exe => $($HOME)\scoop\apps\gsudo\current\gsudo.exe
+
+# pnpm will replace $(which pnpm) if could, and I use "$HOME\.local\bin" instead
+#pnpm.exe => "$($env:LOCALAPPDATA)\pnpm\pnpm.exe"
+
+# cli
+ttfautohint.exe => C:\my\local\portable\ttfautohint\ttfautohint.exe
+websocat.cmd => C:\my\local\cli\websocat_win64.exe
+
+### cmd/ps1
+
+# devenv - ps1
+#code.cmd => "$($env:LOCALAPPDATA)\Programs\Microsoft VS Code\bin\code.cmd"
+errno.cmd => C:\my\local\cli\Err_6.4.5.exe
+github.cmd => $($env:LOCALAPPDATA)\GitHubDesktop\bin\github.bat
+
+# services
+#filebrowser.ps1 => C:\my\local\srv\filebrowser\run.ps1
+#frpc.ps1 => C:\my\local\srv\frp\run.ps1

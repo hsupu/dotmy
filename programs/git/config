@@ -1,0 +1,27 @@
+# 请复制文件至 $HOME/.config/git/config 并定制
+# https://git-scm.com/docs/git-config
+[include]
+    path = "C:/my/sync/dotmy/programs/git/common.gitconfig"
+    path = "C:/my/sync/dotmy/programs/git/win32.gitconfig"
+    path = "C:/my/sync/dotmy/programs/git/tools.gitconfig"
+    path = "C:/my/sync/dotmy/private/current/programs/git/profile.gitconfig"
+
+    # or
+    # path = "~/Documents/PowerShell/Sync/programs/git/common.gitconfig"
+    # path = "~/Documents/PowerShell/Sync/programs/git/win32.gitconfig"
+    # path = "~/Documents/PowerShell/Sync/programs/git/tools.gitconfig"
+    # path = "~/Documents/PowerShell/Sync/private/current/programs/git/profile.gitconfig"
+
+    # path = "C:/my/sync/dotmy/local/profile.gitconfig"
+
+[safe]
+    directory = *
+
+[http "https://gitee.com"]
+    proxy =
+# [http "https://github.com"]
+#     proxy = socks5h://127.0.0.1:4000
+# [http "https://gitlab.com"]
+#     proxy = socks5h://127.0.0.1:4000
+# [http "https://git.dev.azure.com"]
+#     proxy = socks5h://127.0.0.1:4000

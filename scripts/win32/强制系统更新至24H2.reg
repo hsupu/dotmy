@@ -1,0 +1,9 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_LOCAL_MACHINE\SYSTEM\Setup\MoSetup]
+"AllowUpgradesWithUnsupportedTPMOrCPU"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate]
+"ProductVersion"="Windows 11"
+"TargetReleaseVersion"=dword:00000001
+"TargetReleaseVersionInfo"="24H2"

@@ -1,0 +1,9 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\*\shell]
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\*\shell\notepad]
+@="Open with Notepad.."
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\*\shell\notepad\command]
+@="C:\Windows\notepad2\notepad2.exe %1"

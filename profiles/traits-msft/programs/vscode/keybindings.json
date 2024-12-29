@@ -1,0 +1,182 @@
+// Place your key bindings in this file to override the defaultsauto[]
+[
+    {
+        "command": "workbench.action.navigateBack",
+        "key": "alt+oem_4",
+        "when": "editorTextFocus && canNavigateBack"
+    },
+    {
+        "command": "-workbench.action.navigateBack",
+        "key": "alt+left",
+        "when": "canNavigateBack"
+    },
+    {
+        "command": "workbench.action.navigateForward",
+        "key": "alt+oem_6",
+        "when": "editorTextFocus && canNavigateForward"
+    },
+    {
+        "command": "-workbench.action.navigateForward",
+        "key": "alt+right",
+        "when": "canNavigateForward"
+    },
+    {
+        "command": "-workbench.action.terminal.copySelection",
+        "key": "ctrl+c",
+        "when": "terminalFocus && terminalHasBeenCreated && terminalTextSelected || terminalFocus && terminalProcessSupported && terminalTextSelected"
+    },
+    {
+        "command": "editor.action.jumpToBracket",
+        "key": "alt+oem_5",
+        "when": "editorTextFocus"
+    },
+    {
+        "command": "-editor.action.jumpToBracket",
+        "key": "ctrl+shift+oem_5",
+        "when": "editorTextFocus"
+    },
+    {
+        "command": "-editor.action.addCommentLine",
+        "key": "ctrl+k ctrl+c",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "command": "-editor.action.removeCommentLine",
+        "key": "ctrl+k ctrl+u",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "command": "-redo",
+        "key": "ctrl+y"
+    },
+    {
+        "command": "-editor.action.copyLinesDownAction",
+        "key": "shift+alt+down",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "command": "-editor.action.copyLinesUpAction",
+        "key": "shift+alt+up",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "command": "-copyFilePath",
+        "key": "shift+alt+c",
+        "when": "!editorFocus"
+    },
+    {
+        "command": "-copyRelativeFilePath",
+        "key": "ctrl+k ctrl+shift+c",
+        "when": "!editorFocus"
+    },
+    {
+        "command": "-workbench.action.zoomIn",
+        "key": "ctrl+oem_plus"
+    },
+    {
+        "command": "-workbench.action.zoomOut",
+        "key": "ctrl+oem_minus"
+    },
+    {
+        "command": "-workbench.action.selectTheme",
+        "key": "ctrl+k ctrl+t"
+    },
+    {
+        "command": "-workbench.action.terminal.openNativeConsole",
+        "key": "ctrl+shift+c",
+        "when": "!terminalFocus"
+    },
+    {
+        "command": "-editor.action.showAccessibilityHelp",
+        "key": "alt+f1"
+    },
+    {
+        "command": "-workbench.action.openSettings",
+        "key": "ctrl+oem_comma"
+    },
+    {
+        "command": "-editor.action.selectAllMatches",
+        "key": "alt+enter",
+        "when": "editorFocus && findWidgetVisible"
+    },
+    {
+        "command": "editor.action.quickFix",
+        "key": "alt+enter",
+        "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly"
+    },
+    {
+        "command": "problems.action.showQuickFixes",
+        "key": "alt+enter",
+        "when": "problemFocus"
+    },
+    {
+        "command": "github.copilot.generate",
+        "key": "alt+g",
+        "when": "editorTextFocus && github.copilot.activated"
+    },
+    {
+        "command": "-github.copilot.generate",
+        "key": "ctrl+enter",
+        "when": "editorTextFocus && github.copilot.activated"
+    },
+    {
+        "command": "-editor.action.insertLineBefore",
+        "key": "ctrl+shift+enter",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "command": "-github.copilot.generate",
+        "key": "ctrl+enter",
+        "when": "editorTextFocus && github.copilot.activated && !inInteractiveInput && !interactiveEditorFocused"
+    },
+    {
+        "command": "editor.action.dirtydiff.next",
+        "key": "alt+f3",
+        "when": "editorTextFocus && inDiffEditor && diffEditorHasChanges"
+    },
+    {
+        "command": "-editor.action.dirtydiff.next",
+        "key": "alt+f3",
+        "when": "editorTextFocus && !textCompareEditorActive"
+    },
+    {
+        "command": "merge-conflict.next",
+        "key": "alt+f3",
+        "when": "(mergeConflictsCount > 0)"
+    },
+    {
+        "command": "merge-conflict.previous",
+        "key": "alt+shift+f3",
+        "when": "(mergeConflictsCount > 0)"
+    },
+    {
+        "command": "merge-conflict.next",
+        "key": "alt+m .",
+        "when": "(mergeConflictsCount > 0)"
+    },
+    {
+        "command": "merge-conflict.previous",
+        "key": "alt+m ,",
+        "when": "(mergeConflictsCount > 0)"
+    },
+    {
+        "command": "merge-conflict.accept.selection",
+        "key": "alt+m enter",
+        "when": "editorTextFocus"
+    },
+    {
+        "command": "merge-conflict.accept.current",
+        "key": "alt+m 1",
+        "when": "editorTextFocus"
+    },
+    {
+        "command": "merge-conflict.accept.incoming",
+        "key": "alt+m 2",
+        "when": "editorTextFocus"
+    },
+    {
+        "command": "merge-conflict.accept.both",
+        "key": "alt+m 3",
+        "when": "editorTextFocus"
+    }
+]

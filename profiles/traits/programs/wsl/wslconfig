@@ -1,0 +1,78 @@
+# https://learn.microsoft.com/en-us/windows/wsl/wsl-config
+# WSL 不识别 ";" 开头的注释
+[wsl2]
+
+# debugConsole = true
+
+# true to 启用安全模式，用于排查启动问题
+# safeMode = true
+
+# 自定义内核路径，分隔符需转义
+# kernel =
+# kernelCommandLine = ""
+
+# 默认 VM 内存用量是 50% of 主机物理内存
+# memory =
+# 默认 VM CPU 分配数量是全部主机 CPU 核心数
+# processors =
+
+# false to 关闭 WSLg 支持
+# guiApplications = false
+
+# false to 关闭嵌套虚拟化
+# nestedVirtualization = false
+
+# 资源用量限制
+# ============
+
+# 自动关闭前的空闲超时 in ms
+vmIdleTimeout = 3600000
+
+# 允许 windows 回收分配了但未使用的内存
+# pageReporting = true
+
+# swap disk 绝对路径
+# swapFile = %USERPROFILE%\\AppData\\Local\\Temp\\wsl2-swap.vhdx
+# swapFile = R:\\wsl2-swap.vhdx
+
+# 网络相关
+# ========
+
+# 固定 VM MAC 地址
+# macAddress = "01:23:45:67:89:ab"
+
+# 网络模式
+#   - NAT : 默认
+#   - bridged : 桥接（自 WSL 2.4.5 起即将弃用）
+#   - mirrored : 镜像，WSL 与主机共享网络栈，自然也共享 IP。启动失败 fallback to virtioproxy
+#   - virtioproxy : 虚拟化代理，效果同 mirrored
+# networkingMode = bridged
+
+# bridged 模式可用。Hyper-V 网络适配器名称（可用 `Get-VMSwitch -SwitchType External` 查看）
+# vmSwitch = Bridged WSL
+# 桥接模式可用。
+# ipv6 = true
+# dhcp = true
+
+# NAT 模式可用。false to 镜像 Windows 主机的 DNS servers 配置？
+# dnsProxy = false
+
+# false to 不使用 Windows 主机 HTTP Proxy 配置
+autoProxy = false
+
+# false to 允许 Windows 防护墙规则（包括对 Hyper-V 流量的规则）过滤 WSL 流量
+# firewall = false
+
+# false to 禁用这样的流量转发：WSL 内绑定到 wildchar or localhost 地址；Windows 主机通过 `localhost:port` 访问
+localhostForwarding = false
+
+# false to 回退到发送流量包（到 Windows 主机）的方式处理 DNS 请求
+# dnsTunneling = false
+
+[experimental]
+
+# true to 新增的 VHD 以稀疏文件的形式创建
+sparseVhd = true
+
+# mirrored 模式可用。true to 允许通过 localhost 互通 WSL 与 Windows 主机
+# hostAddressLoopback = true

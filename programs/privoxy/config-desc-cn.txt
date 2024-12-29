@@ -1,0 +1,133 @@
+#  Privoxy 主配置文件
+#  =================
+#
+#  Privoxy 会自动检测配置文件变化并重新加载，故无需重启程序。
+#  这种重新加载会在下一次请求时进行，前提是请求没有被丢弃。但这次请求仍然会采用旧配置。
+#
+#  Unix 系统，本文件的路径需要作为最后一个参数；
+#  Windows 系统则会从当前工作目录查找 `config.txt` 文件。
+#
+#  格式
+#  ====
+#
+#  所有选项、规则都遵循以下格式：
+#    <keyword> <params[]>
+#
+#  单行拆多行则以 "\" 结尾。这一般用于某一行写起来太长的情况。
+#
+#  注释行则以 "#" 打头。除了跟在 "\" 下一行的 "#"。
+#
+#  核心配置选项
+#  ==============
+#
+#  toggle <flag>
+#    [默认] flag = 1
+#    是否启用。0=否 1=是。
+#
+#  listen-address [<ip/hostname>]:<port>
+#    监听地址。可以有多个。
+#    不填写 ip/hostname 那么会监听全局地址（0.0.0.0 / [::]）。
+#    使用 hostname 时可能有多个对应的 IP，会采用返回的第一个。如果解析失败，程序会启动失败。
+#    IPv6 地址必须包括在 "[]" 内。
+#
+#  confdir <dirpath>
+#    *必填项
+#    配置所在目录。注意尾部不要有 "/"。
+#
+#  templdir <dirpath>
+#    [默认] path 同 confdir path
+#    模板所在路径。额外说一句，Privoxy 可能会频繁地更新模板变量，不要期待旧模板能一直好用。
+#
+#  temporary-directory <dirpath>
+#    临时文件存放目录。不设置则禁止产生临时文件，因此外部过滤功能无法使用。
+#    注意，这些临时文件可能包含敏感信息。
+#
+#  actionsfile <filenames[]>
+#    行为规则文件路径。相对于 confdir path 进行查找。
+#    行为规则针对 hostname/URL 等配置进行阻断（block）、cookie 管理等。
+#
+#  filterfile <filenames[]>
+#    过滤规则文件路径。相对于 confdir path 进行查找。
+#    过滤规则使用正则表达式修改请求与响应的内容（头和体）。定义好过滤规则就可以在行为规则中使用了。
+#
+#  日志与调试选项
+#  ==============
+#
+#  logdir
+#    *必填项
+#    日志存放目录。注意尾部不要有 "/"。
+#
+#  logfile <filename>
+#    stdout stderr 都会重定向到这里。
+#
+#  debug <level>
+#    日志等级，是一系列二进制位。此外 fatal 级别的日志是必定打印的。
+#        debug     1 # Log the destination for each request Privoxy let through. See also debug 1024.
+#        debug     2 # show each connection status
+#        debug     4 # show I/O status
+#        debug     8 # show header parsing
+#        debug    16 # log all data written to the network
+#        debug    32 # debug force feature
+#        debug    64 # debug regular expression filters
+#        debug   128 # debug redirects
+#        debug   256 # debug GIF de-animation
+#        debug   512 # Common Log Format
+#        debug  1024 # Log the destination for requests Privoxy didn't let through, and the reason why.
+#        debug  2048 # CGI user interface
+#        debug  4096 # Startup banner and warnings.
+#        debug  8192 # Non-fatal errors
+#        debug 32768 # log all data read from the network
+#        debug 65536 # Log the applying actions
+#
+#  single-threaded <flag>
+#    是否仅单线程运行。0=否 1=是。
+#
+#  hostname <hostname>
+#    临时设置主机名，避免当前系统配错导致的巨长解析延迟。
+#
+#  白名单机制的选项
+#  ==============
+#
+#  trustfile <filename>
+#    白名单文件路径。相对于 confdir path 进行查找。
+#    白名单会允许访问其中的网站。也许可以用于家长控制。
+#
+#  trust-info-url <url>
+#  如果开启了信任机制，
+#    拒绝一次不受信任的目标网页的访问（untrusted denied）时，用什么页面来替代显示。
+#    注意，信任机制（trust mechanism）仍然是实验性的。
+#
+#  运维选项
+#  ========
+#
+#  user-manual <fully-qualified-uri>
+#    [默认] fully-qualified-uri = https://www.privoxy.org/version/user-manual/
+#    指定帮助文档的路径前缀。可能是本地路径，也可能是 URL 网址。
+#    如果存在，那么本选项必须作为第一条配置，因为后续命令都需要它。
+#
+#  admin-address <email-address>
+#  proxy-info-url <url>
+#    错误页面的一些信息。
+#    如果二者均未设置，那错误页面不会显示 Local Privoxy Support 部分内容。
+#
+#  enable-remote-toggle <flag>
+#    [默认] flag = 0
+#    控制是否允许在 web 端启停 Privoxy。0=否 1=是。
+#
+#  enable-remote-http-toggle <flag>
+#    [默认] flag = 0
+#    控制是否允许通过 HTTP 请求头控制是否由 Privoxy 来过滤。
+#    当请求包含 "X-Filter: No" 时，禁用过滤器。
+#
+#  enable-edit-actions <flag>
+#    [默认] flag = 0
+#    控制是否启用 web 端行为规则文件编辑器。
+
+
+#  enforce-blocks <flag>
+#  buffer-limit <size>
+#  enable-proxy-authentication-forwarding <flag>
+#  trusted-cgi-referer <url/prefix>
+#
+#  访问控制（ACL）
+#  ===============

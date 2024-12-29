@@ -1,0 +1,7 @@
+-javaagent:C:\opt\ja-netfilter-all\ja-netfilter.jar=jetbrains
+--add-opens=java.base/jdk.internal.org.objectweb.asm=ALL-UNNAMED
+--add-opens=java.base/jdk.internal.org.objectweb.asm.tree=ALL-UNNAMED
+-server
+
+-Dfile.encoding=UTF-8
+-Djava.net.preferIPv4Stack=true

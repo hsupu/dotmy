@@ -1,0 +1,27 @@
+# 优先采用命令，本文是一种等价写法
+#   caddy file-server --listen localhost:8080 --root . --browse --reveal-symlinks
+
+# Global Options
+# https://caddyserver.com/docs/caddyfile/options
+{
+	# https://caddyserver.com/docs/caddyfile/options#debug
+	debug
+	# https://caddyserver.com/docs/caddyfile/options#persist-config
+	persist_config off
+	# https://caddyserver.com/docs/caddyfile/options#admin
+	admin off
+}
+
+http://localhost:8080 {
+	bind 127.0.0.1 [::1]
+	skip_log
+
+	# encode zstd gzip
+	file_server * browse {
+		root "{$PWD}"
+	}
+
+	handle {
+		respond "no route" 404
+	}
+}

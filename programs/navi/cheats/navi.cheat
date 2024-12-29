@@ -1,0 +1,6 @@
+% cheatsheets
+
+# Edit main.cheat
+f="$(navi info cheats-path)/main.cheat"
+if (-not (Test-Path "$f")) { navi info cheats-example > "$f" }
+${EDITOR:-code} "$f"

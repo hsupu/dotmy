@@ -1,0 +1,177 @@
+{
+    "[cpp]": {
+        "editor.defaultFormatter": "ms-vscode.cpptools",
+        "editor.semanticHighlighting.enabled": true,
+        "editor.suggest.insertMode": "replace",
+        "editor.wordBasedSuggestions": "off"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[python]": {
+        "editor.formatOnType": true
+    },
+    "[xml]": {
+        "editor.defaultFormatter": "DotJoshJohnson.xml",
+        "editor.tabSize": 2
+    },
+    "[yaml]": {
+        "editor.tabSize": 2
+    },
+    "breadcrumbs.icons": false,
+    // "breadcrumbs.showVariables": false,
+    // "breadcrumbs.showStrings": false,
+    // "breadcrumbs.showOperators": false,
+    // "breadcrumbs.showNull": false,
+    // "breadcrumbs.showFields": false,
+    // "breadcrumbs.showEvents": false,
+    // "breadcrumbs.showEnums": false,
+    // "breadcrumbs.showEnumMembers": false,
+    // "breadcrumbs.showConstructors": false,
+    // "breadcrumbs.showConstants": false,
+    // "breadcrumbs.showBooleans": false,
+    // "breadcrumbs.showProperties": false,
+    // "breadcrumbs.showTypeParameters": false,
+    "C_Cpp.doxygen.generatedStyle": "/**",
+    "C_Cpp.doxygen.generateOnType": false,
+    "C_Cpp.inlayHints.referenceOperator.enabled": true,
+    "C_Cpp.intelliSenseCacheSize": 20480,
+    "C_Cpp.intelliSenseMemoryLimit": 16384,
+    "C_Cpp.loggingLevel": "Warning",
+    "C_Cpp.vcpkg.enabled": false,
+    "csharp.maxProjectFileCountForDiagnosticAnalysis": 10000,
+    "diffEditor.ignoreTrimWhitespace": true,
+    "diffEditor.maxComputationTime": 0,
+    "dotnet.codeLens.enableReferencesCodeLens": false,
+    "editor.fontFamily": "'Iosevka PU-5', 'Sarasa Fixed SC'",
+    "editor.fontLigatures": false,
+    "editor.inlayHints.enabled": "onUnlessPressed",
+    "editor.inlineSuggest.enabled": true,
+    "editor.roundedSelection": false,
+    "editor.rulers": [
+        120
+    ],
+    "editor.suggestSelection": "first",
+    "editor.tokenColorCustomizations": {
+        "[Default Light+]": {
+            "textMateRules": [
+                {
+                    "scope": "keyword.operator",
+                    "settings": {
+                        "foreground": "#D30102"
+                    }
+                },
+                {
+                    "scope": [
+                        "comment.block.documentation",
+                        "meta.tag"
+                    ],
+                    "settings": {
+                        "foreground": "#008000"
+                    }
+                }
+            ]
+        }
+    },
+    "editor.wordSeparators": "`~!@#$%^&*()-=+[]{}\\|;:'\",.<>/?，。？！；：“”‘’《》【】、…·",
+    "editor.wordWrapColumn": 140,
+    "editor.wrappingIndent": "none",
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+    "extensions.experimental.affinity": {
+        "eamodio.gitlens": 2,
+        "jeff-hykin.better-cpp-syntax": 1,
+        "ms-vscode.cpptools": 1
+    },
+    "files.associations": {
+        "*.json5": "jsonc"
+    },
+    "files.autoGuessEncoding": true,
+    "files.hotExit": "onExitAndWindowClose",
+    "files.watcherExclude": {},
+    "git.mergeEditor": false,
+    "git.openRepositoryInParentFolders": "never",
+    "git.smartCommitChanges": "tracked",
+    "github.copilot.advanced": {},
+    "github.copilot.editor.enableAutoCompletions": true,
+    "github.copilot.enable": {
+        "*": true,
+        "bat": true,
+        "c": true,
+        "cpp": true,
+        "csharp": true,
+        "markdown": true,
+        "plaintext": false,
+        "powershell": true,
+        "python": true,
+        "scminput": false,
+        "xml": true,
+        "yaml": false
+    },
+    "gitlens.views.commits.avatars": false,
+    "powershell.codeFormatting.trimWhitespaceAroundPipe": true,
+    "powershell.codeFormatting.useCorrectCasing": true,
+    "powershell.integratedConsole.showOnStartup": false,
+    "powershell.integratedConsole.suppressStartupBanner": true,
+    "powershell.pester.useLegacyCodeLens": false,
+    "powershell.powerShellDefaultVersion": "PowerShell Core (x64)",
+    "powershell.promptToUpdatePowerShell": false,
+    "powershell.startAsLoginShell.linux": true,
+    "remote.SSH.path": "C:\\opt\\scoop\\shims\\ssh.exe",
+    "remote.SSH.remotePlatform": {
+        "bwh1": "linux",
+        "jh1": "linux",
+        "jh1.xpcas.cc": "linux",
+        "vtr3": "linux",
+        "vtr3.xpcas.cc": "linux"
+    },
+    "remote.SSH.remoteServerListenOnSocket": true,
+    "search.exclude": {},
+    "search.showLineNumbers": true,
+    "search.smartCase": true,
+    "security.allowedUNCHosts": [
+        "reddog",
+        "xpu-2.local",
+        "xpu-3-1.local",
+        "xpu-4.local"
+    ],
+    "security.workspace.trust.untrustedFiles": "open",
+    "terminal.external.windowsExec": "wt.exe",
+    "terminal.integrated.defaultProfile.windows": "PowerShell",
+    "terminal.integrated.fontFamily": "Consolas",
+    "terminal.integrated.profiles.windows": {
+        "Command Prompt": {
+            "icon": "terminal-cmd",
+            "path": "C:\\WINDOWS\\System32\\cmd.exe"
+        },
+        "PowerShell": {
+            "icon": "terminal-powershell",
+            "source": "PowerShell"
+        }
+    },
+    "window.autoDetectHighContrast": false,
+    "window.commandCenter": false,
+    "window.dialogStyle": "custom",
+    "window.zoomLevel": 1,
+    "workbench.colorCustomizations": {
+        "[Default Light+]": {
+            "activityBar.activeBackground": "#eee",
+            "activityBar.background": "#ccc",
+            "activityBar.border": "#aaa",
+            "activityBar.foreground": "#111",
+            "activityBarBadge.background": "#555",
+            "activityBarBadge.foreground": "#fff",
+            "list.inactiveFocusBackground": "#ddd",
+            "sideBar.border": "#ddd",
+            "terminal.background": "#222",
+            "terminal.foreground": "#ddd"
+        }
+    },
+    "workbench.colorTheme": "Default Dark+",
+    "workbench.editor.closeEmptyGroups": false,
+    "workbench.editorAssociations": {
+        "*.bin": "default",
+        "*.ipynb": "jupyter.notebook.ipynb"
+    },
+    "scm.showHistoryGraph": false
+}

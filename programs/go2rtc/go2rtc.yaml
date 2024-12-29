@@ -1,0 +1,12 @@
+
+streams:
+  obs_rdp: {}
+
+api:
+  listen: "127.0.0.1:1984"  # HTTP, default ":1984" ("" - disabled)
+
+rtsp:
+  listen: ":8554"  # default - :8554
+
+# rtmp:
+#   listen: ":1935"  # default - disabled

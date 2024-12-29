@@ -1,0 +1,137 @@
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number: 3 (0x3)
+    Signature Algorithm: sha256WithRSAEncryption
+        Issuer: C=CN, ST=NULL, L=NULL, O=MoeGlobal, OU=MoeLab, CN=Moe OpenVPN Network/name=Moe OpenVPN Network/emailAddress=moeglobal2@gmail.com
+        Validity
+            Not Before: Jun 13 13:21:58 2019 GMT
+            Not After : Jun 10 13:21:58 2029 GMT
+        Subject: C=CN, ST=NULL, L=NULL, O=MoeGlobal, OU=MoeLab, CN=Anonymous/name=Anonymous/emailAddress=anonymous@example.com
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+                Public-Key: (4096 bit)
+                Modulus:
+                    00:b0:64:ec:a8:50:6b:f2:b5:7b:1a:d0:95:14:b2:
+                    ad:cc:60:0a:46:40:d3:ea:fb:d1:b2:1d:63:85:95:
+                    6f:e2:16:ac:b4:00:29:47:6b:d6:c3:cd:2a:ee:07:
+                    7f:03:db:44:60:0c:b2:e8:68:5b:cd:dd:14:6e:26:
+                    1e:52:4b:9a:9c:ca:63:c4:9b:54:8d:30:36:f8:95:
+                    e0:b3:6c:ef:62:20:b3:b7:9a:1f:56:b0:21:b1:42:
+                    5f:81:36:31:33:38:fb:ab:19:42:10:0f:ca:a5:1b:
+                    eb:e3:07:0f:36:b2:ce:30:4e:a8:28:5c:51:60:4a:
+                    df:a4:73:27:13:a7:6c:33:f9:54:40:06:be:fa:37:
+                    d8:87:e9:42:e5:f5:07:ed:9f:b1:5c:14:75:db:6c:
+                    99:3d:41:29:6a:04:5a:7b:43:78:c6:50:19:9e:0c:
+                    70:02:53:a0:e2:49:2c:72:9f:9a:8f:ec:06:67:56:
+                    24:5b:14:ed:9d:57:45:cb:ff:18:6a:4b:db:ad:98:
+                    7a:33:10:89:c9:5c:a8:20:57:b1:60:06:bc:ae:0b:
+                    55:b8:6e:9d:57:b6:f4:d9:55:76:d0:02:c5:44:30:
+                    6c:f3:47:69:2c:09:3e:2c:b4:cf:1b:f6:3d:58:01:
+                    e3:7d:ff:c0:97:f4:a5:b2:05:1d:34:7e:a3:fc:f3:
+                    72:2b:36:2c:81:02:af:67:78:64:c3:fc:a0:92:5f:
+                    dd:c9:ce:9c:b2:fe:f4:0f:2a:56:0a:77:39:57:2d:
+                    21:d5:4f:3b:ae:c5:51:69:7b:d0:b2:95:c8:9e:65:
+                    d1:ef:83:c4:93:08:de:56:ec:6f:77:18:34:08:9c:
+                    1a:fa:06:ed:17:0b:0d:30:ea:52:e4:b7:1c:bf:e0:
+                    d9:67:8e:83:73:c6:46:c3:36:00:84:8e:db:44:7f:
+                    e0:36:d5:98:a5:e3:38:cf:cb:bd:25:f0:5f:12:9f:
+                    0e:78:50:ad:aa:51:43:db:2e:23:3f:72:88:52:eb:
+                    ca:02:ac:04:e7:63:40:e6:cb:47:c5:2c:66:ce:ae:
+                    89:71:9a:b0:d3:a1:8b:63:c6:be:e4:3f:58:d0:25:
+                    cf:22:d1:ea:15:ba:55:95:41:c4:b6:ec:80:18:e2:
+                    77:7e:6d:bb:36:a4:62:67:09:0c:0c:1b:19:9c:02:
+                    2b:fe:4e:67:f1:a2:1e:01:aa:82:d3:dc:36:f0:b3:
+                    09:bf:5d:80:91:b7:bd:51:6f:43:a4:a5:ba:b0:e4:
+                    3e:26:24:b0:7e:0c:c3:69:93:41:f9:7f:3b:02:6d:
+                    24:39:b8:90:df:01:9b:2f:aa:9a:f1:6b:92:45:a7:
+                    a5:b4:d4:e8:c0:1c:8c:c5:7a:c1:4c:c8:92:ac:01:
+                    1c:46:e7
+                Exponent: 65537 (0x10001)
+        X509v3 extensions:
+            X509v3 Basic Constraints: 
+                CA:FALSE
+            Netscape Comment: 
+                Easy-RSA Generated Certificate
+            X509v3 Subject Key Identifier: 
+                B2:48:0C:C3:15:00:CD:37:F8:73:3A:66:86:FA:87:62:87:7B:EC:E5
+            X509v3 Authority Key Identifier: 
+                keyid:86:E3:CD:13:7E:60:79:87:D5:69:AE:3C:00:10:57:C7:3C:60:BF:C2
+                DirName:/C=CN/ST=NULL/L=NULL/O=MoeGlobal/OU=MoeLab/CN=Moe OpenVPN Network/name=Moe OpenVPN Network/emailAddress=moeglobal2@gmail.com
+                serial:BE:53:E6:5A:25:78:94:40
+
+            X509v3 Extended Key Usage: 
+                TLS Web Client Authentication
+            X509v3 Key Usage: 
+                Digital Signature
+    Signature Algorithm: sha256WithRSAEncryption
+         c3:b4:26:df:3c:ec:5e:c2:59:a3:11:7c:10:fa:29:81:bc:91:
+         4a:90:98:e3:f6:04:0d:41:2f:51:36:91:8b:b7:65:d7:41:05:
+         be:95:0f:d5:3a:59:2c:a9:1f:e0:35:e9:44:ab:4d:dc:3b:69:
+         ec:e5:bd:63:e3:cc:30:84:fc:3b:d3:ed:1f:65:56:e8:9b:64:
+         89:40:eb:13:75:5b:c2:92:b3:e4:41:74:2b:22:aa:86:36:26:
+         57:e9:fa:6c:ef:d9:77:c6:62:61:df:64:32:25:df:00:67:d3:
+         54:61:52:20:b7:de:31:7c:db:4f:56:f4:9c:3a:3a:89:d2:be:
+         76:bd:41:3d:28:a9:75:9f:4f:a0:28:08:a9:57:3c:57:73:be:
+         15:25:7c:83:70:45:ac:50:05:12:c4:f9:03:2c:48:bd:f6:b4:
+         36:9f:0c:ac:c1:61:44:7a:60:43:d8:7d:45:d5:53:df:c3:8e:
+         35:63:f9:ff:1d:49:d2:aa:a1:0e:c1:e1:e5:36:fa:45:23:97:
+         77:a8:b3:2e:fa:3a:e9:a5:b2:7e:ef:64:3c:de:e0:5a:cd:73:
+         23:9f:37:7a:f6:b6:13:67:13:98:8c:d5:bc:53:62:9b:f5:c6:
+         64:0d:c9:6f:21:19:3d:3f:cf:75:38:c9:dd:a2:d1:16:e6:3b:
+         31:89:b0:62:92:dd:e2:d2:6e:de:f0:77:5d:fa:6c:59:54:b8:
+         43:5f:37:d7:2b:cf:b9:fa:59:1f:88:a3:be:83:50:5d:34:5b:
+         19:2b:86:2a:82:62:7c:94:73:b5:4a:14:27:3e:51:5e:4a:35:
+         1c:3f:55:51:f5:46:15:26:89:40:11:26:de:4c:0c:19:1d:8a:
+         bd:7b:59:c9:d1:9e:a1:c9:04:be:57:ee:1b:ef:b4:33:6b:28:
+         ee:86:6d:17:6c:6e:0d:79:50:a0:2a:7b:d5:37:0d:ed:03:c8:
+         aa:86:b6:e8:a8:23:ec:6c:b6:59:0e:8b:42:17:46:84:91:07:
+         bb:89:af:94:18:b4:d4:92:27:42:44:f0:6b:15:99:00:4e:bf:
+         6a:ba:8f:77:a7:7c:74:59:88:ce:f7:51:34:02:94:97:d4:fe:
+         c4:b6:be:41:72:33:5f:25:c0:29:71:04:54:4c:7d:3a:37:30:
+         97:cc:51:d1:28:22:58:fe:8b:33:9a:77:ae:89:8c:b6:bf:aa:
+         1c:a1:78:fd:9f:f3:32:54:63:c0:7d:73:9b:28:04:90:80:8b:
+         ed:00:74:da:bd:b7:e4:8a:4e:39:69:f5:8e:8f:d2:57:e7:42:
+         0e:de:8d:d9:19:b0:de:d2:f5:2d:a2:2e:db:fe:8d:6f:af:40:
+         56:f0:e1:5a:ae:c2:10:62
+-----BEGIN CERTIFICATE-----
+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
+Dt6N2Rmw3tL1LaIu2/6Nb69AVvDhWq7CEGI=
+-----END CERTIFICATE-----

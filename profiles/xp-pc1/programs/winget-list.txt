@@ -1,0 +1,28 @@
+Name                                             Id                              Version          Available      Source
+-----------------------------------------------------------------------------------------------------------------------
+AutoHotkey 1.1.33.10                             Lexikos.AutoHotkey              1.1.33.10        1.1.36.01      winget
+DataGrip 2021.3.4                                JetBrains.DataGrip              2021.3.4         2022.3.2       winget
+IntelliJ IDEA 2021.2.3                           JetBrains.IntelliJIDEA.Ultimate 2021.2.3         2022.3.2       winget
+JetBrains Rider 2022.2.3                         JetBrains.Rider                 2022.2.3         2022.3.2       winget
+Postman x86_64 10.6.0                            Postman.Postman                 10.6.0           10.10.9        winget
+PyCharm 2022.1.3                                 JetBrains.PyCharm.Professional  2022.1.3         2022.3.2       winget
+RubyMine 2022.2.3                                JetBrains.RubyMine              2022.2.3         2022.3.2       winget
+腾讯会议                                         Tencent.TencentMeeting          3.13.6.465       3.14.10.401    winget
+LAV Filters 0.76.1                               Nevcairiel.LAVFilters           0.76.1           0.77.1         winget
+qBittorrent                                      qBittorrent.qBittorrent         4.5.0            4.5.1          winget
+Microsoft Visual C++ 2013 Redistributable (x64)… Microsoft.VCRedist.2013.x64     12.0.30501.0     12.0.40664.0   winget
+Microsoft .NET SDK 5.0.214 (x64)                 Microsoft.DotNet.SDK.5          5.0.214          5.0.408        winget
+Python 3.10.4 (64-bit)                           Python.Python.3.10              3.10.4           3.10.9         winget
+JetBrains ETW Host Service (x64)                 JetBrains.ReSharper             > 2022.2.2       2022.3.1       winget
+Windows Software Development Kit - Windows 10.0… Microsoft.WindowsSDK            < 10.0.22000.832 10.0.22621.2   winget
+WinFsp 2022+ARM64                                WinFsp.WinFsp                   1.11.22176       1.12           winget
+VNC Viewer 6.22.315                              RealVNC.VNCViewer               6.22.315.46706   6.22.826.47988 winget
+OSFMount                                         PassmarkSoftware.OSFMount       Unknown          3.1.1001.0     winget
+Microsoft Build of OpenJDK with Hotspot 11.0.16… Microsoft.OpenJDK.11            11.0.16.101      11.0.18.10     winget
+OpenVPN 2.5.6-I601 amd64                         OpenVPNTechnologies.OpenVPN     2.5.029          2.6.010        winget
+MSYS2 64bit                                      MSYS2.MSYS2                     20210228         20230127       winget
+MSYS2 64bit                                      MSYS2.MSYS2                     20220319         20230127       winget
+Microsoft .NET Core Runtime - 2.1.30 (x64)       Microsoft.DotNet.Runtime.3_1    < 3.1.25         3.1.32         winget
+Microsoft .NET SDK 6.0.203 (x64)                 Microsoft.DotNet.SDK.6          6.0.203          6.0.406        winget
+Microsoft Visual C++ 2013 Redistributable (x86)… Microsoft.VCRedist.2013.x86     12.0.30501.0     12.0.40664.0   winget
+25 upgrades available.
