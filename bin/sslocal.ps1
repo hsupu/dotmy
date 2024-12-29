@@ -32,6 +32,7 @@ function CopySslocal {
         throw "$orig --version failed with exit code $LASTEXITCODE"
     }
 
+    $exeVer = $null
     if (Test-Path -LiteralPath $exe) {
         $exeVer = (& $exe --version).Trim()
         if (0 -ne $LASTEXITCODE) {
