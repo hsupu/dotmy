@@ -3,14 +3,6 @@
     touch ~/.hushlogin
 
 201121
-    firewall rule
-        New-NetFirewallRule -DisplayName "WSL" -Direction Inbound -InterfaceAlias "vEthernet (WSL)" -Action Allow
-
-    vim /etc/apt/apt.conf/d/12proxy
-        Acquire::http::proxy "socks5h://127.0.0.1:5000";
-        Acquire::https::proxy "socks5h://127.0.0.1:5000";Acquire::AllowInsecureRepositories "true";
-        Acquire::AllowDowngradeToInsecureRepositories "true";
-
     apt install -y python3 python-as-python3
     vim ~/.pip/pip.conf
         [global]

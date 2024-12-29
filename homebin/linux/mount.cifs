@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+TARGET=//172.16.68.250/Download
+MOUNTPOINT=/mnt/homelab
+
+USER=xp
+PASS=HelloWorld.
+WORKGROUP=
+
+sudo mount -t cifs -o username="$USER",workgroup="$WORKGROUP",password="$PASS" $TARGET $MOUNTPOINT
