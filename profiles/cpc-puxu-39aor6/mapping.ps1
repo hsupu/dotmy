@@ -1,7 +1,4 @@
 
-$global:MyCacheRoot = "C:\cache"
-$global:MyVolatileRoot = "C:\volatile"
-
 $global:CacheRootRedirectTo = "E:\cache"
 $global:VolatileRootRedirectTo = "E:\volatile"
 
@@ -11,18 +8,36 @@ $global:CacheDrive = [IO.Path]::GetPathRoot($CacheRootRedirectTo)
 $mapping = @(
 
     @('C:/AnyBuildCache', '$($CacheDrive)/AnyBuildCache/'),
-    @('C:/packagecache', '$($CacheDrive)/packagecache/'),
     @('C:/CloudBuildCache', '$($CacheDrive)/CloudBuildCache/'),
+    @('C:/packagecache', '$($CacheDrive)/packagecache/'),
+
+    # mklink /j
+    @('C:/.tools/.nuget', '$($CacheDrive)/cache/.nuget/'),
+    @('C:/.tools/CxCache', '$($CacheDrive)/CxCache/'),
+    @('C:/.tools/QuickBuild/_cache', '$($CacheDrive)/cache/QuickBuild_cache/'),
 
     @('$($env:APPDATA)/Code/User/settings.json', 'programs/vscode/settings.json'),
     @('$($env:LOCALAPPDATA)/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState/settings.json', 'programs/WindowsTerminal/settings.json'),
+
+    @('C:/ct', '$($HddDrive)/ct/'),
+    @('C:/drops', '$($HddDrive)/drops/'),
 
     @()
 )
 
 $userEnv = @{
-    'NugetMachineInstallRoot' = 'C:\corextcache';
-    'PACKAGE_CACHE_DIRECTORY' = 'C:\packagecache';
+}
+
+$machineEnv = @{
+    'NUGET_CREDENTIALPROVIDER_FORCE_CANSHOWDIALOG_TO' = 'True';
+    'NUGET_HTTP_CACHE_PATH' = 'E:\.nuget\v3-cache';
+    'NUGET_NETCORE_PLUGIN_PATHS' = 'E:\.nuget\plugins\netcore\CredentialProvider.Microsoft\CredentialProvider.Microsoft.dll';
+    'NUGET_NETFX_PLUGIN_PATHS' = 'E:\.nuget\plugins\netfx\CredentialProvider.Microsoft\CredentialProvider.Microsoft.exe';
+    'NUGET_PACKAGES' = 'E:\.nuget\packages';
+    'NUGET_PLUGIN_PATHS' = 'E:\.nuget\plugins\netfx\CredentialProvider.Microsoft\CredentialProvider.Microsoft.exe';
+    'NUGET_PLUGINS_CACHE_PATH' = 'E:\.nuget\plugins-cache';
+    'NugetMachineInstallRoot' = 'E:\CxCache';
+    'PACKAGE_CACHE_DIRECTORY' = 'E:\packagecache';
 }
 
 $envpathUserSnapshot = @(

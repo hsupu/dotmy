@@ -1,16 +1,51 @@
 param(
     [Parameter(Mandatory)]
     [Alias('c')]
-    [string]$Path
+    [string]$Path,
+
+    [switch]$NoCopy
 )
 
 $ErrorActionPreference = 'Stop'
 trap { throw $_ }
 
-$exe = $(which sslocal.exe)
+$exe = "C:\opt\sslocal.exe"
 $ini = (Resolve-Path -LiteralPath $Path).ToString()
-# Write-Host $exe
+# Write-Host $orig
 # Write-Host $ini
+
+function CopySslocal {
+    # $orig = (& which sslocal.exe)
+    $orig = Join-Path (& scoop prefix shadowsocks-rust) "sslocal.exe"
+
+    if (Test-Path -LiteralPath $exe) {
+        if (-not (Test-Path -LiteralPath $orig)) {
+            return
+        }
+        if (-not $script:NoCopy) {
+            return
+        }
+    }
+
+    $origVer = (& $orig --version).Trim()
+    if (0 -ne $LASTEXITCODE) {
+        throw "$orig --version failed with exit code $LASTEXITCODE"
+    }
+
+    if (Test-Path -LiteralPath $exe) {
+        $exeVer = (& $exe --version).Trim()
+        if (0 -ne $LASTEXITCODE) {
+            throw "$exe --version failed with exit code $LASTEXITCODE"
+        }
+    }
+
+    if ($origVer -eq $exeVer) {
+        return
+    }
+
+    Copy-Item -ErrorAction Stop $orig $exe -Force
+}
+CopySslocal
 
 & conhost.exe $exe -c $ini @args
 return

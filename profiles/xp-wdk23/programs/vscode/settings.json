@@ -1,6 +1,3 @@
-// 230607
-// 230115
-// 211120
 {
     "[cpp]": {
         "editor.defaultFormatter": "ms-vscode.cpptools",
@@ -20,7 +17,7 @@
         "editor.formatOnType": false
     },
     "[xml]": {
-        "editor.defaultFormatter": "redhat.vscode-xml",
+        "editor.defaultFormatter": "DotJoshJohnson.xml",
         "editor.tabSize": 2
     },
     "[yaml]": {
@@ -81,7 +78,7 @@
     },
     "editor.unicodeHighlight.includeComments": false,
     "editor.unicodeHighlight.includeStrings": false,
-    "editor.wordSeparators": "`~!@#$%^&*()-=+[]{}\\|:;'\",.<>/? ·！￥…（）【】、：；‘’“”，。《》？　｀～＠＃＄％＾＆＊－＝＋［］｛｝｜＇＂．＜＞／— │",
+    "editor.wordSeparators": "`~!@#$%^&*()-=+[{]}\\|;:'\",.<>/?，。？！：；、‘’“”（）《》【】｛｝…·",
     "editor.wordWrapColumn": 140,
     "editor.wrappingIndent": "none",
     "explorer.confirmDelete": false,
@@ -178,7 +175,7 @@
     "terminal.integrated.cursorStyle": "line",
     "terminal.integrated.defaultProfile.windows": "PowerShell",
     "terminal.integrated.enableVisualBell": true,
-    "terminal.integrated.fontFamily": "'Iosevka PU-5', 'Sarasa Mono SC'",
+    "terminal.integrated.fontFamily": "'Iosevka PU-5', 'Sarasa Term SC'",
     "terminal.integrated.profiles.windows": {
         "Command Prompt": {
             "icon": "terminal-cmd",
