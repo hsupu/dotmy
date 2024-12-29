@@ -4,6 +4,15 @@
     "actions": 
     [
         {
+            "command": 
+            {
+                "action": "switchToTab",
+                "index": 2
+            },
+            "id": "User.switchToTab.87C324ED",
+            "keys": "ctrl+3"
+        },
+        {
             "command": "closePane",
             "id": "User.closePane",
             "keys": "ctrl+shift+w"
@@ -12,10 +21,10 @@
             "command": 
             {
                 "action": "switchToTab",
-                "index": 2
+                "index": 0
             },
-            "id": "User.switchToTab.87C324ED",
-            "keys": "ctrl+3"
+            "id": "User.switchToTab.D3F0B923",
+            "keys": "ctrl+1"
         },
         {
             "command": 
@@ -216,15 +225,6 @@
             "keys": "ctrl+0"
         },
         {
-            "command": 
-            {
-                "action": "switchToTab",
-                "index": 0
-            },
-            "id": "User.switchToTab.D3F0B923",
-            "keys": "ctrl+1"
-        },
-        {
             "command": "openNewTabDropdown",
             "id": "User.openNewTabDropdown",
             "keys": "ctrl+shift+t"
@@ -256,19 +256,19 @@
             "command": 
             {
                 "action": "switchToTab",
-                "index": 6
+                "index": 5
             },
-            "id": "User.switchToTab.787314EB",
-            "keys": "ctrl+7"
+            "id": "User.switchToTab.75247157",
+            "keys": "ctrl+6"
         },
         {
             "command": 
             {
                 "action": "switchToTab",
-                "index": 5
+                "index": 6
             },
-            "id": "User.switchToTab.75247157",
-            "keys": "ctrl+6"
+            "id": "User.switchToTab.787314EB",
+            "keys": "ctrl+7"
         },
         {
             "command": 
@@ -285,8 +285,10 @@
     "confirmCloseAllTabs": true,
     "copyFormatting": "none",
     "copyOnSelect": false,
+    "defaultInputScope": "alphanumericHalfWidth",
     "defaultProfile": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
     "disableAnimations": true,
+    "initialRows": 40,
     "language": "en-US",
     "launchMode": "default",
     "newTabMenu": 
@@ -404,5 +406,6 @@
     "theme": "dark",
     "themes": [],
     "trimBlockSelection": true,
-    "useAcrylicInTabRow": true
+    "useAcrylicInTabRow": true,
+    "wordDelimiters": "`~!@#$%^&*()-=+[]{}\\\\|:;'\\\",.<>/? \u00b7\uff01\uffe5\u2026\uff08\uff09\u3010\u3011\u3001\uff1a\uff1b\u2018\u2019\u201c\u201d\uff0c\u3002\u300a\u300b\uff1f\u3000\uff40\uff5e\uff20\uff03\uff04\uff05\uff3e\uff06\uff0a\uff0d\uff1d\uff0b\uff3b\uff3d\uff5b\uff5d\uff5c\uff07\uff02\uff0e\uff1c\uff1e\uff0f\u2014 \u2502"
 }
