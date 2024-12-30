@@ -1,28 +1,43 @@
 
 function GetSetRegValue {
     param(
-        [string]$key,
-        [string]$name,
-        [object]$value,
-        [string]$type,
-        [switch]$expectExisting
+        [string]$Key,
+        [string]$Name,
+        [object]$Value,
+        [string]$ValueType,
+        [switch]$ExpectExisting
     )
-    $isKeyExisted = Test-Path -LiteralPath $key -PathType Container
+    $isKeyExisted = Test-Path -LiteralPath $Key -PathType Container
     if (-not $isKeyExisted) {
-        New-Item -ErrorAction Stop -Path $key -ItemType Directory | Out-Null
+        New-Item -ErrorAction Stop -Path $Key -ItemType Directory | Out-Null
     }
 
-    $existingValue = Get-ItemPropertyValue -ErrorAction SilentlyContinue -Path $key -Name $name
-    $isValueExisted = $null -ne $existingValue
-    if (-not $isValueExisted -and $expectExisting) {
-        throw "Unexpected not found: '$key' '$name'"
+    $existingValue = $null
+    try {
+        $existingValue = Get-ItemPropertyValue -ErrorAction SilentlyContinue -Path $Key -Name $Name
+        $isValueExisted = $null -ne $existingValue
+    }
+    catch {
+        $isValueExisted = $false
+    }
+
+    if (-not $isValueExisted -and $ExpectExisting) {
+        throw "Unexpected not found: '$Key' '$Name'"
     }
     elseif ($isValueExisted) {
-        # TODO check type
-        Set-ItemProperty -ErrorAction Stop -Path $key -Name $name -Value $value
+        $isValueUnchanged = $Value -eq $existingValue
+        if ($isValueUnchanged) {
+            Write-Host "RegValue unchanged: '$Key' '$Name'"
+        }
+        else {
+            # TODO check type
+            Set-ItemProperty -ErrorAction Stop -Path $Key -Name $Name -Value $Value
+            Write-Host "RegValue updated: '$Key' '$Name'"
+        }
     }
     else {
-        New-ItemProperty -ErrorAction Stop -Path $key -Name $name -Value $value -PropertyType $type
+        New-ItemProperty -ErrorAction Stop -Path $Key -Name $Name -Value $Value -PropertyType $ValueType
+        Write-Host "RegValue created: '$Key' '$Name'"
     }
 }
 

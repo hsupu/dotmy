@@ -1,12 +1,20 @@
+# 使用如下命令检查当前配置
+# npm config list
+
 msvs_version=2022
 
-# 优先使用本地 workspace 包
-link-workspace-packages=true
+# 使用来自 workspace 的本地包
+link-workspace-packages = true
+
+# 即使 registry 中有更高的版本，也依然优先使用 workspace
+prefer-workspace-packages = true
 
 # 创建兼容 npm 格式的 flatten 软链接
-# shamefully-hoist=true
+# shamefully-hoist = true
 
 # registry=https://registry.npmjs.org/
 registry=http://mirrors.cloud.tencent.com/npm/
-# registry=https://registry.npmmirror.com/
+registry=https://registry.npmmirror.com/
 # registry=https://mirrors.huaweicloud.com/repository/npm/
+
+strict-ssl = false

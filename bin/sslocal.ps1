@@ -3,7 +3,8 @@ param(
     [Alias('c')]
     [string]$Path,
 
-    [switch]$NoCopy
+    [switch]$NoCopy,
+    [switch]$NoNssm
 )
 
 $ErrorActionPreference = 'Stop'

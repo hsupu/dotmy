@@ -4,6 +4,9 @@ param(
     [switch]$DryRun
 )
 
+$ErrorActionPreference = "Stop"
+trap { throw $_ }
+
 if ('' -eq [string]$ZipFile) {
     $ZipFile = Get-Item "Sarasa-TTF-*.7z" | Select-Object -First 1
 }
@@ -44,8 +47,13 @@ foreach ($variant in $variants) {
     }
 }
 
+$files = [System.Linq.Enumerable]::Distinct($files)
+
 if ($DryRun) {
     return $files
 }
 
 & 7z x $ZipFile -o"$OutDir" @files
+if (0 -ne $LASTEXITCODE) {
+    throw "7z exited with code $LASTEXITCODE"
+}

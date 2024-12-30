@@ -1,47 +1,66 @@
+# 241230 for 32.3.0
 # 241109 for 32.0.1
 #
 ### See https://github.com/be5invis/Iosevka/blob/master/doc/custom-build.md for comprehensive
 ### documentation of the options in this file
 
-[buildPlans.IosevkaCustom]      # <IosevkaCustom> is your plan name
-family = "Iosevka PU-5"         # Font family name
+# <IosevkaCustom> is your plan name
+[buildPlans.IosevkaPu]
+family = "Iosevka PU"           # Font family name
+spacing = "normal"              # Optional; Values: `normal`, `term`, `fontconfig-mono`, or `fixed`
+serifs = "sans"                 # Optional; Values: `sans` or `slab`
+snapshotFamily = "Iosevka PU"
+noCvSs = false
+exportGlyphNames = false        # Set this to true for ligature support in Kitty (increased file size)
+
+[buildPlans.IosevkaPuTerm]
+family = "Iosevka PU Term"      # Font family name
 spacing = "term"                # Optional; Values: `normal`, `term`, `fontconfig-mono`, or `fixed`
 serifs = "sans"                 # Optional; Values: `sans` or `slab`
+snapshotFamily = "Iosevka PU"
+exportGlyphNames = false        # Set this to true for ligature support in Kitty (increased file size)
+
+[buildPlans.IosevkaPuFixed]
+family = "Iosevka PU Fixed"     # Font family name
+spacing = "fixed"               # Optional; Values: `normal`, `term`, `fontconfig-mono`, or `fixed`
+serifs = "sans"                 # Optional; Values: `sans` or `slab`
+noLigation = true
+snapshotFamily = "Iosevka PU"
 exportGlyphNames = false        # Set this to true for ligature support in Kitty (increased file size)
 
 ###################################################################################################
 # Configure variants
 
 # Optional; Whether to inherit a `ss##` variant
-[buildPlans.IosevkaCustom.variants]
+[buildPlans.IosevkaPu.variants]
 # inherits = "ss01"
 
 # Optional; Configure single character's variant
-[buildPlans.IosevkaCustom.variants.design]
+[buildPlans.IosevkaPu.variants.design]
+one = "base"
+eight = "two-circles"
 capital-j = "serifless"
 capital-q = "crossing"
-capital-s = "unilateral-inward-serifed"
+capital-s = "serifless"
 capital-w = "straight-flat-top-serifless"
-# capital-w = "straight-vertical-sides-serifless"
 a = "single-storey-serifless"
-# f = "flat-hook"
 f = "flat-hook-serifless-crossbar-at-x-height"
 g = "single-storey-flat-hook-serifless"
+i = "zshaped"
 j = "flat-hook-serifed"
-k = "straight-serifless"
+k = "symmetric-touching-serifless"
+l = "zshaped"
 t = "flat-hook-short-neck2"
 w = "straight-flat-top-serifless"
 y = "straight-turn-serifless"
-# z = "motion-serifed"
-z = "straight-bottom-serifed"
-cyrl-capital-u = "cursive-flat-hook-serifless"
-one = "base"
-eight = "two-circles"
-underscore = "low"
-pilcrow = "low"
-brace = "straight"
-percent = "rings-continuous-slash"
-lig-ltgteq = "slanted"
+brace = "straight" # {}
+percent = "rings-continuous-slash" # %
+
+[buildPlans.IosevkaPuTerm.variants]
+inherits = "buildPlans.IosevkaPu"
+
+[buildPlans.IosevkaPuFixed.variants]
+inherits = "buildPlans.IosevkaPu"
 
 # End variant section
 ###################################################################################################
@@ -49,7 +68,7 @@ lig-ltgteq = "slanted"
 ###################################################################################################
 # Configure ligations
 
-[buildPlans.IosevkaCustom.ligations]
+[buildPlans.IosevkaPuTerm.ligations]
 inherits = "clike"          # Optional; inherits an existing ligation set
 disables = []               # Optional; disable specific ligation groups, overrides inherited ligation set
 enables  = []               # Optional; enable specific ligation groups, overrides inherited ligation set
@@ -67,17 +86,32 @@ enables  = []               # Optional; enable specific ligation groups, overrid
 #             If you decide to use custom weights you have to define all the weights you
 #             plan to use otherwise they will not be built.
 
-# [buildPlans.IosevkaCustom.weights.Light]
-# shape = 300
-# menu  = 300
-# css   = 300
-
-[buildPlans.IosevkaCustom.weights.Regular]
+[buildPlans.IosevkaPu.weights.Regular]
 shape = 400  # Weight for glyph shapes.
 menu  = 400  # Weight for the font's names.
 css   = 400  # Weight for webfont CSS.
 
-[buildPlans.IosevkaCustom.weights.Bold]
+[buildPlans.IosevkaPu.weights.Bold]
+shape = 700
+menu  = 700
+css   = 700
+
+[buildPlans.IosevkaPuTerm.weights.Regular]
+shape = 400
+menu  = 400
+css   = 400
+
+[buildPlans.IosevkaPuTerm.weights.Bold]
+shape = 700
+menu  = 700
+css   = 700
+
+[buildPlans.IosevkaPuFixed.weights.Regular]
+shape = 400
+menu  = 400
+css   = 400
+
+[buildPlans.IosevkaPuFixed.weights.Bold]
 shape = 700
 menu  = 700
 css   = 700
@@ -89,17 +123,17 @@ css   = 700
 # Override default building slope sets
 # When this section is absent, all slopes would be built.
 
-[buildPlans.IosevkaCustom.slopes.Upright]
-angle = 0             # Angle in degrees. Valid range [0, 15]
-shape = "upright"     # Slope grade used for shape selection.  `upright` | `oblique` | `italic`
-menu  = "upright"     # Slope grade used for naming.           `upright` | `oblique` | `italic`
-css   = "normal"      # Slope grade used for webfont CSS.      `normal`  | `oblique` | `italic`
+# [buildPlans.IosevkaPu.slopes.Upright]
+# angle = 0             # Angle in degrees. Valid range [0, 15]
+# shape = "upright"     # Slope grade used for shape selection.  `upright` | `oblique` | `italic`
+# menu  = "upright"     # Slope grade used for naming.           `upright` | `oblique` | `italic`
+# css   = "normal"      # Slope grade used for webfont CSS.      `normal`  | `oblique` | `italic`
 
-[buildPlans.IosevkaCustom.slopes.Italic]
-angle = 9.4
-shape = "italic"
-menu  = "italic"
-css   = "italic"
+# [buildPlans.IosevkaPu.slopes.Italic]
+# angle = 9.4
+# shape = "italic"
+# menu  = "italic"
+# css   = "italic"
 
 # End slope section
 ###################################################################################################
@@ -115,7 +149,17 @@ css   = "italic"
 #             If you decide to use custom widths you have to define all the widths you plan to use,
 #             otherwise they will not be built.
 
-[buildPlans.IosevkaCustom.widths.Normal]
+[buildPlans.IosevkaPu.widths.Normal]
+shape = 500        # Unit Width, measured in 1/1000 em.
+menu  = 5          # Width grade for the font's names.
+css   = "normal"   # "font-stretch' property of webfont CSS.
+
+[buildPlans.IosevkaPuTerm.widths.Normal]
+shape = 500        # Unit Width, measured in 1/1000 em.
+menu  = 5          # Width grade for the font's names.
+css   = "normal"   # "font-stretch' property of webfont CSS.
+
+[buildPlans.IosevkaPuFixed.widths.Normal]
 shape = 500        # Unit Width, measured in 1/1000 em.
 menu  = 5          # Width grade for the font's names.
 css   = "normal"   # "font-stretch' property of webfont CSS.
@@ -128,8 +172,8 @@ css   = "normal"   # "font-stretch' property of webfont CSS.
 # Specify character ranges in the section below to exclude certain characters from the font being
 # built. Remove this section when this feature is not needed.
 
-[buildPlans.IosevkaCustom.excludeChars]
-ranges = [[10003, 10008]]
+# [buildPlans.IosevkaPu.excludeChars]
+# ranges = [[10003, 10008]]
 
 # End character exclusion
 ###################################################################################################
@@ -141,10 +185,10 @@ ranges = [[10003, 10008]]
 # following section to build PUA characters that are generated from the OpenType ligatures.
 # Remove this section when compatibility ligatures are not needed.
 
-[[buildPlans.IosevkaCustom.compatibilityLigatures]]
-unicode = 57600 # 0xE100
-featureTag = 'calt'
-sequence = '<*>'
+# [[buildPlans.IosevkaPuTerm.compatibilityLigatures]]
+# unicode = 57600 # 0xE100
+# featureTag = 'calt'
+# sequence = '<*>'
 
 # End compatibility ligatures section
 ###################################################################################################
@@ -156,3 +200,11 @@ sequence = '<*>'
 
 # End metric override section
 ###################################################################################################
+
+[collectPlans.IosevkaPu]
+release = true
+from = [
+	"IosevkaPu",
+	"IosevkaPuTerm",
+	"IosevkaPuFixed"
+]

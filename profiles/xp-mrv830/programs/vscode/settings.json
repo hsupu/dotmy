@@ -20,7 +20,7 @@
         "sound": "on"
     },
     "diffEditor.ignoreTrimWhitespace": false,
-    "editor.fontFamily": "'Iosevka PU-5', 'Sarasa Mono SC', Cousine, Consolas, 'Courier New', monospace",
+    "editor.fontFamily": "'Iosevka PU', 'Sarasa Mono SC', Cousine, Consolas, 'Courier New', monospace",
     "editor.fontLigatures": false,
     "editor.formatOnPaste": false,
     "editor.formatOnSave": false,
@@ -91,6 +91,7 @@
     "search.quickOpen.includeSymbols": true,
     "search.showLineNumbers": true,
     "search.smartCase": false,
+    "search.useReplacePreview": false,
     "security.allowedUNCHosts": [
         "wsl.localhost",
         "XP-TM17"
@@ -109,6 +110,7 @@
         "sortJSONValuesReverse": false
     },
     "terminal.external.windowsExec": "wt.exe",
+    "terminal.integrated.allowChords": false,
     "terminal.integrated.commandsToSkipShell": [
         "workbench.action.terminal.sendSequence"
     ],
@@ -120,6 +122,7 @@
     "window.autoDetectHighContrast": false,
     "window.commandCenter": false,
     "window.dialogStyle": "custom",
+    "window.zoomLevel": 1,
     "workbench.colorCustomizations": {
         "[Default Light+]": {
             "activityBar.activeBackground": "#eee",
@@ -135,11 +138,10 @@
         }
     },
     "workbench.colorTheme": "Default Dark+",
+    "workbench.commandPalette.experimental.enableNaturalLanguageSearch": false,
     "workbench.editor.closeEmptyGroups": false,
     "workbench.editorAssociations": {
         "*.ipynb": "jupyter-notebook"
     },
-    "workbench.quickOpen.preserveInput": true,
-    "search.useReplacePreview": false,
-    "workbench.commandPalette.experimental.enableNaturalLanguageSearch": false
+    "workbench.quickOpen.preserveInput": true
 }
