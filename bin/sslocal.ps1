@@ -4,7 +4,8 @@ param(
     [string]$Path,
 
     [switch]$NoCopy,
-    [switch]$NoNssm
+    [switch]$NoRun,
+    [switch]$NoConHost
 )
 
 $ErrorActionPreference = 'Stop'
@@ -16,60 +17,46 @@ $ini = (Resolve-Path -LiteralPath $Path).ToString()
 # Write-Host $ini
 
 function CopySslocal {
-    # $orig = (& which sslocal.exe)
+    # $orig = & which sslocal.exe
     $orig = Join-Path (& scoop prefix shadowsocks-rust) "sslocal.exe"
 
     if (Test-Path -LiteralPath $exe) {
         if (-not (Test-Path -LiteralPath $orig)) {
-            return
-        }
-        if (-not $script:NoCopy) {
-            return
+            return # no orig to copy
         }
     }
 
-    $origVer = (& $orig --version).Trim()
+    $origVer = & $orig --version
     if (0 -ne $LASTEXITCODE) {
         throw "$orig --version failed with exit code $LASTEXITCODE"
     }
 
     $exeVer = $null
     if (Test-Path -LiteralPath $exe) {
-        $exeVer = (& $exe --version).Trim()
+        $exeVer = & $exe --version
         if (0 -ne $LASTEXITCODE) {
             throw "$exe --version failed with exit code $LASTEXITCODE"
         }
     }
 
-    if ($origVer -eq $exeVer) {
-        return
+    if ([string]$origVer -eq [string]$exeVer) {
+        return # unchanged
     }
 
     Copy-Item -ErrorAction Stop $orig $exe -Force
 }
-CopySslocal
 
-& conhost.exe $exe -c $ini @args
-return
+if (-not $script:NoCopy) {
+    CopySslocal
+}
 
-# /C - Treat string after /C as command, execute it and then terminates
-# /K - Treat string after /K as command, execute it and then remains
-# /S - Don't treat the only quote(") string specially
-# /A - Make internal commands output ANSI
-# /U - Make internal commands output Unicode
-# /E:ON - Enable command extensions
-# cmd /?
+if ($script:NoRun) {
+    return
+}
 
-& conhost.exe cmd.exe /A /S /K "@" $exe -c $ini @args
-return
-
-# 等价于
-# Start-Process conhost.exe -ArgumentList @(
-#     "cmd.exe",
-#     "/A /E:ON /S /K @ `"$exe`" -c `"$ini`""
-# )
-# return
-
-# 如果用 powershell
-# & conhost.exe powershell.exe -NoExit -Command "& `"$exe`" -c `"$ini`""
-return
+if ($script:NoConHost) {
+    & $exe -c $ini @args
+}
+else {
+    & conhost.exe $exe -c $ini @args
+}

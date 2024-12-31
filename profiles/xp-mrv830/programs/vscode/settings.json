@@ -109,6 +109,7 @@
         "sortJSONValues": false,
         "sortJSONValuesReverse": false
     },
+    "telemetry.telemetryLevel": "error",
     "terminal.external.windowsExec": "wt.exe",
     "terminal.integrated.allowChords": false,
     "terminal.integrated.commandsToSkipShell": [
