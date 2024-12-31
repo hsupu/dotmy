@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+# ip -6 route | grep "proto kernel" | awk '{print $9}'
+ip -6 route list scope link | awk '{ print $7 }'

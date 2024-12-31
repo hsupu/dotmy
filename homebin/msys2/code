@@ -2,8 +2,8 @@
 
 LocalAppData=$(cygpath --unix $LOCALAPPDATA)
 if [[ ! -d "$LocalAppData" ]]; then
-	echo "Failed to get \$LOCALAPPDATA"
-	exit 1
+    echo "Failed to get \$LOCALAPPDATA"
+    exit 1
 fi
 
 "$LocalAppData/Programs/Microsoft VS Code/bin/code" $@

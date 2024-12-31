@@ -2,42 +2,49 @@
 # alias
 #
 [alias]
-	# status
-	#
-	# 当前检出根路径
-	root = rev-parse --show-toplevel
-	# git 数据路径
-	git-dir = rev-parse --git-dir
-	# 当前 commit 的 SHA1
-	sha = rev-parse HEAD
-	# 当前分支名/标签名
-	head = rev-parse --abbrev-ref HEAD
-	# 当前分支名
-	bname = branch --show-current
-	# --heads : limit to "refs/heads", "refs/tags"
-	ref = !git show-ref --heads $(git head)
-	c1 = log -1 HEAD
-	s = status --short --branch
+    # status
+    #
+    # 当前检出根路径
+    root = rev-parse --show-toplevel
+    # git 数据路径
+    git-dir = rev-parse --git-dir
+    # 当前 commit 的 SHA1
+    sha = rev-parse HEAD
+    # 当前分支名/标签名
+    head = rev-parse --abbrev-ref HEAD
+    # 当前分支名
+    bname = branch --show-current
+    # --heads : limit to "refs/heads", "refs/tags"
+    ref = !git show-ref --heads $(git head)
+    c1 = log -1 HEAD
+    s = status --short --branch
+    # 彩色历史记录
+    hist = log --pretty=format:'%C(yellow)[%ad]%C(reset) %C(green)[%h]%C(reset) | %C(cyan)%s %C(bold red){{%an}}%C(reset) %C(blue)%d%C(reset)' --graph --date=format:'%Y-%m-%d %H:%M:%S'
+    # 只克隆主分支
+    clones = clone --single-branch --branch
 #
 # functional
 #
 [core]
-	# 引用路径不再使用八进制，以支持中文显示
-	quotePath = false
+    # 这也是默认值
+    encoding = utf-8
+    # 引用路径不再使用八进制，以支持中文显示
+    quotePath = false
     # 多大的文件被视为 big - 可能进行特别处理，默认 512m
     bigFileThreshold = 8m
     # 哪些空格现象该被高亮，以 "," 隔开
-    whitespace = trailing-space
+    #   trailing-space = blank-at-eol + blank-at-eof
+    whitespace = trailing-space,cr-at-eol
 [diff]
     # 只显示当前目录及子目录的变更
     relative = true
-	# 以特定模式显示移动的行，true = default
-	colorMoved = true
+    # 以特定模式显示移动的行，true = default
+    colorMoved = true
 [fetch]
-	writeCommitGraph = true
+    writeCommitGraph = true
 [gc]
     # 更新 commit-graph
-	writeCommitGraph = true
+    writeCommitGraph = true
 [grep]
     # -n
     lineNumber = true
@@ -46,11 +53,16 @@
 [help]
     # 不仅提示纠错，还询问是否采用
     autoCorrect = prompt
+[i18n]
+    # commit message，这也是默认值
+    commitEncoding = utf-8
+    # 这也是默认值
+    logOutputEncoding = utf-8
 [init]
-	defaultBranch = main
+    defaultBranch = main
 [pull]
     # 采用 merge 而非 rebase
-	rebase = false
+    rebase = false
 [push]
     # 没有追踪远端的分支，push 时自动设置追踪
     autoSetupRemote = true
@@ -59,19 +71,19 @@
     autoSquash = true
 [receive]
     # git-receive-pack 告知 client 其 push options
-	advertisePushOptions = true
+    advertisePushOptions = true
     # git-receive-pack 的 ref 前缀
-	procReceiveRefs = refs/for
+    procReceiveRefs = refs/for
 [safe]
-	# 位于 include.path 时不生效
-	directory = *
+    # 位于 include.path 时不生效
+    directory = *
 #
 # color
 #
 [color "diff"]
-	meta = 11
-	frag = magenta bold
-	commit = yellow bold
-	old = red bold
-	new = green bold
-	whitespace = red reverse
+    meta = 11
+    frag = magenta bold
+    commit = yellow bold
+    old = red bold
+    new = green bold
+    whitespace = red reverse

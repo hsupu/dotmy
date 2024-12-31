@@ -3,9 +3,9 @@
 pushd "/mnt/c" > /dev/null
 
 if [[ $# < 1 ]]; then
-	/mnt/c/Windows/System32/cmd.exe /c "set"
+    /mnt/c/Windows/System32/cmd.exe /c "set"
 else
-	/mnt/c/Windows/System32/cmd.exe /c "echo %$1%"
+    /mnt/c/Windows/System32/cmd.exe /c "echo %$1%"
 fi
 
 popd > /dev/null

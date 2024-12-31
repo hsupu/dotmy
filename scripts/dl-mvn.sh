@@ -11,8 +11,8 @@ ZIP_DIR=apache-maven-$VER
 wget -O $FILE $URL || exit 1
 
 tar -x -f $FILE \
-	-C "$INSTALL_DIR"
-	--one-top-level="$ZIP_DIR" \
-	--strip-components=1 \
-	|| exit 1
+    -C "$INSTALL_DIR"
+    --one-top-level="$ZIP_DIR" \
+    --strip-components=1 \
+    || exit 1
 

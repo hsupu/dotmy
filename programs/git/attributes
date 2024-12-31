@@ -1,97 +1,235 @@
+# 解释参见 win32 分支
 
-# https://help.github.com/articles/dealing-with-line-endings/
+# "text"s
+# =======
 
-# * text=input
+*               text=auto
 
-*.c text=input
-*.cc text=input
-*.cpp text=input
-*.h text=input
-*.hpp text=input
-*.inc text=input
+# code src
+#
 
-*.cs text=input
-*.csproj text=input
-*.noproj text=input
-*.proj text=input
-*.sln text=input
-*.vcxproj text=input
-*.props text=input
-*.targets text=input
+# c
+*.c             text=auto eol=native
+*.cc            text=auto eol=native
+*.cpp           text=auto eol=native
+*.h             text=auto eol=native
+*.hpp           text=auto eol=native
+*.inc           text=auto eol=native
 
-*.rs text=input
+# C#, MSBuild, VS
+*.cs            text=auto eol=native
+*.csproj        text=auto eol=native
+*.noproj        text=auto eol=native
+*.proj          text=auto eol=native
+*.sln           text=auto eol=native
+*.vcxproj       text=auto eol=native
+*.props         text=auto eol=native
+*.targets       text=auto eol=native
 
-*.js text=input
-*.php text=input
-*.pl text=input
-*.ps1 text=input
-*.py text=input
-*.rb text=input
-*.sh text=input
+*.rs            text=auto eol=native
 
-*.css text=input
-*.htm text=input
-*.html text=input
-*.html5 text=input
-*.svg text=input
+# web lang
+*.cjs           text=auto eol=native diff=javascript
+*.css           text=auto eol=native diff=css
+*.ejs           text=auto eol=native diff=javascript
+*.htm           text=auto eol=native diff=html
+*.html          text=auto eol=native diff=html
+*.html5         text=auto eol=native diff=html
+*.js            text=auto eol=native diff=javascript
+*.jsx           text=auto eol=native diff=javascript
+*.less          text=auto eol=native
+*.mjs           text=auto eol=native diff=javascript
+*.sass          text=auto eol=native
+*.scss          text=auto eol=native diff=css
+*.ts            text=auto eol=native diff=typescript
+*.tsx           text=auto eol=native diff=typescript
+*.vue           text=auto eol=native diff=typescript
+*.xhtml         text=auto eol=native diff=html
 
-*.csv text=input
-*.ini text=input
-*.json text=input
-*.json5 text=input
-*.md text=input
-*.properties text=input
-*.toml text=input
-*.txt text=input
-*.xml text=input
-*.yaml text=input
-*.yml text=input
+# script lang
+*.php           text=auto eol=native diff=php
+*.pl            text=auto eol=native diff=perl
+*.py            text=auto eol=native diff=python
+*.rb            text=auto eol=native diff=ruby
 
-*.scm text=input
+# shell lang
+*.bash          text=auto eol=lf
+*.bat           text=auto eol=crlf
+*.cmd           text=auto eol=crlf
+*.ps1           text=auto eol=native
+*.sh            text=auto eol=lf
+*.zsh           text=auto eol=lf
 
-*.sql text=input
+# docs & config
+*.conf          text=auto eol=native
+*.csv           text=auto eol=native
+*.ini           text=auto eol=native
+*.ipynb         text=auto eol=native
+*.json          text=auto eol=native
+*.json5         text=auto eol=native
+*.md            text=auto eol=native
+*.properties    text=auto eol=native
+*.toml          text=auto eol=native
+*.txt           text=auto eol=native
+*.xml           text=auto eol=native
+*.yaml          text=auto eol=native
+*.yml           text=auto eol=native
 
-.htaccess text=input
+*.scm           text=auto eol=native
 
-# "binary" is a macro for "-text -diff"
+*.sql           text=auto eol=native
 
-*.7z binary
-*.gz binary
-*.rar binary
-*.zip binary
+# conventional
+*.*config       text=auto eol=native
+*.*ignore       text=auto eol=native
+*.lock          text=auto eol=native -diff
 
-*.a binary
-*.bin binary
-*.dll binary
-*.exe binary
-*.lib binary
-*.o binary
-*.obj binary
-*.out binary
-*.pyc binary
-*.so binary
+.env            text=auto eol=native
+.env.*          text=auto eol=native
+.gitattributes  text=auto eol=native
+.htaccess       text=auto eol=native
+Containerfile   text=auto eol=native
+Dockerfile      text=auto eol=native
+makefile        text=auto eol=native
+Makefile        text=auto eol=native
 
-*.ape binary
-*.fla binary
-*.flv binary
-*.m4a binary
-*.mov binary
-*.mp3 binary
-*.mp4 binary
-*.swf binary
 
-*.gif binary
-*.ico binary
-*.jpeg binary
-*.jpg binary
-*.png binary
+# "binary"s
+# =========
 
-*.ttf binary
-*.ttc binary
+# obj
+*.a         binary
+*.bin       binary
+*.class     binary
+*.com       binary
+*.dll       binary
+*.exe       binary
+*.lib       binary
+*.o         binary
+*.obj       binary
+*.out       binary
+*.pyc       binary
+*.so        binary
+*.sys       binary
 
-*.pdf binary
-*.doc binary
-*.docx binary
-*.ppt binary
-*.xls binary
-*.xlsx binary
+# zip
+*.7z        binary
+*.bz2       binary
+*.bzip2     binary
+*.cab       binary
+*.deb       binary
+*.dmg       binary
+*.gz        binary
+*.gzip      binary
+*.iso       binary
+*.jar       binary
+*.lzma      binary
+*.nupkg     binary
+*.rar       binary
+*.rpm       binary
+*.tar       binary
+*.tbz       binary
+*.tbz2      binary
+*.tgz       binary
+*.tpz       binary
+*.txz       binary
+*.vhd       binary
+*.vhdx      binary
+*.wim       binary
+*.xz        binary
+*.zip       binary
+
+# ebooks
+*.epub      binary
+*.mobi      binary
+*.azw       binary
+*.azw3      binary
+
+# images
+*.bmp       binary
+*.eps       binary
+*.gif       binary
+*.gifv      binary
+*.ico       binary
+*.jpeg      binary
+*.jpeg2000  binary
+*.jp2       binary
+*.jpg       binary
+*.png       binary
+*.svg       text=auto eol=native
+*.svgz      binary
+*.tif       binary
+*.tiff      binary
+*.wbmp      binary
+*.webp      binary
+
+# audio
+*.aac       binary
+*.ac3       binary
+*.aif       binary
+*.aiff      binary
+*.amr       binary
+*.ape       binary
+*.dff       binary
+*.dsf       binary
+*.dts       binary
+*.fla       binary
+*.flac      binary
+*.flv       binary
+*.m4a       binary
+*.mid       binary
+*.midi      binary
+*.mka       binary
+*.mov       binary
+*.mp3       binary
+*.mp4       binary
+*.ogg       binary
+*.opus      binary
+# Real Audio
+*.ra        binary
+*.wma       binary
+
+# videos
+*.3g2       binary
+*.3gp       binary
+*.3gp2      binary
+*.3gpp      binary
+*.amv       binary
+*.as        binary
+*.asf       binary
+*.asx       binary
+*.avi       binary
+*.cue       text=auto eol=native
+*.f4v       binary
+*.fla       binary
+*.flv       binary
+*.m4v       binary
+*.mkv       binary
+*.mng       binary
+*.mov       binary
+*.mp4       binary
+*.mpeg      binary
+*.mpg       binary
+*.ogv       binary
+*.rm        binary
+*.rmvb      binary
+*.swc       binary
+*.swf       binary
+*.webm      binary
+*.wmv       binary
+
+# fonts
+*.ttf       binary
+*.ttc       binary
+*.otf       binary
+*.woff      binary
+*.woff2     binary
+
+# office files
+*.doc       binary
+*.docx      binary
+*.pdf       binary
+*.ppt       binary
+*.pptx      binary
+*.xls       binary
+*.xlsx      binary

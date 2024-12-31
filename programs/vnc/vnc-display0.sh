@@ -6,5 +6,5 @@ while : ; do
 done
 
 x0tigervncserver -display :0 \
-	-SecurityTypes none \
-	-AlwaysShared
+    -SecurityTypes none \
+    -AlwaysShared

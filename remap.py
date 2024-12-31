@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: UTF-8 -*-
+import logging
 import os
 import re
 import shutil
@@ -7,6 +8,9 @@ import sys
 
 from abc import ABC, ABCMeta, abstractmethod
 
+
+logging.basicConfig(level=logging.DEBUG)
+_logger = logging.getLogger(__name__)
 
 gvars = {}
 
@@ -22,13 +26,14 @@ try:
     gvars.update(dotenv.dotenv_values(".env"))
 # else:
 except ModuleNotFoundError:
-    print("module 'dotenv' not installed, dotenv files will not be loaded")
+    _logger.warning("module 'dotenv' not installed, dotenv files will not be loaded")
 
 gvars.update(os.environ)
 if 'DOTMY' not in gvars:
     gvars['DOTMY'] = (os.path.dirname(os.path.realpath(__file__)))
 
 is_sudo = os.geteuid() == 0
+
 
 def string_substitute(s: str):
     # s = s.replace('{', '{{{{')
@@ -71,17 +76,30 @@ class ItemDef():
             item.attrs = t[2]
         return item
 
+    def __repr__(self):
+        return '"{}" <- "{}" {}'.format(
+            self.dst,
+            self.src,
+            self.attrs
+        )
+
+    def __str__(self):
+        return '"{}" <- "{}"'.format(
+            self.dst,
+            self.src
+        )
+
     def path_normalize(self, curdir: str):
         # variable apply
         src = string_substitute(self.src)
         dst = string_substitute(self.dst)
 
         if len(src) == 0:
-            print('WARN  EmptySrc', self.src)
+            _logger.warning('EmptySrc', self.src)
             return None
 
         if src == '/':
-            print('WARN  RootMapping', self.src)
+            _logger.warning('RootMapping', self.src)
             return None
 
         # *nix won't care about link source type
@@ -92,18 +110,19 @@ class ItemDef():
         # rel to abs
         if src[0] != '/':
             src = os.path.abspath(os.path.join(curdir, src))
+            # print(src)
 
         if not os.path.islink(src):
             if src_is_dir:
                 if not os.path.isdir(src):
-                    print('ERROR SrcNotADir: "{}"'.format(src))
+                    _logger.error('SrcNotADir: "{}"'.format(src))
                     return None
             else:
                 if not os.path.isfile(src):
-                    print('ERROR SrcNotAFile: "{}"'.format(src))
+                    _logger.error('SrcNotAFile: "{}"'.format(src))
                     return None
         else:
-            print('INFO  SrcIsALink: "{}"'.format(src))
+            _logger.info('SrcIsALink: "{}"'.format(src))
 
         if dst_in_dir:
             lastname = os.path.basename(src)
@@ -139,10 +158,9 @@ class ItemDef():
 
         self.target_is_expected = (norm_src == norm_target)
 
-
     def apply(self):
         if is_sudo != self.need_sudo:
-            print('INFO  Ignored: sudo={} "{}"'.format(self.need_sudo, self.dst))
+            _logger.error('Unexpected. SudoMismatch: {}'.format(self))
             return
 
         try:
@@ -155,12 +173,12 @@ class ItemDef():
 
             if self.need_copy:
                 shutil.copy2(self.src, self.dst)
-                print('INFO  Write "{}" (copy from "{}")'.format(self.dst, self.src))
+                _logger.info('Copy {}'.format(str(self)))
             else:
                 os.symlink(self.src, self.dst, target_is_directory=self.src_is_dir)
-                print('INFO  Link "{}" => "{}"'.format(self.dst, self.src))
-        except PermissionError:
-            print('ERROR NoPerm: "{}"'.format(self.dst))
+                _logger.info('Link {}'.format(str(self)))
+        except PermissionError as exc:
+            _logger.error('NoPerm: "{}"'.format(self.dst), exc_info=exc)
 
 
 class IMappingDefs(ABC):
@@ -176,10 +194,10 @@ class IMappingDefs(ABC):
         pass
 
 
-class Engine:
+class Main:
 
-    def __init__(self, cmdargs):
-        self.cmdargs = cmdargs
+    def __init__(self, args):
+        self.args = args
         self.items = [] # type: list[ItemDef]
         self.dsts = set()
 
@@ -190,35 +208,37 @@ class Engine:
                 if item is None:
                     continue
                 if item.dst in self.dsts:
-                    print('DEBUG DefDup: "{}"'.format(item.dst))
+                    _logger.debug('DefDup: "{}"'.format(item.dst))
                     continue
 
+                _logger.debug('Add {}'.format(item))
                 item.check_status()
                 if is_sudo and not item.need_sudo:
+                    _logger.debug("SudoMismatch: {}".format(item))
                     continue
 
                 if item.dst_is_exist:
                     if not item.dst_is_link:
                         if item.need_copy:
-                            print('DEBUG DstExist: "{}" (copy from "{}")'.format(item.dst, item.src))
+                            _logger.debug('DstExist: "{}" (copy from "{}")'.format(item.dst, item.src))
                         else:
-                            print('ERROR DstNotALink: "{}"'.format(item.dst))
+                            _logger.error('DstNotALink: "{}"'.format(item.dst))
                         continue
 
                     if item.target_is_expected:
                         if item.target_is_broken:
-                            print('WARN  LinkExist.Broken: "{}" => "{}"'.format(item.dst, item.src))
+                            _logger.warning('LinkExist.Broken: {}'.format(item))
                         else:
-                            print('DEBUG LinkExist: "{}" => "{}"'.format(item.dst, item.src))
+                            _logger.debug('LinkExist: {}'.format(item))
                         continue
 
                     if item.target_is_broken:
-                        print('WARN  LinkOther.Broken: "{}" => "{}" (expect "{}")'.format(item.dst, item.target, item.src))
-                        if not self.cmdargs.fix_other and not self.cmdargs.fix_broken:
+                        _logger.warning('LinkOther.Broken: "{}" => "{}" (expect "{}")'.format(item.dst, item.target, item.src))
+                        if not self.args.fix_other and not self.args.fix_broken:
                             continue
                     else:
-                        print('WARN  LinkOther: "{}" => "{}" (expect "{}")'.format(item.dst, item.target, item.src))
-                        if not self.cmdargs.fix_other:
+                        _logger.warning('LinkOther: "{}" => "{}" (expect "{}")'.format(item.dst, item.target, item.src))
+                        if not self.args.fix_other:
                             continue
 
                 self.dsts.add(item.dst)
@@ -235,11 +255,11 @@ class Engine:
 
         if isinstance(input, str):
             map_file = input
-            target = 'mapping'
+            target_var = 'mapping'
         elif isinstance(input, tuple):
-            map_file, target = input
+            map_file, target_var = input
         else:
-            print('ERROR InvalidInclude', input)
+            _logger.error('InvalidInclude: {}'.format(input))
             return
 
         map_file = string_substitute(map_file)
@@ -251,7 +271,7 @@ class Engine:
             map_file = os.path.join(map_file, 'mapping.py')
 
         if not os.path.exists(map_file):
-            print('ERROR IncNotExist: "{}"'.format(map_file))
+            _logger.error('IncNotExist: "{}"'.format(map_file))
             return
 
         map_file_dir = os.path.dirname(map_file)
@@ -261,24 +281,24 @@ class Engine:
         exec(open(map_file).read(), my_vars)
         # print(my_vars)
 
-        target = my_vars[target]
-        # print(target)
+        target = my_vars[target_var]
+        _logger.info("Including {} {}".format(map_file, target_var))
         self.include(target, map_file_dir)
 
     def start(self):
-        self.include(self.cmdargs.map_file, os.path.curdir)
+        self.include(self.args.map_file, os.path.curdir)
 
-        if not self.cmdargs.dry_run:
+        if not self.args.dry_run:
             if os.geteuid() == 0:
                 # print(sys.argv)
                 confirm = input('run as root, continue? [Yy]')
                 if not confirm or confirm not in ['Y', 'y']:
-                    print('User cancelled')
+                    _logger.error('User cancelled')
                     return
 
         for item in self.items:
-            if self.cmdargs.dry_run:
-                print('INFO  DryRun: "{}" => "{}"'.format(item.dst, item.src))
+            if self.args.dry_run:
+                _logger.info('DryRun: "{}" => "{}"'.format(item.dst, item.src))
             else:
                 item.apply()
 
@@ -290,5 +310,5 @@ if __name__ == '__main__':
     parser.add_argument('--dry-run', action='store_true', default=False)
     parser.add_argument('--fix-broken', action='store_true', default=False)
     parser.add_argument('--fix-other', action='store_true', default=False)
-    cmdargs = parser.parse_args()
-    Engine(cmdargs).start()
+    args = parser.parse_args()
+    Main(args).start()
