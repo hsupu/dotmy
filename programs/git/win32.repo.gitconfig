@@ -1,17 +1,17 @@
 [core]
-	repositoryFormatVersion = 0
-	fileMode = false
-	bare = true
-	ignoreCase = true
+    repositoryFormatVersion = 0
+    fileMode = false
+    bare = true
+    ignoreCase = true
 # https://git-scm.com/docs/git-fetch#_configured_remote_tracking_branches
 # https://github.com/git/git/blob/master/Documentation/pull-fetch-param.txt
 [remote "origin"]
-	url =
-	# fetch = +refs/pull/*/head:refs/remotes/origin/pr/*
-	fetch = +refs/heads/master:refs/remotes/origin/master
-	fetch = +refs/heads/int:refs/remotes/origin/int
-	fetch = +refs/heads/prod:refs/remotes/origin/prod
-	fetch = +refs/heads/puxu/*:refs/remotes/origin/puxu/*
-	fetch = ^refs/heads/puxu/tmp_*
+    url =
+    # fetch = +refs/pull/*/head:refs/remotes/origin/pr/*
+    fetch = +refs/heads/master:refs/remotes/origin/master
+    fetch = +refs/heads/int:refs/remotes/origin/int
+    fetch = +refs/heads/prod:refs/remotes/origin/prod
+    fetch = +refs/heads/puxu/*:refs/remotes/origin/puxu/*
+    fetch = ^refs/heads/puxu/tmp_*
 [remote "mirror"]
-	url = D:/src/mirror
+    url = D:/src/mirror

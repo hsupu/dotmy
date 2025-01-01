@@ -1,28 +1,7 @@
 -javaagent:C:\opt\ja-netfilter-all\ja-netfilter.jar=jetbrains
--XX:+IgnoreUnrecognizedVMOptions
--XX:+HeapDumpOnOutOfMemoryError
--XX:-OmitStackTraceInFastThrow
--server
--enableassertions
--Dsun.io.useCanonCaches=false
--Djdk.http.auth.tunneling.disabledSchemes=""
--Djdk.attach.allowAttachSelf=true
--Djdk.module.illegalAccess.silent=true
--Dkotlinx.coroutines.debug=off
--XX:ErrorFile=$USER_HOME/java_error_in_idea_%p.log
--XX:HeapDumpPath=$USER_HOME/java_error_in_idea.hprof
-
 --add-opens=java.base/jdk.internal.org.objectweb.asm=ALL-UNNAMED
 --add-opens=java.base/jdk.internal.org.objectweb.asm.tree=ALL-UNNAMED
+-server
 
 -Dfile.encoding=UTF-8
 -Djava.net.preferIPv4Stack=true
-
-# -XX:+UseG1GC
-# -XX:+UseNUMA
-# -XX:-UseSerialGC
-# -XX:-UseParNewGC
-# -XX:-UseParallelGC
-# -XX:-UseParallelOldGC
-# -XX:-UseConcMarkSweepGC
-# -XX:+UseCompressedOops

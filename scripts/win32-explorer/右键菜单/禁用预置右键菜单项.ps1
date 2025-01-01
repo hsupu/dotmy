@@ -2,8 +2,8 @@
 
 $regKey = "Registry::HKCU\Software\Microsoft\Windows\CurrentVersion\Shell Extensions\Blocked"
 $regNameMap = @{
-	SkypeShare = "{776DBC8D-7347-478C-8D71-791E12EF49D8}";
-	OneDriveAdd = "{CB3D0F55-BC2C-4C1A-85ED-23ED75B5106B}";
+    SkypeShare = "{776DBC8D-7347-478C-8D71-791E12EF49D8}";
+    OneDriveAdd = "{CB3D0F55-BC2C-4C1A-85ED-23ED75B5106B}";
 }
 
 foreach ($kvp in $regNameMap.GetEnumerator()) {

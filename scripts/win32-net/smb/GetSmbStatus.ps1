@@ -1,10 +1,14 @@
 
 $ErrorActionPreferenceOld = $ErrorActionPreference
 $ErrorActionPreference = 'Continue'
-# RunWith PS 5.1
-Import-Module SmbShare
-$ErrorActionPreference = $ErrorActionPreferenceOld
-Remove-Variable ErrorActionPreferenceOld
+try {
+    # RunWith PS 5.1
+    Import-Module SmbShare
+}
+finally {
+    $ErrorActionPreference = $ErrorActionPreferenceOld
+    Remove-Variable ErrorActionPreferenceOld
+}
 
 Get-SmbServerConfiguration
 

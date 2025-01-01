@@ -89,6 +89,7 @@
 *.pl            text=auto eol=native diff=perl
 *.py            text=auto eol=native diff=python
 *.rb            text=auto eol=native diff=ruby
+*.vbs           text=auto eol=crlf
 
 # shell lang
 *.bash          text=auto eol=lf
@@ -147,6 +148,8 @@ Makefile        text=auto eol=native
 *.obj       binary
 *.out       binary
 *.pyc       binary
+*.pyd       binary
+*.pyo       binary
 *.so        binary
 *.sys       binary
 
