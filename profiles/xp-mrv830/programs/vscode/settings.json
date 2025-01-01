@@ -1,3 +1,4 @@
+// 250101
 // 230115
 // 211120
 {
@@ -5,6 +6,13 @@
         "editor.semanticHighlighting.enabled": true,
         "editor.suggest.insertMode": "replace",
         "editor.wordBasedSuggestions": "off"
+    },
+    "[graphql]": {
+        "editor.tabSize": 2
+    },
+    "[js]": {
+        "editor.suggest.insertMode": "replace",
+        "editor.tabSize": 2
     },
     "[json]": {
         "editor.quickSuggestions": {
@@ -76,6 +84,7 @@
     "hexeditor.defaultEndianness": "little",
     "hexeditor.inspectorType": "aside",
     "hexeditor.showDecodedText": true,
+    "javascript.updateImportsOnFileMove.enabled": "never",
     "notebook.cellToolbarLocation": {
         "default": "right",
         "jupyter-notebook": "left"
@@ -94,7 +103,7 @@
     "search.useReplacePreview": false,
     "security.allowedUNCHosts": [
         "wsl.localhost",
-        "XP-TM17"
+        "xp-*.local"
     ],
     "security.workspace.trust.untrustedFiles": "open",
     "sortJSON.contextMenu": {
@@ -118,11 +127,14 @@
     "terminal.integrated.confirmOnExit": "hasChildProcesses",
     "terminal.integrated.cursorStyle": "line",
     "terminal.integrated.enableVisualBell": true,
-    "terminal.integrated.fontFamily": "'Iosevka PU-5', 'Sarasa Mono SC'",
+    "terminal.integrated.experimental.windowsUseConptyDll": true,
+    "terminal.integrated.fontFamily": "'Iosevka PU Term', 'Sarasa Mono SC'",
     "terminal.integrated.tabs.hideCondition": "never",
+    "terminal.integrated.tabStopWidth": 4,
     "window.autoDetectHighContrast": false,
     "window.commandCenter": false,
     "window.dialogStyle": "custom",
+    "window.menuBarVisibility": "visible",
     "window.zoomLevel": 1,
     "workbench.colorCustomizations": {
         "[Default Light+]": {

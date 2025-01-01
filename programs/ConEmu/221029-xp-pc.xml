@@ -117,7 +117,7 @@
 			<value name="Multi.SplitHeight" type="hex" data="04"/>
 			<value name="ResetTerminalConfirm" type="hex" data="01"/>
 			<value name="KeyboardHooks" type="hex" data="01"/>
-			<value name="FontName" type="string" data="Iosevka PU-5 Regular"/>
+			<value name="FontName" type="string" data="Iosevka PU Term Regular"/>
 			<value name="FontName2" type="string" data="Sarasa Fixed SC"/>
 			<value name="FontAutoSize" type="hex" data="00"/>
 			<value name="FontSize" type="ulong" data="14"/>
@@ -251,7 +251,7 @@
 			<value name="KeyBarRClick" type="hex" data="01"/>
 			<value name="StatusBar.Show" type="hex" data="01"/>
 			<value name="StatusBar.Flags" type="dword" data="00000002"/>
-			<value name="StatusFontFace" type="string" data="Iosevka PU-5 Regular"/>
+			<value name="StatusFontFace" type="string" data="Iosevka PU Term Regular"/>
 			<value name="StatusFontCharSet" type="ulong" data="1"/>
 			<value name="StatusFontHeight" type="long" data="12"/>
 			<value name="StatusBar.Color.Back" type="dword" data="00423607"/>
@@ -755,4 +755,3 @@
 		</key>
 	</key>
 </key>
-

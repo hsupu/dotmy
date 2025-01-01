@@ -35,7 +35,7 @@
     // "breadcrumbs.showTypeParameters": false,
     "csharp.maxProjectFileCountForDiagnosticAnalysis": 10000,
     "csharp.referencesCodeLens.enabled": false,
-    "editor.fontFamily": "'Iosevka PU-5', 'Sarasa Fixed SC'",
+    "editor.fontFamily": "'Iosevka PU', 'Sarasa Fixed SC'",
     "editor.fontLigatures": false,
     "editor.roundedSelection": false,
     "editor.rulers": [

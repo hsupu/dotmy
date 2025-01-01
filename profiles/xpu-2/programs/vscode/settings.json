@@ -43,7 +43,7 @@
     "diffEditor.ignoreTrimWhitespace": true,
     "diffEditor.maxComputationTime": 0,
     "dotnet.codeLens.enableReferencesCodeLens": false,
-    "editor.fontFamily": "'Iosevka PU-5', 'Sarasa Fixed SC'",
+    "editor.fontFamily": "'Iosevka PU', 'Sarasa Fixed SC'",
     "editor.fontLigatures": false,
     "editor.inlayHints.enabled": "onUnlessPressed",
     "editor.inlineSuggest.enabled": true,

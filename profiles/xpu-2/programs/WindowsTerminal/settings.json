@@ -1,3 +1,4 @@
+// 250101
 {
     "$help": "https://aka.ms/terminal-documentation",
     "$schema": "https://aka.ms/terminal-profiles-schema",
@@ -306,7 +307,7 @@
             "cursorShape": "bar",
             "font": 
             {
-                "face": "Iosevka PU-5",
+                "face": "Iosevka PU Term",
                 "size": 12,
                 "weight": "normal"
             },

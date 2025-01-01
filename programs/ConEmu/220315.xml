@@ -105,7 +105,7 @@
 			<value name="Multi.SplitHeight" type="hex" data="04"/>
 			<value name="ResetTerminalConfirm" type="hex" data="01"/>
 			<value name="KeyboardHooks" type="hex" data="01"/>
-			<value name="FontName" type="string" data="Iosevka PU-5"/>
+			<value name="FontName" type="string" data="Iosevka PU Term"/>
 			<value name="FontName2" type="string" data="Sarasa Fixed SC"/>
 			<value name="FontAutoSize" type="hex" data="00"/>
 			<value name="FontSize" type="ulong" data="16"/>
@@ -762,4 +762,3 @@
 		</key>
 	</key>
 </key>
-

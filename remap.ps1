@@ -35,7 +35,7 @@ if ('' -eq $env:DOTMY) {
     $env:DOTMY = $PSScriptRoot
     [Environment]::SetEnvironmentVariable('DOTMY', $env:DOTMY, 'User')
 }
-. (Join-Path $env:DOTMY "shells/pwsh/lib/os.ps1")
+. (Join-Path $env:DOTMY "scripts/_lib/os.ps1")
 
 $isPwsh = ([version]$PSVersionTable.PSVersion).CompareTo([version]::Parse("6.0")) -ge 0
 if (-not $isPwsh) {

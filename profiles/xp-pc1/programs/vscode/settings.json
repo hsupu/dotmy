@@ -34,7 +34,7 @@
         "sound": "on"
     },
     "diffEditor.ignoreTrimWhitespace": false,
-    "editor.fontFamily": "'Iosevka PU-5', 'Sarasa Mono SC', Cousine, Consolas, 'Courier New', monospace",
+    "editor.fontFamily": "'Iosevka PU', 'Sarasa Mono SC', Cousine, Consolas, 'Courier New', monospace",
     "editor.fontLigatures": false,
     "editor.formatOnPaste": false,
     "editor.formatOnSave": false,
@@ -140,7 +140,7 @@
     "terminal.integrated.confirmOnExit": "hasChildProcesses",
     "terminal.integrated.cursorStyle": "line",
     "terminal.integrated.enableVisualBell": true,
-    "terminal.integrated.fontFamily": "'Iosevka PU-5', 'Sarasa Mono SC'",
+    "terminal.integrated.fontFamily": "'Iosevka PU Term', 'Sarasa Mono SC'",
     "terminal.integrated.tabs.hideCondition": "never",
     "window.autoDetectHighContrast": false,
     "window.commandCenter": false,

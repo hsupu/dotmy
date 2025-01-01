@@ -43,7 +43,7 @@
     "csharp.maxProjectFileCountForDiagnosticAnalysis": 10000,
     "diffEditor.ignoreTrimWhitespace": false,
     "dotnet.codeLens.enableReferencesCodeLens": false,
-    "editor.fontFamily": "'Iosevka PU-5', 'Sarasa Fixed SC'",
+    "editor.fontFamily": "'Iosevka PU', 'Sarasa Fixed SC'",
     "editor.fontLigatures": false,
     "editor.formatOnPaste": false,
     "editor.formatOnSave": false,
@@ -175,7 +175,7 @@
     "terminal.integrated.cursorStyle": "line",
     "terminal.integrated.defaultProfile.windows": "PowerShell",
     "terminal.integrated.enableVisualBell": true,
-    "terminal.integrated.fontFamily": "'Iosevka PU-5', 'Sarasa Term SC'",
+    "terminal.integrated.fontFamily": "'Iosevka PU Term', 'Sarasa Term SC'",
     "terminal.integrated.profiles.windows": {
         "Command Prompt": {
             "icon": "terminal-cmd",

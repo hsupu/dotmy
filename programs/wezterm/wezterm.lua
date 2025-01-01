@@ -56,7 +56,7 @@ return {
     default_cwd = "C:/my/",
 
     -- https://wezfurlong.org/wezterm/config/fonts.html
-    font = wezterm.font("Iosevka PU-5", {
+    font = wezterm.font("Iosevka PU Term", {
         weight = "Regular",
     }),
 

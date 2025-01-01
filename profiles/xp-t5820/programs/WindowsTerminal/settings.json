@@ -1,3 +1,4 @@
+// 250101
 {
     "$help": "https://aka.ms/terminal-documentation",
     "$schema": "https://aka.ms/terminal-profiles-schema",
@@ -292,7 +293,7 @@
             "cursorShape": "bar",
             "font": 
             {
-                "face": "Iosevka PU-5",
+                "face": "Iosevka PU Term",
                 "size": 12.0,
                 "weight": "normal"
             },
@@ -323,21 +324,6 @@
                 "hidden": false,
                 "name": "PowerShell",
                 "source": "Windows.Terminal.PowershellCore"
-            },
-            {
-                "closeOnExit": "never",
-                "commandline": "powershell.exe -NoLogo -NoProfile -f C:\\my\\bin\\msys2.ps1",
-                "guid": "{e7d1a433-ac30-4fee-9482-c4a6877a0b02}",
-                "hidden": false,
-                "icon": "C:\\my\\local\\opt\\msys64\\msys2.ico",
-                "name": "msys2"
-            },
-            {
-                "guid": "{0b406d9a-8fe4-5bfc-bc80-3e8d63fe4506}",
-                "hidden": false,
-                "name": "MyUbuntu",
-                "source": "Windows.Terminal.Wsl",
-                "startingDirectory": "/home/xp"
             }
         ]
     },

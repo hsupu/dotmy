@@ -10,7 +10,7 @@ $base_mapping = @(
     @('$HOME/.local', 'C:/my/local/'),
     @('$HOME/.ssh', '$($env:DOTMY)/private/current/ssh/'),
     @('C:/my/bin', '$($env:DOTMY)/bin/'),
-    @("$($env:SystemRoot)\WindowsPowerShell", "$($env:SystemRoot)\System32\WindowsPowerShell\", @{ sudo=$true }),
+    # @("$($env:SystemRoot)\WindowsPowerShell", "$($env:SystemRoot)\System32\WindowsPowerShell\", @{ sudo=$true }),
     @()
 )
 
